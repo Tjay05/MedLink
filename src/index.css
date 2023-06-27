@@ -1,13 +1,149 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* 
+! Mobile-First Approach
+- Variables
+- Reset
+- Base Styles
+- Utility Styles
+- Mobile Styles
+- Tablet Styles
+- Desktop Styles 
+*/
+
+/* Variables */
+:root {
+  --bg-login-dark-green: hsla(131, 33%, 31%, 1);
+  --bg-form-green: hsla(104, 32%, 56%, 0.77);
+  --pure-white: hsla(0, 0%, 100%, 1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* base styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+/* Dektop Styles */
+.container {
+  background-color: var(--bg-login-dark-green);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-block-start: 1rem;
+  padding-inline: 2.3rem;
+  height: 100vh;
+}
+
+.container nav h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--pure-white);
+}
+
+h1 span.white-line {
+  border-top: 3px solid #fff;
+}
+
+h1 span.red-line {
+  border-bottom: 3px solid red;
+}
+
+.content {
+  align-self: center;
+  color: var(--pure-white);
+  font-family: 'Roboto', sans-serif;
+}
+
+.content h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.form-field {
+  background-color: var(--bg-form-green);
+  background-image: url(./assets/images/heart.svg), url(./assets/images/lungs-svg.svg);
+  background-repeat: no-repeat;
+  background-size: 27%;
+  background-position-y: 50%, 58%;
+  background-position-x: 0, 94%;
+  padding-inline: 2.5rem;
+  padding-block: 2.7rem;
+  border-radius: 30px;
+  width: 100%;
+  height: 400px;
+  margin-block: 2rem;
+}
+
+.form-field form {
+  margin-inline: auto;
+  width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.form-field form input {
+  width: 350px;
+  height: 37px;
+  margin-block: 0.5rem 1.7rem;
+  border: none;
+  border-radius: 5px;
+  padding-inline-start: 1rem;
+  font-size: 0.9rem;
+}
+
+.med-personnels {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.med-personnels ul.nav-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--pure-white);
+  border-radius: 10px;
+  color: var(--bg-login-dark-green);
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.med-personnels ul.nav-footer li {
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  border-left: 2px solid var(--bg-login-dark-green);
+}
+
+ul.nav-footer li.none {
+  border: none;
+}
+
+.med-personnels button {
+  color: var(--bg-login-dark-green);
+  border: none;
+  border-radius: 7px;
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
