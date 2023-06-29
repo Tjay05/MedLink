@@ -1,9 +1,11 @@
+import DocNav from "./components/DocNav";
 import SignIn from "./components/SignIn";
 
 function App() {
   return (
     <div className="App">
-      <SignIn />
+      <DocNav />
+      {/* <SignIn /> */}
     </div>
   );
 }

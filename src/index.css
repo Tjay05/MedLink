@@ -39,6 +39,13 @@ ul{
   list-style: none;
 }
 
+/* Utility Styles */
+.rule {
+  width: 90%;
+  margin-inline: auto;
+  min-width: 926px;
+}
+
 /* Dektop Styles */
 .container {
   background-color: var(--bg-login-dark-green);
@@ -46,9 +53,9 @@ ul{
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  padding-block-start: 1rem;
+  padding-block: 2.9rem 10.7rem;
   padding-inline: 2.3rem;
-  height: 100vh;
+  height: 100%;
 }
 
 .container nav h1 {
@@ -146,4 +153,48 @@ ul.nav-footer li.none {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+/* DOCTOR NAVBAR */
+nav.header {
+  background-color: var(--bg-login-dark-green);
+  width: 100%;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-block: 0.8rem;
+}
+
+nav.header .rule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav.header .rule ul {
+  display: flex;
+  align-items: center;
+}
+
+nav.header .rule ul.first-nav li {
+  padding-inline: 1rem;
+}
+
+ul.second-nav li {
+  padding-inline: 0.5rem;
+}
+
+ul.second-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+ul.second-nav li a .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.profile span {
+  opacity: 0.7;
 }
