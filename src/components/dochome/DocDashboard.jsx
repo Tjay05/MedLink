@@ -1,4 +1,4 @@
-import searchIcon from '../assets/icons/search-icon.svg'
+import searchIcon from '../../assets/icons/search-icon.svg'
 import Calendar from 'react-calendar';
 
 const DocDashboard = () => {

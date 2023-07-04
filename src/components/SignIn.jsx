@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import DoctorForm from "./DoctorForm";
 
 const SignIn = () => {
@@ -17,7 +18,7 @@ const SignIn = () => {
                     <li><a>Lab</a></li>
                     <li className="active"><a>Doctor</a></li>
                 </ul>
-                <button type="submit">Login</button>
+                <button type="submit"><Link to="home">Login</Link></button>
             </footer>
         </div>
      );
