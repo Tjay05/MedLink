@@ -10,7 +10,7 @@ const AddDoctor = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("https://learnhub-y2uf.onrender.com/mentor/all")
+    fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -21,7 +21,7 @@ const AddDoctor = () => {
       });
   }, []);
   const refreshFromBackend = () => {
-    fetch("https://learnhub-y2uf.onrender.com/mentor/all")
+    fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -89,23 +89,23 @@ const AddDoctor = () => {
                 <img src={avatar} alt="" className="avatar" />
 
                 <p className="firstName">
-                  {user.firstName} {user.lastName}
-                  <span className="light">Dermatologist</span>
+                  {user.firstname} {user.lastname}
+                  <span className="light">{user.areaOfSpecialization}</span>
                 </p>
               </div>
-              <div id="">87364523</div>
-              <div id="">brooklyns@mail.com</div>
-              <div id="">(603) 555-0123</div>
+              <div id="">{user.id}</div>
+              <div id="">{user.email}</div>
+              <div id="">{user.number}</div>
               <div>
-                <p id="getDate">21/12/2022</p>
+                <p id="getDate">{user.dateAdded}</p>
                 <p className="light" id="time">
-                  10:40 PM
+                  {user.timeAdded}
                 </p>
               </div>
               <div className="active">
-                {user.Status ? (
+                {user.Status ? Active(
                   <button className="active1"> Active</button>
-                ) : (
+                ) : Offline(
                   <button className="offline1">Offline</button>
                 )}
               </div>
