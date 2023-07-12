@@ -16,7 +16,7 @@ export default function NavLayout() {
                                 </a>
                             </li>
                             <li>
-                                <NavLink to="dashboard">Home</NavLink>
+                                <NavLink to="./">Home</NavLink>
                             </li>
                             <li>
                                 <NavLink to="appointment">Appointments</NavLink>
