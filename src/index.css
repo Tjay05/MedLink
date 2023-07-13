@@ -144,6 +144,23 @@ h1 span.red-line {
   font-size: 0.9rem;
 }
 
+/* Form Subit-btn */
+.btn-centre{
+  display: flex;
+  justify-content: center;
+}
+form button.submit-btn {
+  align-self: center;
+  color: var(--bg-login-dark-green);
+  border: none;
+  border-radius: 7px;
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .med-personnels {
   display: flex;
   justify-content: space-around;
