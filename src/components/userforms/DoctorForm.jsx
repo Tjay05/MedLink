@@ -15,7 +15,7 @@ const DoctorForm = ({ docId, setDocId, docPword, setDocPword, data}) => {
                 <br />
                 <label htmlFor="docPword">Enter your Password</label>
                 <br />
-                <p className="err-mssg" >{data[0]}</p>
+                <p className="err-mssg" >{data}</p>
                 <input
                     id="docPword"
                     name="docPword"

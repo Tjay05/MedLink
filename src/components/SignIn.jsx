@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 
 // User Forms
 import Adminform from "./userforms/Adminform";
@@ -26,12 +26,14 @@ const SignIn = () => {
   const [docPword, setDocPword] = useState("");
 
   const [data, setData] = useState('');
+  const history = useNavigate();
  
   const loginButtonClicked = () => {
     console.log("Login button clicked");
     
     if(location.pathname.includes("/doctor")){
-
+      
+      history('/home');
       const signup = async (userData) => {
         try {
 
@@ -47,12 +49,20 @@ const SignIn = () => {
           });
 
           setData(await response.json());
-          const message  = response.json()
+          // const message  = response.json()
       //  console.log(data);
           if (response.ok) {
             console.log(data);
           } else {
-            console.log('errorrr', data)
+            if( data){
+              try {
+                setData(data.message)
+                console.log('errorrr', data.message)
+                
+              } catch (error) {
+                console.log(error);
+              }
+            }
             // errorMessage.TextContent = data.message
           }
         } catch (error) {
@@ -110,7 +120,7 @@ const SignIn = () => {
           });
 
           setData(await response.json());
-          const message = response.json()
+          // const message = response.json()
       //  console.log(data);
           if (response.ok) {
             console.log(data);
@@ -128,6 +138,7 @@ const SignIn = () => {
     } else{
       const signup = async (userData) => {
         try {
+          history()
           // Make API request to signup endpoint
           const response = await fetch('https://hospital-management-backend.onrender.com/admin/login', {
             method: 'POST',
@@ -141,7 +152,7 @@ const SignIn = () => {
           });
 
           setData(await response.json());
-          const message = response.json()
+          // const message = response.json()
       //  console.log(data);
           if (response.ok) {
             console.log(data);
