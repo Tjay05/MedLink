@@ -1,26 +1,4 @@
-import { useEffect, useState } from "react";
-import useFetch from "../../Api/useFetch";
-
-const PharmForm = () => {
-    const [pharmId, setpharmId] = useState("");
-    const [password, setPassword] = useState("");
-    const { data, isPending, error } = useFetch(
-        "https://hospital-management-backend.onrender.com/pharmacist/login",
-        "POST",
-        {
-        "Content-type": "application/json",
-        },
-        {   
-        id: pharmId,
-        password: password,
-        }
-    );
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission
-        onLogin()
-    };
+const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, data }) => {
     return ( 
         <div className="form-field">
             <form>
@@ -31,9 +9,11 @@ const PharmForm = () => {
                     id="pharmId"
                     placeholder="Pharmacist Id" 
                     name="pharmId"
+                    value={pharmId}
+                    onChange={(e) => setPharmId(e.target.value)}
                 />
                 <br />
-
+                <p className="err-mssg" >{data[0]}</p>
                 <label htmlFor="pharmPword">Enter your Password</label>
                 <br />
                 <input 
@@ -41,6 +21,8 @@ const PharmForm = () => {
                     id="pharmPword"
                     placeholder="Password"
                     name="pharmPword" 
+                    value={pharmPword}
+                    onChange={(e) => setPharmPword(e.target.value)}
                 />
             </form>
         </div>

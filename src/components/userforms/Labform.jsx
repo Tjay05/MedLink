@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import useFetch from "../../Api/useFetch";
-
-const Labform = () => {
+const Labform = ({ labId, setLabId, labPassword, setLabPassword, data }) => {
     return ( 
         <div className="form-field">
             <form>
@@ -12,16 +9,20 @@ const Labform = () => {
                     id="labId"
                     placeholder="Lab Id"
                     name="labId"
+                    value={labId}
+                    onChange={(e) => setLabId(e.target.value)}
                 />
                 <br />
-
-                <label htmlFor="labPword">Enter Your Password</label>    
+                <p className="err-mssg" >{data[0]}</p>
+                <label htmlFor="labPassword">Enter Your Password</label>    
                 <br />
                 <input 
                     type="password"
                     id="labPword"
                     placeholder="Password"
-                    name="labPword" 
+                    name="labPassword" 
+                    value={labPassword}
+                    onChange={(e) => setLabPassword(e.target.value)}
                 />
             </form>
         </div>

@@ -1,30 +1,28 @@
-import { useEffect, useState } from "react";
-import useFetch from "../../Api/useFetch";
-
-const DoctorForm = ({onLogin}) => {
+const DoctorForm = ({ docId, setDocId, docPword, setDocPword, data}) => {
     return (
         <div className="form-field">
             <form >
-                <label htmlFor="doctorId">Enter your Doctor Id</label>
+                <label htmlFor="docId">Enter your Doctor Id</label>
                 <br />
                 <input
-                    id="doctorId"
+                    id="docId"
                     type="text"
                     placeholder="Doctor Id"
                     name="docId"
-                    // value={docId}
-                    // onChange={(e) => setDocId(e.target.value)}
+                    value={docId}
+                    onChange={(e) => setDocId(e.target.value)}
                 />
                 <br />
-                <label htmlFor="pword">Enter your Password</label>
+                <label htmlFor="docPword">Enter your Password</label>
                 <br />
+                <p className="err-mssg" >{data[0]}</p>
                 <input
-                    id="pword"
-                    name="password"
+                    id="docPword"
+                    name="docPword"
                     type="password"
                     placeholder="Password"
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
+                    value={docPword}
+                    onChange={(e) => setDocPword(e.target.value)}
                 />
                 <br />
             </form>

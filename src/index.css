@@ -123,6 +123,7 @@ h1 span.red-line {
   padding-block: 2.7rem;
   border-radius: 30px;
   width: 100%;
+  max-width: 430px;
   min-height: 350px;
   margin-block: 2rem;
 }
@@ -718,5 +719,15 @@ td {
 #errorMessage{
   color: #832e2e;
   font-weight: 800;
+  text-align: center;
+}
+
+/* ERROR MESSAGE */
+
+.err-mssg {
+  color: rgb(150, 53, 53);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-style: italic;
   text-align: center;
 }

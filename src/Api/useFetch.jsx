@@ -1,37 +1,38 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 
-const useFetch = (url, method, headers, body) => {
-  const [data, setData] = useState(null);
-  const [isPending, setIsPending] = useState(true);
+const useFetch = () => {
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, {
-          method,
-          headers,
-          body: JSON.stringify(body),
-        });
+  const signup = async (userData) => {
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
 
-        if (!response.ok) {
-          throw new Error("Could not fetch data");
-        }
+    try {
+      // Make API request to signup endpoint
+      const response = await fetch('https://hospital-management-backend.onrender.com/doctor/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
 
-        const responseData = await response.json();
-        setData(responseData);
-        setIsPending(false);
-        setError(null);
-      } catch (error) {
-        setError(error.message);
-        setIsPending(false);
+      if (!response.ok) {
+        throw new Error('Signup failed');
       }
-    };
 
-    fetchData();
-  }, [url, method, headers, body]);
+      setSuccess(true);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  return { data, isPending, error };
+  return { loading, error, success, signup };
 };
 
 export default useFetch;
