@@ -14,6 +14,9 @@ import DocAppointment from "./components/dochome/DocAppointment";
 import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
 
+// Admin Pages
+import Header from "./components/admin/admincomponents/Header"
+
 // Layouts
 import SignIn from "./components/SignIn";
 
@@ -35,6 +38,7 @@ function App() {
   const [docId, setDocId] = useState("");
   const [docPword, setDocPword] = useState("");
 
+  // Responses
   const [data, setData] = useState('');
 
   return (
@@ -53,6 +57,9 @@ function App() {
             <Route path="appointment" element={<DocAppointment/>} />
             <Route path="details" element={<AppointmentDetails/>} />
             <Route path="notifications" element={<DocNotifications/>} />
+          </Route>
+          <Route path="adminhome" element={<Header/>} >
+
           </Route>
         </Routes>
       </BrowserRouter>

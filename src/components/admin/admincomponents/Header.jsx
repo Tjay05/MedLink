@@ -1,39 +1,36 @@
-import React from "react";
-// import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.svg";
-import Icons from "../assets/Icons.svg";
-import Bga from "../assets/BgStaff.svg";
-import M from "../assets/Group 1.svg";
+import Logo from "../../../assets/icons/logo.svg";
+import blocks from "../../../assets/icons/blocks.svg"
+import chart from "../../../assets/icons/chart.svg"
+import chat from "../../../assets/icons/chat.svg"
 import { Link, Outlet } from "react-router-dom";
 const Header = () => {
   return (
-    <header className="header">
-      <div className="left">
-        <img src={Logo} alt="" className="logo" /> 
-        <nav>
-          <ul>
-                      <Link style={ {textDecoration:"none"}} to="/">
-              <li className="staff">Staff</li>
-            </Link>
-            <Link style={{textDecoration:"none"}} to="patients">
-              <li>Patients</li>
-            </Link>
-            <li>Appiontments</li>
-            <li>Payroll</li>
-            <li>NHIS Scheme</li>
-          </ul>
-        </nav>
+    <nav className="header">
+      <div className="rule">
+        <ul className="first-nav">
+          <li><a><img src={Logo} alt="" className="logo" /></a></li>
+          <li><Link to="staff">Staff</Link></li>
+          <li><Link to="patients">Patients</Link></li>
+          <li>Appiontments</li>
+          <li>Payroll</li>
+          <li>NHIS Scheme</li>
+        </ul>
+        <ul className="second-nav">
+          <li><a><img src={blocks} /></a></li>
+          <li><a><img src={chart} /></a></li>
+          <li><a><img src={chat} /></a></li>
+          <li>
+            <a>
+              <div className="profile">
+                <p id="adminName">Marvin Mckinney</p>
+                <span>Admin</span>
+              </div>
+              <p>M</p>
+            </a>
+          </li>
+        </ul>
       </div>
-
-      <div className="right">
-        <img src={Icons} alt="" /> 
-        <p>
-          Marvin Mckinney <br /> <span className="admin">Admin </span>
-        </p>
-
-        <img src={M} alt="" className="m" /> 
-      </div>
-    </header>
+    </nav>
   );
 };
 
