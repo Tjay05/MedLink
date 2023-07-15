@@ -1,31 +1,7 @@
-import { useState } from "react";
-import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-// User Forms
-import Adminform from "./userforms/Adminform";
-import DoctorForm from "./userforms/DoctorForm";
-import Labform from "./userforms/Labform";
-import PharmForm from "./userforms/Pharmform";
+const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId, labPassword, docId, docPword, data, setData }) => {  
 
-const SignIn = () => {  
-  // ADMIN
-  const [hospitalId, setHospitalId] = useState('');
-  const [adminId, setAdminId] = useState('');
-  const [adminPassword, setAdminPassword] = useState('');
-
-  // PHARMACIST
-  const [pharmId, setPharmId] = useState('');
-  const [pharmPword, setPharmPword] = useState('');
-
-  // LAB
-  const [labId, setLabId] = useState('');
-  const [labPassword, setLabPassword] = useState('');
-
-  // DOCTOR
-  const [docId, setDocId] = useState("");
-  const [docPword, setDocPword] = useState("");
-
-  const [data, setData] = useState('');
   const history = useNavigate();
  
   const loginButtonClicked = () => {
@@ -33,7 +9,7 @@ const SignIn = () => {
     
     if(location.pathname.includes("/doctor")){
       
-      history('/home');
+      history('/dochome/');
       const signup = async (userData) => {
         try {
 
@@ -179,12 +155,7 @@ const SignIn = () => {
       </nav>
       <div className="content">
         <h2>Sign In</h2>
-        <Routes>
-          <Route path="/" element={<Adminform hospitalId={hospitalId} data={data} setHospitalId={setHospitalId} adminId={adminId} setAdminId={setAdminId} adminPassword={adminPassword} setAdminPassword={setAdminPassword} />} />
-          <Route path="pharm" element={<PharmForm pharmId={pharmId} data={data} setPharmId={setPharmId} pharmPword={pharmPword} setPharmPword={setPharmPword}  />} />
-          <Route path="Lab" element={<Labform labId={labId} data={data} setLabId={setLabId} labPassword={labPassword} setLabPassword={setLabPassword} />} />
-          <Route path="doctor" element={<DoctorForm docId={docId} data={data} setDocId={setDocId} docPword={docPword}  setDocPword={setDocPword} />} />
-        </Routes>
+        <Outlet />
       </div>
       <footer className="med-personnels">
         <ul className="nav-footer">

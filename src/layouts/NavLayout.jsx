@@ -1,8 +1,4 @@
-import { NavLink, Route, Routes } from "react-router-dom";
-import DocDashboard from "../components/dochome/DocDashboard";
-import DocAppointment from "../components/dochome/DocAppointment";
-import DocNotifications from "../components/dochome/DocNotifications";
-import AppointmentDetails from "../components/dochome/AppointmentDetails";
+import { NavLink, Outlet } from "react-router-dom";
 
 export default function NavLayout() {
     return (
@@ -83,12 +79,7 @@ export default function NavLayout() {
             </>
 
             <main className="context rule">
-                <Routes>
-                    <Route index element={<DocDashboard/>}/>
-                    <Route path="appointment" element={<DocAppointment/>} />
-                    <Route path="details" element={<AppointmentDetails/>} />
-                    <Route path="notifications" element={<DocNotifications/>} />
-                </Routes>
+                <Outlet/>
             </main>
         </>
     )

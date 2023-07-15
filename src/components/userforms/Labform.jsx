@@ -1,4 +1,4 @@
-const Labform = ({ labId, setLabId, labPassword, setLabPassword, data }) => {
+const Labform = ({ labId, setLabId, labPassword, setLabPassword, /*data*/ }) => {
     return ( 
         <div className="form-field">
             <form>
@@ -13,7 +13,7 @@ const Labform = ({ labId, setLabId, labPassword, setLabPassword, data }) => {
                     onChange={(e) => setLabId(e.target.value)}
                 />
                 <br />
-                <p className="err-mssg" >{data[0]}</p>
+                {/* <p className="err-mssg" >{data[0]}</p> */}
                 <label htmlFor="labPassword">Enter Your Password</label>    
                 <br />
                 <input 

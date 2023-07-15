@@ -1,4 +1,4 @@
-const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, data }) => {
+const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, /*data*/ }) => {
     return ( 
         <div className="form-field">
             <form>
@@ -13,7 +13,7 @@ const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, data }) => 
                     onChange={(e) => setPharmId(e.target.value)}
                 />
                 <br />
-                <p className="err-mssg" >{data[0]}</p>
+                {/* <p className="err-mssg" >{data[0]}</p> */}
                 <label htmlFor="pharmPword">Enter your Password</label>
                 <br />
                 <input 
