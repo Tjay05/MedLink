@@ -112,9 +112,9 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
       signup()
       console.log(labId, labPassword);
     } else{
+      history('/adminhome/');
       const signup = async (userData) => {
         try {
-          history()
           // Make API request to signup endpoint
           const response = await fetch('https://hospital-management-backend.onrender.com/admin/login', {
             method: 'POST',

@@ -993,3 +993,39 @@ header.docHeader {
     color: #ffffff;
     text-transform: uppercase;
 }
+
+/* docSuccessadd index.jsx */
+.afterSubmit {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 48px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #5F8D4E;
+    padding-top: 3rem;
+}
+
+.checkImg {
+    /* padding-top: -7rem; */
+    position: relative;
+    left: 180px;
+}
+
+.done {
+    cursor: pointer;
+    background-color: #5F8D4E;
+    width: 90px;
+    height: 34px;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.done p{
+color: #ffffff;
+}

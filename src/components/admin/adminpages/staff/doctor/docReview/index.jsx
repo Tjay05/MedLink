@@ -42,10 +42,7 @@ const DocReview = () => {
 
           <div className="btnReviewWrap">
             <button className="btnNextStep">
-              <Link
-                style={{ textDecoration: "none" }}
-                to="../docSuccessAdd"
-              >
+              <Link to="../docSuccessAdd">
                 <p>Next step</p>
               </Link>
             </button>

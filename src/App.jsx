@@ -1,18 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
+// Layouts
+import SignIn from "./components/SignIn";
+
 // User Forms
 import Adminform from "./components/userforms/Adminform";
 import DoctorForm from "./components/userforms/DoctorForm";
 import Labform from "./components/userforms/Labform";
 import PharmForm from "./components/userforms/Pharmform";
-
-// Doctor Pages
-import NavLayout from "./layouts/NavLayout";
-import DocDashboard from "./components/dochome/DocDashboard";
-import DocAppointment from "./components/dochome/DocAppointment";
-import DocNotifications from "./components/dochome/DocNotifications";
-import AppointmentDetails from "./components/dochome/AppointmentDetails";
 
 // Admin Pages
 import Header from "./components/admin/admincomponents/Header";
@@ -57,8 +53,12 @@ import DomServices from "./components/admin/adminpages/staff/domesticWorkers/dom
 import DomReview from "./components/admin/adminpages/staff/domesticWorkers/domReview";
 import DomAddSuccess from "./components/admin/adminpages/staff/domesticWorkers/domAddSuccess";
 
-// Layouts
-import SignIn from "./components/SignIn";
+// Doctor Pages
+import NavLayout from "./layouts/NavLayout";
+import DocDashboard from "./components/dochome/DocDashboard";
+import DocAppointment from "./components/dochome/DocAppointment";
+import DocNotifications from "./components/dochome/DocNotifications";
+import AppointmentDetails from "./components/dochome/AppointmentDetails";
 
 function App() {
   // ADMIN

@@ -13,7 +13,7 @@ const DocAddSuccess = () => {
 
           <div className="afterSubmit">
             <p>
-              You have Successfully Added (Dr’s name). Check your email address
+              You have Successfully Added (Dr's name). Check your email address
               for your unique ID
             </p>
           </div>

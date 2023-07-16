@@ -75,7 +75,7 @@ const AddDoctor = () => {
                 <p id="user">Arnold Schwarzenneger</p>
                 <p id="profession">Opthalmologists</p>
               </div>
-            </div>
+            </div>  
             <p>89271093</p>
             <p>arnold@gmail.com</p>
             <p>000-call-rexxie</p>
