@@ -1,12 +1,10 @@
-import DocMenu from "../docBasicInfo/DocMenu";
-import checkimg from "../../../../assets/checkimage.svg";
+import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
 
 const DocAddSuccess = () => {
   return (
     <>
-      <DocMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <div className="checkImg">
@@ -20,7 +18,7 @@ const DocAddSuccess = () => {
             </p>
           </div>
           <button className="done">
-            <Link style={{ textDecoration: "none" }} to="/staff/doctor">
+            <Link style={{ textDecoration: "none" }} to="/adminhome/">
               <p>Done</p>
             </Link>
           </button>

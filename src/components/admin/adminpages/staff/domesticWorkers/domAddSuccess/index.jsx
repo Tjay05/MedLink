@@ -1,12 +1,9 @@
-
-import DomMenu from "../domWorkBasicInfo/DomMenu";
-import checkimg from "../../../../assets/checkimage.svg";
+import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
 const DomSuccessAdd = () => {
   return (
     <>
-      <DomMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <div className="checkImg">
@@ -20,7 +17,7 @@ const DomSuccessAdd = () => {
             </p>
           </div>
           <button className="done">
-            <Link style={{ textDecoration: "none" }} to="/staff/domesticWorkers">
+            <Link to="../domesticWorkers">
               <p>Done</p>
             </Link>
             </button>

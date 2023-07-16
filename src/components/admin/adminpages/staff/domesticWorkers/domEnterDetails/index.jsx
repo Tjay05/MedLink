@@ -1,13 +1,12 @@
-import DomMenu from "../domWorkBasicInfo/DomMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
-import { Link,useNavigate } from "react-router-dom";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import calender from "../../../../../../assets/icons/calen.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const DomEnterDetails = () => {
     const history=useNavigate()
   return (
     <>
-      <DomMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap">
           <header className="headBasicInfo">
@@ -72,27 +71,6 @@ const DomEnterDetails = () => {
                   />
                   <img src={poly} alt="" className="imageInput" />
                 </div>
-                {/* <label htmlFor="">
-                  <p className="pInput">Area of Specialization</p>
-                </label>
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="your specialization"
-                /> */}
-                {/* <label htmlFor="">
-                  <p className="pInput"> Medical License Number</p>
-                </label>
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="your license number"
-                /> */}
-
                 <label htmlFor="">
                   <p className="pInput"> Years of experience</p>
                 </label>
@@ -119,25 +97,11 @@ const DomEnterDetails = () => {
 
                   <img src={poly} alt="" className="imageInput" />
                 </div>
-
-                {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
               </form>
             </div>
           </div>
           <button className="btnNextStep">
-          <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/domesticWorkers/domServices"
-            >
+          <Link to="../domServices">
               <p>Next step</p>
             </Link>
           </button>

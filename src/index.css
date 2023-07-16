@@ -66,6 +66,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Utility Styles */
 .rule {
   width: 90%;
@@ -733,4 +737,259 @@ td {
 }
 
 /* ADMIN STYLES */
-/* Admin Navbar */
+/* Admin Lower Nav */
+aside .menu {
+  display: flex;
+  align-items: center;
+  color: #5F8D4E;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu a {
+  margin-inline: 1.5rem;
+  padding-inline: 1rem;
+}
+
+.menu a.active {
+  background: rgba(8, 92, 92, 0.2);
+}
+
+/* List of Doctors */
+.wrapAddDoc {
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  margin-inline: auto;
+  padding-block: 1rem 2rem;
+}
+
+header.docHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.docHeader .left1 {
+  display: flex;
+  flex-direction: column;
+  color: #212121;
+  font-weight: 500;
+}
+
+.left1 p.p1 {
+  font-size: 1.2rem;
+}
+
+.left1 p.p2 {
+  color:hsla(240, 10%, 74%, 1);
+  font-size: 0.75rem;
+}
+
+.docHeader .btnright button {
+  font-family: inherit;
+  background: var(--bg-btn-green);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  color: var(--pure-white);
+}
+
+.docs__info {
+  display: flex;
+  width: 100%;
+  background-color: hsla(0, 0%, 98%, 1);
+  color: var(--bg-form-green);
+  font-weight: 600;
+  font-size: .9rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.docs__info * {
+  flex: 1;
+}
+
+.allDocs {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--patient-apointment);
+  font-weight: 600;
+}
+
+.allDocs .PicProfile {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.allDocs > p {
+  flex: 1;
+}
+
+.allDocs .dateAdded {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+}
+
+.dateAdded .light {
+  opacity: 0.5;
+}
+
+/* Doc Add basic Info */
+.docMenu {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  padding-inline-start: 4rem;
+  gap: 1.4rem;
+  color: #C9C9C9;
+}
+
+.wrapBasicInfo {
+  font-family: 'Poppins', sans-serif;
+  width: 87%;
+  margin-inline: auto;
+  padding-block: 3rem 2rem;
+}
+
+.headBasicInfo {
+  display: flex;
+  width: 95%;
+  margin-inline: auto;
+  color: #5F8D4E;
+  cursor: pointer;    
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headBasicInfo img {
+  width: 12rem;
+}
+
+.headBasicInfo p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 22px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.headBasicInfo p span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.blurBasic {
+    color: #C9C9C9;
+    margin-left: 2rem;
+}
+
+.seperator {
+    color: #C9C9C9;
+    background-color: transparent;
+    filter: opacity(5%);
+}
+
+.basicInfo h2 {
+    position: relative;
+    top: 5px;
+    color: #181C32;
+    padding-left: 4.5rem;
+    padding-top: 2rem;
+    letter-spacing: 0px;
+    font-size: large;
+    text-align: left;
+    font-family: Poppins;
+    font-weight: 600;
+
+}
+
+.twoForms {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 4rem;
+    padding-top: 2px;
+}
+
+.imageInput {
+    width: 7px;
+    position: relative;
+    left: -30px;
+}
+
+.twoForms input {
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.pInput {
+    color: black;
+    padding-top: 14px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.editInput {
+    color: black;
+    width: 350px;
+    outline: none;
+    border: 1px solid lightgrey;
+
+}
+
+.twoForms input::placeholder {
+    opacity: 23%;
+    color: #181C32;
+}
+
+.btnNextStep {
+    cursor: pointer;
+    background-color: #5F8D4E;
+    width: 90px;
+    height: 34px;
+    position: relative;
+    left: 44rem;
+    bottom: 30px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.btnNextStep p {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.btnBack {
+    cursor: pointer;
+    background-color: #5F8D4E;
+    width: 90px;
+    height: 34px;
+    position: relative;
+    bottom: 34px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.btnBack p {
+    color: #ffffff;
+    text-transform: uppercase;
+}

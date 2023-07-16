@@ -1,14 +1,12 @@
-import DomMenu from "../domWorkBasicInfo/DomMenu";
-import seperator from "../../../../assets/Separator.svg";
-import { Link,useNavigate } from "react-router-dom";
-// import poly from "../assets/Polygon 1.svg";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import calender from "../../../../../../assets/icons/calen.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const DomReview = () => {
     const history=useNavigate()
   return (
     <>
-      <DomMenu />
-
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <header className="headBasicInfo1">
@@ -46,10 +44,7 @@ const DomReview = () => {
 
           <div className="btnReviewWrap">
             <button className="btnNextStep">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/domesticWorkers/domAddSuccess"
-            >
+            <Link to="../domAddSuccess">
               <p>Next step</p>
             </Link>
             </button>

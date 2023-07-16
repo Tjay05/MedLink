@@ -1,11 +1,9 @@
-import LabMenu from "../labBasicInfo/LabMenu";
-import checkimg from "../../../../assets/checkimage.svg";
+import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
 const LabAddSuccess = () => {
   return (
     <>
-      <LabMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <div className="checkImg">
@@ -19,10 +17,7 @@ const LabAddSuccess = () => {
             </p>
           </div>
           <button className="done">
-          <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/labScientist"
-            >
+          <Link to="../labScientist">
               <p>Done</p>
             </Link>
             </button>

@@ -1,15 +1,12 @@
-import NurseMenu from "./NurseMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
-import calender from "../../../../assets/calen.svg";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import calender from "../../../../../../assets/icons/calen.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 const NurseBasicinfo = () => {
   const history=useNavigate()
   return (
     <>
-      <NurseMenu />
-
       <div className="wrapBasicInfo">
         <div className="secondWrap">
           <header className="headBasicInfo">
@@ -114,16 +111,6 @@ const NurseBasicinfo = () => {
                   <img src={poly} alt="" className="imageInput" />
                 </div>
 
-                {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
                 <label htmlFor="">
                   <p className="pInput">Date of birth </p>
                 </label>
@@ -142,10 +129,7 @@ const NurseBasicinfo = () => {
           </div>
 
           <button className="btnNextStep">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/nurses/nurseEnterDetails"
-            >
+            <Link to="../nurseEnterDetails">
               <p>Next step</p>
             </Link>
           </button>

@@ -1,15 +1,11 @@
-import LabMenu from "../labBasicInfo/LabMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link,useNavigate } from "react-router-dom";
-
-
 
 const LabServices = () => {
      const history=useNavigate()
     return (
       <>
-        <LabMenu />
         <div className="wrapBasicInfo">
           <div className="secondWrap">
             <header className="headBasicInfo">
@@ -93,9 +89,7 @@ const LabServices = () => {
             </div>
             <button className="btnNextStep">
               
-            <Link
-                style={{ textDecoration: "none" }}
-                to="/staff/labScientist/labReview">
+            <Link to="../labReview">
                 <p>Next step</p>
               </Link>
 

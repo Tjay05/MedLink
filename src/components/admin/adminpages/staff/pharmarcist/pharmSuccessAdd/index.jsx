@@ -1,11 +1,9 @@
-import PharmMenu from "../pharmBasicInfo/PharmMenu";
-import checkimg from "../../../../assets/checkimage.svg";
+import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
 const PharmSuccessAdd = () => {
   return (
     <>
-      <PharmMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <div className="checkImg">
@@ -21,7 +19,7 @@ const PharmSuccessAdd = () => {
           <button className="done">
             <Link
               style={{ textDecoration: "none" }}
-              to="/staff/pharmacist"
+              to="../pharmacist"
             >
               <p>Done</p>
             </Link>

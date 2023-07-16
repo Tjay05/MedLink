@@ -1,4 +1,4 @@
-import dots from "../../../../assets/Dots.svg";
+import dots from "../../../../../../assets/icons/Dots.svg";
 const PharmMenu = () => {
   return (
     <header>

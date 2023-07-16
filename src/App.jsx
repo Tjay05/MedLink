@@ -15,7 +15,47 @@ import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
 
 // Admin Pages
-import Header from "./components/admin/admincomponents/Header"
+import Header from "./components/admin/admincomponents/Header";
+
+// Admin: Doc Pages
+import AddDoctor from "./components/admin/adminpages/staff/doctor";
+import DocBasicInfo from "./components/admin/adminpages/staff/doctor/docBasicInfo";
+import DocEnterDetails from "./components/admin/adminpages/staff/doctor/docEnterDetails";
+import DocServices from "./components/admin/adminpages/staff/doctor/docServices";
+import DocReview from "./components/admin/adminpages/staff/doctor/docReview";
+import DocSuccessAdd from "./components/admin/adminpages/staff/doctor/docSucessAdd";
+
+// Pharmacist Pages
+import AddPharm from "./components/admin/adminpages/staff/pharmarcist/index";
+import PharmBasicInfo from "./components/admin/adminpages/staff/pharmarcist/pharmBasicInfo";
+import PharmEnterDetails from "./components/admin/adminpages/staff/pharmarcist/pharmEnterDetails";
+import PharmServices from "./components/admin/adminpages/staff/pharmarcist/pharmServices";
+import PharmReview from "./components/admin/adminpages/staff/pharmarcist/pharmReview";
+import PharmSuccessAdd from "./components/admin/adminpages/staff/pharmarcist/pharmSuccessAdd";
+
+// Nurse Pages
+import AddNurse from "./components/admin/adminpages/staff/nurses/index";
+import NurseBasicInfo from "./components/admin/adminpages/staff/nurses/nurseBasicInfo";
+import NursesEnterDetails from "./components/admin/adminpages/staff/nurses/nurseEnterDetails";
+import NursesServices from "./components/admin/adminpages/staff/nurses/nurseServices";
+import NursesReview from "./components/admin/adminpages/staff/nurses/nurseReview";
+import NursesSuccessAdd from "./components/admin/adminpages/staff/nurses/nurseSuccessAdd";
+
+// Lab Scientist Pages
+import AddLab from "./components/admin/adminpages/staff/labScientist/index";
+import LabBasicInfo from "./components/admin/adminpages/staff/labScientist/labBasicInfo";
+import LabEnterDetails from "./components/admin/adminpages/staff/labScientist/labEnterDetails";
+import LabServices from "./components/admin/adminpages/staff/labScientist/labServices";
+import LabReview from "./components/admin/adminpages/staff/labScientist/labReview";
+import LabAddSuccess from "./components/admin/adminpages/staff/labScientist/labAddSuccess"
+
+// Domestic Workers Page
+import AddDomesticWorkers from "./components/admin/adminpages/staff/domesticWorkers/index";
+import BasicInfoDomW from "./components/admin/adminpages/staff/domesticWorkers/domWorkBasicInfo";
+import DomEnterDetails from "./components/admin/adminpages/staff/domesticWorkers/domEnterDetails";
+import DomServices from "./components/admin/adminpages/staff/domesticWorkers/domServices";
+import DomReview from "./components/admin/adminpages/staff/domesticWorkers/domReview";
+import DomAddSuccess from "./components/admin/adminpages/staff/domesticWorkers/domAddSuccess";
 
 // Layouts
 import SignIn from "./components/SignIn";
@@ -59,6 +99,45 @@ function App() {
             <Route path="notifications" element={<DocNotifications/>} />
           </Route>
           <Route path="adminhome" element={<Header/>} >
+            {/* Doctor */}
+            <Route index element={<AddDoctor/>} />
+            <Route path="AddDoctor" element={<DocBasicInfo/>} />
+            <Route path="docEnterDetails" element={<DocEnterDetails/>} />
+            <Route path="docServices" element={<DocServices/>} />
+            <Route path="docReview" element={<DocReview/>} />
+            <Route path="docSuccessAdd" element={<DocSuccessAdd/>} />
+
+            {/* Pharmacist */}
+            <Route path="pharmacist" element={<AddPharm/>} />
+            <Route path="Addpharmacist" element={<PharmBasicInfo/>} />
+            <Route path="pharmEnterDetails" element={<PharmEnterDetails/>} />
+            <Route path="pharmServices" element={<PharmServices/>} />
+            <Route path="pharmReview" element={<PharmReview/>} />
+            <Route path="pharmSuccessAdd" element={<PharmSuccessAdd/>} />
+
+            {/* Nurses */}
+            <Route path="nurse" element={<AddNurse/>} />
+            <Route path="AddNurse" element={<NurseBasicInfo/>} />
+            <Route path="nurseEnterDetails" element={<NursesEnterDetails/>} />
+            <Route path="nurseServices" element={<NursesServices/>} />
+            <Route path="nurseReview" element={<NursesReview/>} />
+            <Route path="nurseSuccessAdd" element={<NursesSuccessAdd/>} />
+
+            {/* Lab Scientist */}
+            <Route path="labScientist" element={<AddLab/>} />
+            <Route path="AddLabSci" element={<LabBasicInfo/>} />
+            <Route path="labEnterDetails" element={<LabEnterDetails/>} />
+            <Route path="labServices" element={<LabServices/>} />
+            <Route path="labReview" element={<LabReview/>} />
+            <Route path="labAddSuccess" element={<LabAddSuccess/>} />
+
+            {/* Domestic Workers */}
+            <Route path="domesticWorkers" element={<AddDomesticWorkers/>} />
+            <Route path="AddDomWorker" element={<BasicInfoDomW/>} />
+            <Route path="domEnterDetails" element={<DomEnterDetails/>} />
+            <Route path="domServices" element={<DomServices/>} />
+            <Route path="domReview" element={<DomReview/>} />
+            <Route path="domAddSuccess" element={<DomAddSuccess/>} />
 
           </Route>
         </Routes>

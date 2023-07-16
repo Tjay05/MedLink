@@ -1,15 +1,12 @@
-import DomMenu from "./DomMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
-import calender from "../../../../assets/calen.svg";
-import { Link,useNavigate} from "react-router-dom";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import calender from "../../../../../../assets/icons/calen.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const BasicinfoDomW = () => {
     const history=useNavigate()
       return (
     <>
-      <DomMenu />
-
       <div className="wrapBasicInfo">
         <div className="secondWrap">
           <header className="headBasicInfo">
@@ -114,16 +111,6 @@ const BasicinfoDomW = () => {
                   <img src={poly} alt="" className="imageInput" />
                 </div>
 
-                {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
                 <label htmlFor="">
                   <p className="pInput">Date of birth </p>
                 </label>
@@ -142,10 +129,7 @@ const BasicinfoDomW = () => {
           </div>
 
           <button className="btnNextStep">
-          <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/domesticWorkers/domEnterDetails"
-            >
+          <Link to="../domEnterDetails">
               <p>Next step</p>
             </Link>
           </button>

@@ -21,29 +21,24 @@ const Staff = () => {
       {isStaffRoute && (
         <nav>
           <ul className="menu">
-            <Link style={{ textDecoration: "none" }} to="/staff/doctor">
+            <Link to="/staff/doctor">
               <li>Doctor</li>
             </Link>
-            <Link style={{ textDecoration: "none" }} to="/staff/pharmacist">
+            <Link to="/staff/pharmacist">
               <li>Pharmacists</li>
             </Link>
-            <Link style={{ textDecoration: "none" }} to="/staff/nurses">
+            <Link to="/staff/nurses">
               <li>Nurses</li>
             </Link>
-            <Link style={{ textDecoration: "none" }} to="/staff/labScientist">
+            <Link to="/staff/labScientist">
               <li>Lab Scientists</li>
             </Link>
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/domesticWorkers"
-            >
+            <Link to="/staff/domesticWorkers">
               <li>Domestic Workers</li>
             </Link>
           </ul>
         </nav>
       )}
-      
-      <Outlet />
     </div>
   );
 };

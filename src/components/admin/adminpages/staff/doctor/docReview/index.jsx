@@ -1,13 +1,10 @@
-import DocMenu from "../docBasicInfo/DocMenu";
-import separator from "../../../../assets/Separator.svg";
+import separator from "../../../../../../assets/icons/Separator.svg";
 import { Link,useNavigate } from "react-router-dom";
 
 const DocReview = () => {
     const history = useNavigate();
   return (
     <>
-      <DocMenu />
-
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
           <header className="headBasicInfo1">
@@ -47,7 +44,7 @@ const DocReview = () => {
             <button className="btnNextStep">
               <Link
                 style={{ textDecoration: "none" }}
-                to="/staff/doctor/docSuccessAdd"
+                to="../docSuccessAdd"
               >
                 <p>Next step</p>
               </Link>

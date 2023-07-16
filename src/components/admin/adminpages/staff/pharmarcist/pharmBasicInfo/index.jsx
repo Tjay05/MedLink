@@ -1,14 +1,11 @@
-import PharmMenu from "./PharmMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
-import calender from "../../../../assets/calen.svg";
-import { Link,useNavigate } from "react-router-dom";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import calender from "../../../../../../assets/icons/calen.svg";
+import {useNavigate,Link } from "react-router-dom";
 const PharmBasicInfo = () => {
     const history = useNavigate();
   return (
     <>
-      <PharmMenu />
-
       <div className="wrapBasicInfo">
         <div className="secondWrap">
           <header className="headBasicInfo">
@@ -143,7 +140,7 @@ const PharmBasicInfo = () => {
           <button className="btnNextStep">
             <Link
               style={{ textDecoration: "none" }}
-              to="/staff/pharmarcist/pharmEnterDetails"
+              to="../pharmEnterDetails"
             >
               <p>Next step</p>
             </Link>

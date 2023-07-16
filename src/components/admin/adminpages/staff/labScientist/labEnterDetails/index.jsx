@@ -1,13 +1,11 @@
-import LabMenu from "../labBasicInfo/LabMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
-import { Link, useNavigate } from "react-router-dom";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
+import { Link,useNavigate } from "react-router-dom";
 
 const LabEnterDetails = () => {
     const history=useNavigate()
     return (
       <>
-        <LabMenu />
         <div className="wrapBasicInfo">
           <div className="secondWrap">
             <header className="headBasicInfo">
@@ -106,24 +104,11 @@ const LabEnterDetails = () => {
 
                     <img src={poly} alt="" className="imageInput" />
                   </div>
-
-                  {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
                 </form>
               </div>
             </div>
             <button className="btnNextStep">
-              <Link
-                style={{ textDecoration: "none" }}
-                to="/staff/labScientist/labServices">
+              <Link to="../labServices">
                 <p>Next step</p>
               </Link>
             </button>

@@ -1,13 +1,11 @@
-import NurseMenu from "../nurseBasicInfo/NurseMenu";
-import seperator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
+import seperator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link,useNavigate } from "react-router-dom";
 
 const NurseEnterDetails = () => {
   const history = useNavigate()
   return (
     <>
-      <NurseMenu />
       <div className="wrapBasicInfo">
         <div className="secondWrap">
           <header className="headBasicInfo">
@@ -106,25 +104,11 @@ const NurseEnterDetails = () => {
 
                   <img src={poly} alt="" className="imageInput" />
                 </div>
-
-                {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
               </form>
             </div>
           </div>
           <button className="btnNextStep">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="/staff/nurses/nurseServices"
-            >
+            <Link to="../nurseServices">
               <p>Next step</p>
             </Link>
           </button>

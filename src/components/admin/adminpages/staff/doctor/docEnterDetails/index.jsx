@@ -1,12 +1,10 @@
-import DocMenu from "../docBasicInfo/DocMenu";
-import  separator from "../../../../assets/Separator.svg";
-import poly from "../../../../assets/Polygon 1.svg";
+import separator from "../../../../../../assets/icons/Separator.svg";
+import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 const DocEnterDetails = () => {
   const history = useNavigate();
     return (
       <>
-        <DocMenu />
         <div className="wrapBasicInfo">
           <div className="secondWrap">
             <header className="headBasicInfo">
@@ -106,25 +104,12 @@ const DocEnterDetails = () => {
                     <img src={poly} alt="" className="imageInput" />
                   </div>
 
-                  {/* <label htmlFor="">
-                    <p className="pInput"> Designation</p>
-                  </label>
-                  <input
-                    type="text"
-                    id=""
-                    className="editInput"
-                    name=""
-                    placeholder="Your first name"
-                  /> */}
                 </form>
               </div>
             </div>
 
             <button className="btnNextStep">
-              {/* <Link style={{ textDecoration: "none" }} to="/staff/labScientist">
-              <li>Lab Scientists</li>
-            </Link> */}
-              <Link style={{ textDecoration: "none" }} to="/staff/doctor/docServices">
+              <Link style={{ textDecoration: "none" }} to="../docServices">
                 <p>Next step</p>
               </Link>
             </button>
