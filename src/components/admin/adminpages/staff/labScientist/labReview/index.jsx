@@ -9,49 +9,43 @@ const LabReview = () => {
     <>
       <div className="wrapBasicInfo">
         <div className="secondWrap1">
+          <div className="reviewAndSubmit">
+            <h2>Review and Submit</h2>
+          </div>
           <header className="headBasicInfo1">
             <div className="blurBasic">
               <p>
-                <span>1 </span> Basic information
+                <Link to="../AddLabSci" ><span>1 </span> Basic information</Link>
               </p>
               <img src={seperator} alt="" className="seperator" />
             </div>
             <div className="blurBasic">
               <p>
-                <span>2 </span>Enter Details
+                <Link to="../labEnterDetails" ><span>2 </span>Enter Details</Link>
               </p>
               <img src={seperator} alt="" className="seperator" />
             </div>
 
             <div className="blurBasic">
               <p>
-                <span>3 </span> Select Services
+                <Link to="../labServices" ><span>3 </span> Select Services</Link>
               </p>
               <img src={seperator} alt="" className="seperator" />
-            </div>
-            <div>
-              <p>
-                <span>4 </span> Review and Submit
-              </p>
-              <img src={seperator} alt="" />
             </div>
           </header>
           <div className="basicInfo">
-            <div className="reviewAndSubmit">
-              <h2>Review and Submit</h2>
+            <div className="nav__direction">
+              <button className="btnBack" onClick={()=>history(-1)}>
+                <p>Back</p>
+              </button>
+              <Link to="../labAddSuccess">
+                <button className="btnNextStep">
+                  <p>Next step</p>
+                </button>
+              </Link>
             </div>
           </div>
 
-          <div className="btnReviewWrap">
-            <button className="btnNextStep">
-            <Link to="../labAddSuccess">
-                <p>Next step</p>
-              </Link>
-            </button>
-            <button className="btnBack" onClick={()=>history(-1)}>
-              <p>Back</p>
-            </button>
-          </div>
         </div>
       </div>
     </>

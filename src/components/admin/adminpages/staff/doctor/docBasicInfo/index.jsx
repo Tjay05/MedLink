@@ -1,7 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import calender from "../../../../../../assets/icons/calen.svg";
-import {useNavigate,Link } from "react-router-dom";
+import {useNavigate, Link } from "react-router-dom";
 
 const DocBasicInfo = () => {
   const history=useNavigate()
@@ -38,7 +38,6 @@ const DocBasicInfo = () => {
 
         <div className="basicInfo">
           <h2>Basic Information</h2>
-
           <div className="twoForms">
             <form action="">
               <label htmlFor="">
@@ -115,19 +114,18 @@ const DocBasicInfo = () => {
               </div>
             </form>
           </div>
+          <div className="nav__direction">
+            <button className="btnBack" onClick={() => history(-1)}>
+              Back
+            </button>
+            <Link to="../docEnterDetails">
+              <button className="btnNextStep">
+                Next step
+              </button>
+            </Link>
+          </div>
         </div>
 
-        <button className="btnNextStep">
-          {/* <Link style={{ textDecoration: "none" }} to="/staff/labScientist">
-            <li>Lab Scientists</li>
-          </Link> */}
-          <Link style={{ textDecoration: "none" }} to="../docEnterDetails">
-            <p>Next step</p>
-          </Link>
-        </button>
-        <button className="btnBack" onClick={() => history(-1)}>
-          <p>Back</p>
-        </button>
       </div>
     </>
   );

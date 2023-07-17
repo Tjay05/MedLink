@@ -71,17 +71,17 @@ const AddNurse = () => {
             <div className="PicProfile">
               <img src={avatar} alt="" />
               <div className="profile">
-                <p className="firstName">Kwang Pam</p>
+                <p className="firstName">{`${user.firstname} ${user.lastname}`}</p>
               </div>
             </div>
-            <p>89271093</p>
-            <p>Senior Patron</p>
-            <p>000-call-rexxie</p>
+            <p>{user.id}</p>
+            <p>{user.areaOfSpecialization}</p>
+            <p>{user.number}</p>
             <div className="dateAdded">
-              <p>21/03/23</p>
-              <p className="light">10:40 pm</p>
+              <p>{user.timeAdded}</p>
+              <p className="light" >{user.dateAdded}</p>
             </div>
-            <p className="active">Active</p>
+            <p className="active">{user.Status}</p>
           </div>
         ))}
       </div>

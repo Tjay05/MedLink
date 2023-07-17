@@ -41,12 +41,6 @@ const AddPharm = () => {
               <span>{user.length}</span> pharmacist availble
             </p>
           </div>
-          {/* <div className="refresh">
-            <button onClick={refreshFromBackend}>
-              <img src={refresh} alt="" id="imgRefresh" />
-              Refresh
-            </button>
-          </div> */}
           <div className="btnright">
             <Link to="../Addpharmacist">
               <button>
@@ -71,17 +65,17 @@ const AddPharm = () => {
             <div className="PicProfile">
               <img src={fairAvatar} alt=""/>
               <div className="profile">
-                <p id="user">Tom Jerry</p>
+                <p id="user">{user.firstname}</p>
               </div>
             </div>
-            <p>89271093</p>
-            <p>Senior Pharmacist</p>
+            <p>{user.id}</p>
+            <p>{user.UserType}</p>
             <p>000-call-rexxie</p>
             <div className="dateAdded">
               <p>21/03/23</p>
               <p className="light">10:40 pm</p>
             </div>
-            <p className="active">Active</p>
+            <p className="active">{user.Status}</p>
           </div>
         ))}
       </div>

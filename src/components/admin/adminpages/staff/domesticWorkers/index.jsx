@@ -72,17 +72,17 @@ const AddDomesticWorkers = () => {
             <div className="PicProfile">
               <img src={avatar} alt="" />
               <div className="profile">
-                <p>Ike Jesse</p>
+                <p>{`${user.firstname} ${user.lastname}`}</p>
               </div>
             </div>
-            <p>89271093</p>
-            <p>Janitor</p>
-            <p>000-call-rexxie</p>
+            <p>{user.id}</p>
+            <p>{user.area_Of_Specialization}</p>
+            <p>{user.number}</p>
             <div className="dateAdded">
-              <p>21/03/23</p>
-              <p className="light">10:40 pm</p>
+              <p>{user.timeAdded}</p>
+              <p className="light">{user.dateAdded}</p>
             </div>
-            <p className="active">Unavailable</p>
+            <p className="active">{user.Status}</p>
           </div>
         ))} 
       </div>

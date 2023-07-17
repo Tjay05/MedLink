@@ -68,23 +68,26 @@ const AddDoctor = () => {
         </div>
 
         {user.map((user) => (
+          <>
           <div className="allDocs">
             <div className="PicProfile">
               <img src={fairAvatar} alt="" />
               <div className="profile">
-                <p id="user">Arnold Schwarzenneger</p>
-                <p id="profession">Opthalmologists</p>
+                <p id="user">{`${user.firstname} ${user.lastname}`}</p>
+                <p id="profession">{user.areaOfSpecialization}</p>
               </div>
             </div>  
-            <p>89271093</p>
-            <p>arnold@gmail.com</p>
-            <p>000-call-rexxie</p>
+            <p>{user.id}</p>
+            <p>{user.email}</p>
+            <p>{user.number}</p>
             <div className="dateAdded">
-              <p>21/03/23</p>
-              <p className="light">10:40 pm</p>
+              <p>{user.dateAdded}</p>
+              <p className="light">{user.timeAdded}</p>
             </div>
-            <p className="active">Active</p>
-          </div>)
+            <p className="active">{user.Status}</p>
+          </div>
+          </>
+          )
           )
         }
       </div>

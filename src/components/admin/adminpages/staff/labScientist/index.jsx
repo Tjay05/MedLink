@@ -74,17 +74,17 @@ const AddLabSci = () => {
             <div className="PicProfile">
               <img src={avatar} alt="" className="avatar" />
               <div className="profile">
-                <p>Chi Frank</p>
+                <p>{`${user.firstname} ${user.lastname}`}</p>
               </div>
             </div>
-            <p>89200093</p>
-            <p>Lab Technician</p>
-            <p>000-call-rexxie</p>
+            <p>{user.id}</p>
+            <p>{user.area_Of_Specialization}</p>
+            <p>{user.number}</p>
             <div className="dateAdded">
-              <p>21/03/23</p>
-              <p className="light">10:40 pm</p>
+              <p>{user.dateAdded}</p>
+              <p className="light">{user.timeAdded}</p>
             </div>
-            <p className="active">Unavailable</p>
+            <p className="active">{user.Status}</p>
           </div>
         ))} 
       </div>

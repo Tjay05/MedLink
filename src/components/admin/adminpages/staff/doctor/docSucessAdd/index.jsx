@@ -1,7 +1,6 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
-
 const DocAddSuccess = () => {
   return (
     <>
@@ -17,11 +16,11 @@ const DocAddSuccess = () => {
               for your unique ID
             </p>
           </div>
-          <button className="done">
-            <Link style={{ textDecoration: "none" }} to="/adminhome/">
-              <p>Done</p>
-            </Link>
-          </button>
+          <Link to="/adminhome/">
+            <button className="done">
+                <p>Done</p>
+            </button>
+          </Link>
         </div>
       </div>
     </>
