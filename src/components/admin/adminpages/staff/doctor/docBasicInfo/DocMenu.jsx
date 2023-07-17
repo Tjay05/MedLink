@@ -6,7 +6,7 @@ const DocMenu = () => {
         <p>
           <img src={dots} id="dot" />
         </p>
-        <p className="p">Add a new Doctor</p>
+        <p className="p">Add a New Doctor</p>
       </div>
   );
 };

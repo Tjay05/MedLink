@@ -79,8 +79,8 @@ const AddDomesticWorkers = () => {
             <p>{user.areaOfSpecialization}</p>
             <p>{user.number}</p>
             <div className="dateAdded">
-              <p>{user.timeAdded}</p>
-              <p className="light">{user.dateAdded}</p>
+              <p>{user.dateAdded}</p>
+              <p className="light">{user.timeAdded}</p>
             </div>
             <p className="active">{user.Status}</p>
           </div>
