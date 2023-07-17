@@ -65,7 +65,7 @@ const AddPharm = () => {
             <div className="PicProfile">
               <img src={fairAvatar} alt=""/>
               <div className="profile">
-                <p id="user">{user.firstname}</p>
+                <p id="user">{`${user.firstname} ${user.lastname}`}</p>
               </div>
             </div>
             <p>{user.id}</p>

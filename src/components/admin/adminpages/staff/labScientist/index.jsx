@@ -78,7 +78,7 @@ const AddLabSci = () => {
               </div>
             </div>
             <p>{user.id}</p>
-            <p>{user.area_Of_Specialization}</p>
+            <p>{user.areaOfSpecialization}</p>
             <p>{user.number}</p>
             <div className="dateAdded">
               <p>{user.dateAdded}</p>
