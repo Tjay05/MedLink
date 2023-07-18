@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId, labPassword, docId, docPword, data, setData }) => {  
+const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId, labPassword, docId, docPword, data, setData, newData, setNewData }) => {  
 
   const history = useNavigate();
  
@@ -9,7 +9,7 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
     
     if(location.pathname.includes("/doctor")){
       
-      history('/dochome/');
+      // history('/dochome/');
       const signup = async (userData) => {
         try {
 
@@ -23,25 +23,32 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
               password: docPword,
             }),
           });
-
-          setData(await response.json());
+          const data = await response.json()
+          setData(data);
           // const message  = response.json()
-      //  console.log(data);
+          //  console.log(data);
           if (response.ok) {
-            console.log(data);
-          } else {
-            if( data){
-              try {
-                setData(data.message)
-                console.log('errorrr', data.message)
-                
-              } catch (error) {
-                console.log(error);
-              }
+            history('/docHome/')
+            // console.log(data);
+            // setData(data);
+            localStorage.setItem('doctor', JSON.stringify({
+              firstname: data.firstname,
+              lastname: data.lastname,
+              appointments: data.appointments,
+              id: data.id,
+              _id:data._id
+            }));            
+          } else if(response.status === 401) {
+                setData(data)
+                console.log('error for 401 ', data)
+            }else if (response.status === 404){
+              setData(data)
+                console.log('error', data)
+            }else{
+              setData('could not login doctor')
             }
-            // errorMessage.TextContent = data.message
           }
-        } catch (error) {
+         catch (error) {
           console.log('Error:', error);
         }
       };
@@ -112,7 +119,7 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
       signup()
       console.log(labId, labPassword);
     } else{
-      history('/adminhome/');
+      // history('/adminhome/');
       const signup = async (userData) => {
         try {
           // Make API request to signup endpoint

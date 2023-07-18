@@ -1,4 +1,4 @@
-const DoctorForm = ({ docId, setDocId, docPword, setDocPword, /*data*/}) => {
+const DoctorForm = ({ docId, newData, setDocId, docPword, setDocPword, data}) => {
     return (
         <div className="form-field">
             <form >
@@ -15,7 +15,6 @@ const DoctorForm = ({ docId, setDocId, docPword, setDocPword, /*data*/}) => {
                 <br />
                 <label htmlFor="docPword">Enter your Password</label>
                 <br />
-                {/* <p className="err-mssg" >{data}</p> */}
                 <input
                     id="docPword"
                     name="docPword"
@@ -24,7 +23,7 @@ const DoctorForm = ({ docId, setDocId, docPword, setDocPword, /*data*/}) => {
                     value={docPword}
                     onChange={(e) => setDocPword(e.target.value)}
                 />
-                <br />
+                <p className="err-mssg" >{data}</p>
             </form>
         </div>
     );

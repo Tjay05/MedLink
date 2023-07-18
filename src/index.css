@@ -729,11 +729,11 @@ td {
 /* ERROR MESSAGE */
 
 .err-mssg {
-  color: rgb(150, 53, 53);
+  color: rgba(128, 3, 3, 0.9);
   font-size: 0.9rem;
   font-weight: 700;
   font-style: italic;
-  text-align: center;
+  text-align: left;
 }
 
 /* ADMIN STYLES */
@@ -753,7 +753,9 @@ aside .menu {
 }
 
 .menu a.active {
-  background: rgba(8, 92, 92, 0.2);
+  background: hsla(119, 100%, 98%, 1);
+  padding-block: .6rem;
+  border-radius: 10px;
 }
 
 /* List of Doctors */

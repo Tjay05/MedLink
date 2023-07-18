@@ -5,6 +5,8 @@ import charts from "../assets/icons/chart.svg"
 import chat from "../assets/icons/chat.svg"
 
 export default function NavLayout() {
+    const doctorData = localStorage.getItem('doctor')
+    const doctor = JSON.parse(doctorData);
     return (
         <>
             <>
@@ -30,7 +32,7 @@ export default function NavLayout() {
                             <li>
                                 <a>
                                     <div className="profile">
-                                        <p id="docName">Jacob Jones</p>
+                                        <p id="docName">{`${doctor.firstname} ${doctor.lastname}`}</p>
                                         <span>Doctor</span>
                                     </div>
                                     <p>J</p>

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const AddDoctor = () => {
   const [user, setUser] = useState([]);
 
-  useEffect(() => {
+  useEffect( () => {
     fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {

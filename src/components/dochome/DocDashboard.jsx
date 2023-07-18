@@ -1,7 +1,25 @@
 import searchIcon from '../../assets/icons/search-icon.svg'
 import Calendar from 'react-calendar';
+import { useState ,useEffect } from "react";
+
 
 const DocDashboard = () => {
+    const doctorData = localStorage.getItem('doctor')
+    const doctor = JSON.parse(doctorData);
+    // console.log(doctor._id);
+    const [doCtor , setDoCtor] = useState([])
+      useEffect( ()=> {
+        fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/appointment`)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setDoCtor(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }, []);
+
     return ( 
         <div className="dashwrap">
             <div className="doctor-dashboard">
@@ -15,7 +33,7 @@ const DocDashboard = () => {
                     <div className="doc-welcome">
                         <div className="chai">
                             <div className="text-wrapper">Welcome, Dr</div>
-                            <h1 className="h-1">Jacob Jones</h1>
+                            <h1 className="h-1">{`${doctor.firstname} ${doctor.lastname}`}</h1>
                             <div className="welcome-line"></div>
                             <p className="tip" id="healthTip">Another day to save lives. Have a great day at work.</p>
                         </div>
@@ -26,7 +44,7 @@ const DocDashboard = () => {
                             <path id="Vector" d="M44.7561 5.97992H42.1577V3.38156C42.1577 1.82255 41.1184 0.783203 39.5593 0.783203C38.0003 0.783203 36.961 1.82255 36.961 3.38156V5.97992H16.1741V3.38156C16.1741 1.82255 15.1348 0.783203 13.5758 0.783203C12.0168 0.783203 10.9774 1.82255 10.9774 3.38156V5.97992H8.37906C3.96185 5.97992 0.583984 9.35778 0.583984 13.775V16.3733H52.5511V13.775C52.5511 9.35778 49.1733 5.97992 44.7561 5.97992ZM0.583984 44.9553C0.583984 49.3725 3.96185 52.7503 8.37906 52.7503H44.7561C49.1733 52.7503 52.5511 49.3725 52.5511 44.9553V21.5701H0.583984V44.9553ZM39.5593 26.7668C41.1184 26.7668 42.1577 27.8061 42.1577 29.3651C42.1577 30.9241 41.1184 31.9635 39.5593 31.9635C38.0003 31.9635 36.961 30.9241 36.961 29.3651C36.961 27.8061 38.0003 26.7668 39.5593 26.7668ZM39.5593 37.1602C41.1184 37.1602 42.1577 38.1995 42.1577 39.7586C42.1577 41.3176 41.1184 42.3569 39.5593 42.3569C38.0003 42.3569 36.961 41.3176 36.961 39.7586C36.961 38.1995 38.0003 37.1602 39.5593 37.1602ZM26.5676 26.7668C28.1266 26.7668 29.1659 27.8061 29.1659 29.3651C29.1659 30.9241 28.1266 31.9635 26.5676 31.9635C25.0085 31.9635 23.9692 30.9241 23.9692 29.3651C23.9692 27.8061 25.0085 26.7668 26.5676 26.7668ZM26.5676 37.1602C28.1266 37.1602 29.1659 38.1995 29.1659 39.7586C29.1659 41.3176 28.1266 42.3569 26.5676 42.3569C25.0085 42.3569 23.9692 41.3176 23.9692 39.7586C23.9692 38.1995 25.0085 37.1602 26.5676 37.1602ZM13.5758 26.7668C15.1348 26.7668 16.1741 27.8061 16.1741 29.3651C16.1741 30.9241 15.1348 31.9635 13.5758 31.9635C12.0168 31.9635 10.9774 30.9241 10.9774 29.3651C10.9774 27.8061 12.0168 26.7668 13.5758 26.7668ZM13.5758 37.1602C15.1348 37.1602 16.1741 38.1995 16.1741 39.7586C16.1741 41.3176 15.1348 42.3569 13.5758 42.3569C12.0168 42.3569 10.9774 41.3176 10.9774 39.7586C10.9774 38.1995 12.0168 37.1602 13.5758 37.1602Z" fill="white"/>
                         </svg>
                         <div className="appoint-details">
-                            <h3>0</h3>
+                            <h3>{doCtor.length}</h3>
                             <p>Appointment Today</p>
                         </div>
                     </a>

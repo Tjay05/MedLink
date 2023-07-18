@@ -80,17 +80,18 @@ function App() {
 
   // Responses
   const [data, setData] = useState('');
+  const [newData, setNewData] = useState('');
 
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route 
-            path="/" element={<SignIn hospitalId={hospitalId} adminId={adminId} adminPassword={adminPassword} pharmId={pharmId} pharmPword={pharmPword} labId={labId} labPassword={labPassword} docId={docId} docPword={docPword} data={data} setData={setData} />} >
+            path="/" element={<SignIn hospitalId={hospitalId} newData={newData} setNewData={setNewData} adminId={adminId} adminPassword={adminPassword} pharmId={pharmId} pharmPword={pharmPword} labId={labId} labPassword={labPassword} docId={docId} docPword={docPword} data={data} setData={setData} />} >
             <Route index element={<Adminform hospitalId={hospitalId} data={data} setData={setData} setHospitalId={setHospitalId} adminId={adminId} setAdminId={setAdminId} adminPassword={adminPassword} setAdminPassword={setAdminPassword} />} />
             <Route path="pharm" element={<PharmForm pharmId={pharmId} data={data} setData={setData} setPharmId={setPharmId} pharmPword={pharmPword} setPharmPword={setPharmPword}  />} />
             <Route path="Lab" element={<Labform labId={labId} data={data} setData={setData} setLabId={setLabId} labPassword={labPassword} setLabPassword={setLabPassword} />} />
-            <Route path="doctor" element={<DoctorForm docId={docId} data={data} setData={setData} setDocId={setDocId} docPword={docPword}  setDocPword={setDocPword} />} />
+            <Route path="doctor" element={<DoctorForm docId={docId} newData={newData} setNewData={setNewData} data={data} setData={setData} setDocId={setDocId} docPword={docPword}  setDocPword={setDocPword} />} />
           </Route>
           <Route path="dochome" element={<NavLayout/>} >
             <Route index element={<DocDashboard/>}/>
