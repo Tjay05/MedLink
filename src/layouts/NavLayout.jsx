@@ -4,7 +4,17 @@ import blocks from "../assets/icons/blocks.svg"
 import charts from "../assets/icons/chart.svg"
 import chat from "../assets/icons/chat.svg"
 
+import Homelayout from "./Home-layout";
+import Appointmentlayout from "./Appointment-layout";
+import Notificationlayout from "./Notification-layout";
+
+import { useLocation } from "react-router-dom";
+
 export default function NavLayout() {
+    const location = useLocation();
+    const isDocRoute = !location.pathname.includes("/dochome/") && !location.pathname.includes("/dochome/appointment") && !location.pathname.includes("/dochome/details") && !location.pathname.includes("/dochome/notifications") ; 
+
+
     const doctorData = localStorage.getItem('doctor')
     const doctor = JSON.parse(doctorData);
     return (
@@ -35,7 +45,7 @@ export default function NavLayout() {
                                         <p id="docName">{`${doctor.firstname} ${doctor.lastname}`}</p>
                                         <span>Doctor</span>
                                     </div>
-                                    <p>J</p>
+                                    <p className="initials">{doctor.firstname[0]}</p>
                                 </a>
                             </li>
                         </ul>
@@ -43,7 +53,9 @@ export default function NavLayout() {
                 </nav>
                 <header>
                     <div className="rule">
-                        <p style={{paddingLeft: "4.65rem"}}>Home</p>
+                        {
+                            isDocRoute ? (<Homelayout/>): location.pathname === "/docHome/appointment" || location.pathname === "/docHome/details" ? (<Appointmentlayout/>) : location.pathname === "/docHome/notification" ? (<Notificationlayout/>) : (<Homelayout/>)
+                        }
                     </div>
                 </header>
             </>

@@ -4,9 +4,7 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
 
   const history = useNavigate();
  
-  const loginButtonClicked = () => {
-    console.log("Login button clicked");
-    
+  const loginButtonClicked = () => {    
     if(location.pathname.includes("/doctor")){
       
       // history('/dochome/');
@@ -25,12 +23,8 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
           });
           const data = await response.json()
           setData(data);
-          // const message  = response.json()
-          //  console.log(data);
           if (response.ok) {
             history('/docHome/')
-            // console.log(data);
-            // setData(data);
             localStorage.setItem('doctor', JSON.stringify({
               firstname: data.firstname,
               lastname: data.lastname,
@@ -54,7 +48,6 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
       };
   
       signup()
-      console.log(docId, docPword);
 
     } else if(location.pathname.includes("/pharm")){
       const signup = async (userData) => {

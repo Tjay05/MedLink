@@ -210,7 +210,7 @@ nav.header {
   width: 100%;
   color: white;
   font-family: 'Poppins', sans-serif;
-  padding-block: 1rem 0.4rem;
+  padding-block: 1rem 0rem;
 }
 
 nav.header .rule {
@@ -224,19 +224,23 @@ nav.header .rule ul {
   align-items: center;
 }
 
-nav.header .rule ul.first-nav li {
+nav.header .rule ul.first-nav li a {
   padding-inline: 1rem;
 }
 
 ul.first-nav li a {
   padding-block: 0.5rem;
-  border-block-end: 2px solid var(--bg-login-dark-green);
 }
 
 /* NAV-LINKS */
 ul.first-nav li a.active {
-  border-block-end: 2px solid #fff;
-  border-radius: 5px;
+  background-image: url(/src/assets/icons/active-bg.svg);
+  color: var(--bg-login-dark-green);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* border-block-end: 2px solid #fff;
+  border-radius: 5px; */
 }
 
 ul.second-nav li {
@@ -257,6 +261,12 @@ ul.second-nav li a .profile {
 
 .profile span {
   opacity: 0.7;
+}
+
+p.initials {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.14);
 }
 
 /* Header */
@@ -338,6 +348,7 @@ header {
 .chai {
   position: relative;
   z-index: 2;
+  margin-block-start: 3rem;
 }
 
 .grid-container .doc-welcome {
@@ -350,10 +361,6 @@ header {
   grid-row: span 2;
   border-radius: 10px;
   padding: 0rem 1.5rem;
-}
-
-.chai {
-  margin-block-start: 3rem;
 }
 
 .doc-welcome .text-wrapper {
@@ -698,6 +705,7 @@ td {
   align-items: center;
   gap: 1.5rem;
   padding-inline: 1rem;
+  margin-block: 1rem;
   padding-block: 0.7rem;
   border-left: 1px solid #fafafa;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
