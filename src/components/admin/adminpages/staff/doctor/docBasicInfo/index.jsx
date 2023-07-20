@@ -78,15 +78,10 @@ const DocBasicInfo = () => {
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select gender"
-                />
-
-                <img src={poly} alt="" className="imageInput" />
+                <select name="gender" id="">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
               </div>
 
               <label htmlFor="">
@@ -102,16 +97,13 @@ const DocBasicInfo = () => {
               <label htmlFor="">
                 <p className="pInput">Date of birth </p>
               </label>
-              <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder=" select your date of birth "
-                />
-                <img src={calender} alt="" className="imageInput" />
-              </div>
+              <input
+                type="date"
+                id=""
+                className="editInput"
+                name=""
+                placeholder=" select your date of birth "
+              />
             </form>
           </div>
           <div className="nav__direction">

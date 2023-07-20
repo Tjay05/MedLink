@@ -23,7 +23,6 @@ const AddDomesticWorkers = () => {
     fetch("https://hospital-management-backend.onrender.com/domestic-worker/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {
@@ -66,7 +65,7 @@ const AddDomesticWorkers = () => {
         </div>
 
         {user.map((user) => (
-          <div className="allDocs">
+          <div className="allDocs" key={user._id}>
             <div className="PicProfile">
               <img src={avatar} alt="" />
               <div className="profile">
@@ -81,7 +80,7 @@ const AddDomesticWorkers = () => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-              <img className="arrow21" src={arrow} alt="" />
+            <img className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

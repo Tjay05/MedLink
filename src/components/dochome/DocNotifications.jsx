@@ -11,7 +11,6 @@ const DocNotifications = () => {
         .then((res) => res.json())
         .then((data) => {
           setDoCtor(data);
-          console.log(doCtor);
         })
         .catch((error) => {
           console.log(error);
@@ -24,10 +23,10 @@ const DocNotifications = () => {
                 <p id="docId">{doctor.id}</p>
             </div>
             {doCtor.map((doCtor) => (
-                <div className="notification-preview">
-                <img src={notification} alt="" />
-                <p className="notification-message">{doCtor}</p>
-            </div>
+                <div className="notification-preview" key={doCtor._id}>
+                    <img src={notification} alt="" />
+                    <p className="notification-message">{doCtor}</p>
+                </div>
             ))}
             
         </div>

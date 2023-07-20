@@ -2,7 +2,7 @@ import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 import avatar from "../../../../../assets/icons/Avatar1.svg";
 import refresh from "../../../../../assets/icons/refreshlogo.png";
-import fairAvatar from "../../../../../assets/icons/fairAvatar.svg"
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -24,7 +24,6 @@ const AddNurse = () => {
     fetch("https://hospital-management-backend.onrender.com/nurse/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {
@@ -67,7 +66,7 @@ const AddNurse = () => {
           <p>Status</p>
         </div>
         {user.map((user) => (
-          <div className="allDocs">
+          <div className="allDocs" key={user._id}>
             <div className="PicProfile">
               <img src={avatar} alt="" />
               <div className="profile">
@@ -82,6 +81,7 @@ const AddNurse = () => {
               <p className="light" >{user.dateAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
+            <img className="arrow21" src={arrow} alt="" />
           </div>
         ))}
       </div>

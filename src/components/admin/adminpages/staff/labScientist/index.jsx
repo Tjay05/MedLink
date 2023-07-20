@@ -26,7 +26,6 @@ const AddLabSci = () => {
     fetch("https://hospital-management-backend.onrender.com/lab-scientist/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {
@@ -70,7 +69,7 @@ const AddLabSci = () => {
         </div>
 
         {user.map((user) => (
-          <div className="allDocs">
+          <div className="allDocs" key={user._id}>
             <div className="PicProfile">
               <img src={avatar} alt="" className="avatar" />
               <div className="profile">
@@ -85,6 +84,7 @@ const AddLabSci = () => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
+            <img className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>
