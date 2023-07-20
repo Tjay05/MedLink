@@ -69,11 +69,13 @@ const DocDashboard = () => {
                         <p>ID</p>
                         <p>Date</p>
                     </div>
-                    <div className="awaiting-patients">
-                        <p id="patientName">Tosin Poppins</p>
-                        <p id="patientId">87364523TP</p>
-                        <p id="bookingDate">01/01/2023</p>
-                    </div>
+                    {doCtor.map((doCtor) => (
+                        <div className="awaiting-patients">
+                            <p id="patientName">{`${doCtor.firstname} ${doCtor.lastname}`}</p>
+                            <p id="patientId">{doCtor.id}</p>
+                            <p id="bookingDate">01/01/2023</p>
+                        </div>
+                    ))}
                 </section>
             </div>
             <div className="line"></div>

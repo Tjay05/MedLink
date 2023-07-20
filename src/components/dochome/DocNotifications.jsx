@@ -11,6 +11,7 @@ const DocNotifications = () => {
         .then((res) => res.json())
         .then((data) => {
           setDoCtor(data);
+          console.log(doCtor);
         })
         .catch((error) => {
           console.log(error);
@@ -23,9 +24,9 @@ const DocNotifications = () => {
                 <p id="docId">{doctor.id}</p>
             </div>
             {doCtor.map((doCtor) => (
-                <div className="notification-preview" key={doCtor._id}>
+                <div className="notification-preview">
                     <img src={notification} alt="" />
-                    <p className="notification-message">{doCtor}</p>
+                    <p className="notification-message">You ahve a new appointment with {`${doCtor.firstname} ${doCtor.lastname}(${doCtor.id})`} scheduled for {doCtor.time}</p>
                 </div>
             ))}
             

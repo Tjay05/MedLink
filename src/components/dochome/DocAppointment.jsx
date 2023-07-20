@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const DocAppointment = () => {
+    const doctorData = localStorage.getItem('doctor')
+    const doctor = JSON.parse(doctorData);
+    const [doCtor , setDoCtor] = useState([])
+      useEffect( ()=> {
+        fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/appointment`)
+        .then((res) => res.json())
+        .then((data) => {
+          setDoCtor(data);
+          console.log(doCtor);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }, []);
+
     return ( 
         <div className="appointment__wrapper">
             <h1>
-                You have <span id="noOfPatients">1</span> patient waiting, Dr <span id="docName">Jacob</span>!!!
+                You have <span id="noOfPatients">{doCtor.length}</span> patient waiting, Dr <span id="docName">{doctor.firstname}</span>!!!
             </h1>
             <div className="patient-head">
                 <p>Patient Name</p>
@@ -12,11 +28,13 @@ const DocAppointment = () => {
                 <p>Gender</p>
             </div>
             <div className="await-table">
+            {doCtor.map((doCtor) => (
                 <div className="awaiting-patients">
-                    <p id="patientName">Tosin Poppins</p>
-                    <p id="patientId">87364523TP</p>
-                    <p id="gender">Male</p>
+                    <p id="patientName">{`${doCtor.firstname} ${doCtor.lastname}`}</p>
+                    <p id="patientId">{doCtor.id}</p>
+                    <p id="gender">{doCtor.Gender}</p>
                 </div>
+            ))}
                 <Link to="/dochome/details">
                     <svg 
                         width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
