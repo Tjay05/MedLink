@@ -81,7 +81,7 @@ const AddNurse = () => {
               <p>{user.timeAdded}</p>
               <p className="light" >{user.dateAdded}</p>
             </div>
-            <p className="active">{user.Status}</p>
+            <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
           </div>
         ))}
       </div>

@@ -84,7 +84,7 @@ const AddLabSci = () => {
               <p>{user.dateAdded}</p>
               <p className="light">{user.timeAdded}</p>
             </div>
-            <p className="active">{user.Status}</p>
+            <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
           </div>
         ))} 
       </div>

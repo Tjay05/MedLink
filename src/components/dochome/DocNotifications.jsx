@@ -11,6 +11,7 @@ const DocNotifications = () => {
         .then((res) => res.json())
         .then((data) => {
           setDoCtor(data);
+          console.log(doCtor);
         })
         .catch((error) => {
           console.log(error);

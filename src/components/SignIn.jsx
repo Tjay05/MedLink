@@ -1,13 +1,13 @@
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId, labPassword, docId, docPword, data, setData, newData, setNewData }) => {  
+const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId, labPassword, docId, docPword, data, setData, adminData, setAdminData }) => {  
 
   const history = useNavigate();
  
   const loginButtonClicked = () => {    
     if(location.pathname.includes("/doctor")){
-      
-      // history('/dochome/');
+      console.log('clicked on admin login');
+
       const signup = async (userData) => {
         try {
 
@@ -111,11 +111,12 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
   
       signup()
       console.log(labId, labPassword);
-    } else{
-      // history('/adminhome/');
+    } else if (location.pathname.includes("/")){
+      console.log('clicked on admin login')
+
       const signup = async (userData) => {
         try {
-          // Make API request to signup endpoint
+          
           const response = await fetch('https://hospital-management-backend.onrender.com/admin/login', {
             method: 'POST',
             headers: {
@@ -124,17 +125,28 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
             body: JSON.stringify({
               id: adminId,
               password: adminPassword,
+              hospitalId
             }),
           });
-
-          setData(await response.json());
-          // const message = response.json()
-      //  console.log(data);
+          const adminData = await response.json()
+          setAdminData(adminData);
           if (response.ok) {
-            console.log(data);
+            history('/adminhome/');
+            localStorage.setItem('admin', JSON.stringify({
+              firstname: adminData.firstname,
+              lastname: adminData.lastname,
+              appointments: adminData.appointments,
+              id: adminData.id,
+              _id:adminData._id
+            }));           
+          } else if(response.status === 401) {
+                setAdminData(adminData)
+                console.log('error for 401', adminData);
+          } else if(response.status === 404) {
+                setAdminData(adminData)
+                console.log('error', adminData);
           } else {
-            console.log('errorrr', data)
-            // errorMessage.TextContent = data.message
+            setAdminData('Could not login Admin')
           }
         } catch (error) {
           console.log('Error:', error);
@@ -142,7 +154,6 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
       };
   
       signup()
-      console.log(hospitalId, adminId, adminPassword);
     }
   };
 

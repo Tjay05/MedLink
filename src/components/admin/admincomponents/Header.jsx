@@ -24,6 +24,9 @@ const location  = useLocation()
      //the domestic worker part
       !location.pathname.includes("/adminhome/AddDomWorker") &&  !location.pathname.includes("/adminhome/domEnterDetails") && !location.pathname.includes("/adminhome/domServices") && !location.pathname.includes("/adminhome/domReview") && !location.pathname.includes("/adminhome/domAddSuccess");
 
+      const adminData = localStorage.getItem('admin');
+      const admin = JSON.parse(adminData);
+
   return (
     <>
     <nav className="header">
@@ -32,9 +35,9 @@ const location  = useLocation()
           <li><a><img src={Logo} alt="" className="logo" /></a></li>
           <li><Link to="/adminhome/">Staff</Link></li>
           <li><Link to="patients">Patients</Link></li>
-          <li>Appiontments</li>
-          <li>Payroll</li>
-          <li>NHIS Scheme</li>
+          <li><a>Appointments</a></li>
+          <li><a>Payroll</a></li>
+          <li><a>NHIS Scheme</a></li>
         </ul>
         <ul className="second-nav">
           <li><a><img src={blocks} /></a></li>
@@ -43,10 +46,10 @@ const location  = useLocation()
           <li>
             <a>
               <div className="profile">
-                <p id="adminName">Marvin Mckinney</p>
+                <p id="adminName">{`${admin.firstname} ${admin.lastname}`}</p>
                 <span>Admin</span>
               </div>
-              <p>M</p>
+              <p className="initials">{admin.firstname[0]}</p>
             </a>
           </li>
         </ul>

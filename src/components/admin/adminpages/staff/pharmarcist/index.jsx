@@ -70,12 +70,12 @@ const AddPharm = () => {
             </div>
             <p>{user.id}</p>
             <p>{user.UserType}</p>
-            <p>000-call-rexxie</p>
+            <p>{user.number}</p>
             <div className="dateAdded">
-              <p>21/03/23</p>
-              <p className="light">10:40 pm</p>
+              <p>{user.dateAdded}</p>
+              <p className="light">{user.timeAdded}</p>
             </div>
-            <p className="active">{user.Status}</p>
+            <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
           </div>
         ))}
       </div>

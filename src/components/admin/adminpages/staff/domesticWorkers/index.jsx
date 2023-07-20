@@ -1,8 +1,6 @@
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 import avatar from "../../../../../assets/icons/Avatar1.svg";
-import refresh from "../../../../../assets/icons/refreshlogo.png";
-import fairAvatar from "../../../../../assets/icons/fairAvatar.svg"
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -82,7 +80,8 @@ const AddDomesticWorkers = () => {
               <p>{user.dateAdded}</p>
               <p className="light">{user.timeAdded}</p>
             </div>
-            <p className="active">{user.Status}</p>
+            <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
+              <img className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

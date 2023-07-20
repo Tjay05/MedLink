@@ -14,7 +14,6 @@ const AddDoctor = () => {
     fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {
@@ -25,7 +24,6 @@ const AddDoctor = () => {
     fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {

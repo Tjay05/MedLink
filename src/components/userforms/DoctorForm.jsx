@@ -1,4 +1,4 @@
-const DoctorForm = ({ docId, newData, setDocId, docPword, setDocPword, data}) => {
+const DoctorForm = ({ docId, setDocId, docPword, setDocPword, data}) => {
     return (
         <div className="form-field">
             <form >

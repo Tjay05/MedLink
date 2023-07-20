@@ -210,7 +210,7 @@ nav.header {
   width: 100%;
   color: white;
   font-family: 'Poppins', sans-serif;
-  padding-block: 1rem 0rem;
+  padding-block: 1rem 0.5rem;
 }
 
 nav.header .rule {
@@ -234,13 +234,8 @@ ul.first-nav li a {
 
 /* NAV-LINKS */
 ul.first-nav li a.active {
-  background-image: url(/src/assets/icons/active-bg.svg);
-  color: var(--bg-login-dark-green);
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  /* border-block-end: 2px solid #fff;
-  border-radius: 5px; */
+  border-bottom: 2px solid #fff;
+  border-radius: 5px;
 }
 
 ul.second-nav li {
@@ -1011,4 +1006,27 @@ header.docHeader {
   border: none;
   color: var(--pure-white);
   border-radius: 5px;
+}
+
+p.active {
+  background-color: hsla(119, 100%, 98%, 1);
+  /* border: 5px solid red; */
+  max-width: 150px;
+  padding: 0.7rem;
+  text-align: center;
+  color: hsla(104, 29%, 43%, 1);
+  border-radius: 10px;
+}
+
+p.off-duty {
+  border-radius: 10px;
+  max-width: 150px;
+  padding: 0.7rem;
+  text-align: center;
+  background: hsla(354, 100%, 94%, 1);
+  color: hsla(354, 90%, 64%, 1);
+}
+
+.arrow21 {
+  margin-left: 2rem;
 }

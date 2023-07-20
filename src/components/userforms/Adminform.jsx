@@ -1,4 +1,4 @@
-const Adminform = ({ hospitalId, setHospitalId, adminId, setAdminId, adminPassword, setAdminPassword, /*data*/ }) => {
+const Adminform = ({ hospitalId, setHospitalId, adminId, setAdminId, adminPassword, setAdminPassword, adminData }) => {
     return ( 
         <div className="form-field">
             <form>
@@ -36,6 +36,7 @@ const Adminform = ({ hospitalId, setHospitalId, adminId, setAdminId, adminPasswo
                     value={adminPassword}
                     onChange={(e) => setAdminPassword(e.target.value)}
                 />
+                <p className="err-mssg">{adminData}</p>
             </form>
         </div>
      );
