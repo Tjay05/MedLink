@@ -27,9 +27,8 @@ const DocAppointment = () => {
                 <p>ID</p>
                 <p>Gender</p>
             </div>
-            <div className="await-table">
             {doCtor.map((doCtor) => (
-                <>
+            <div className="await-table">
                 <div className="awaiting-patients">
                     <p id="patientName">{`${doCtor.firstname} ${doCtor.lastname}`}</p>
                     <p id="patientId">{doCtor.id}</p>
@@ -42,9 +41,8 @@ const DocAppointment = () => {
                     </svg>
                     Begin Appointment
                 </Link>
-                </>
-            ))}
             </div>
+            ))}
         </div>
      );
 }

@@ -28,6 +28,7 @@ const DocNotifications = () => {
                     <img src={notification} alt="" />
                     <p className="notification-message">You have a new appointment with {`${doCtor.firstname} ${doCtor.lastname}(${doCtor.id})`} scheduled for {doCtor.time}</p>
                 </div>
+                
             ))}
             
         </div>
