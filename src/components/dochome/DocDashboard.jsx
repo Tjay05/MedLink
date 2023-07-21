@@ -27,7 +27,7 @@ const DocDashboard = () => {
         <div className="dashwrap">
             <div className="doctor-dashboard">
                 <form className="search-bar" method="get">
-                    <input class="search__input" type="text" placeholder="Search apoointment, patient etc" />     
+                    <input class="search__input" type="text" placeholder="Search appointment, patient etc" />     
                     <button className="search-icon">
                         <img src={searchIcon} alt="" />    
                     </button>              
