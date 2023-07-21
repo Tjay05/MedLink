@@ -29,6 +29,7 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
               firstname: data.firstname,
               lastname: data.lastname,
               appointments: data.appointments,
+              today:data.appointmentsToday,
               id: data.id,
               _id:data._id
             }));            

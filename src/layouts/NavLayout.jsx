@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
 import Logo from "../assets/icons/logo.svg"
 import blocks from "../assets/icons/blocks.svg"
 import charts from "../assets/icons/chart.svg"
@@ -45,7 +45,7 @@ export default function NavLayout() {
                                         <p id="docName">{`${doctor.firstname} ${doctor.lastname}`}</p>
                                         <span>Doctor</span>
                                     </div>
-                                    <p className="initials">{doctor.firstname[0]}</p>
+                                    <Link to="docProfile"><p className="initials">{doctor.firstname[0]}</p></Link>
                                 </a>
                             </li>
                         </ul>

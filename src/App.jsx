@@ -59,6 +59,7 @@ import DocDashboard from "./components/dochome/DocDashboard";
 import DocAppointment from "./components/dochome/DocAppointment";
 import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
+import DocProfile from "./components/dochome/DocProfile";
 
 function App() {
   // ADMIN
@@ -98,6 +99,7 @@ function App() {
             <Route path="appointment" element={<DocAppointment/>} />
             <Route path="details" element={<AppointmentDetails/>} />
             <Route path="notifications" element={<DocNotifications/>} />
+            <Route path="docProfile" element={<DocProfile/>}/>
           </Route>
           <Route path="adminhome" element={<Header/>} >
             {/* Doctor */}

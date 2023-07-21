@@ -41,12 +41,13 @@ const DocDashboard = () => {
                             <p className="tip" id="healthTip">Another day to save lives. Have a great day at work.</p>
                         </div>
                     </div>
-                    <Link className="appointments" to="appointment">
+                    <a className="appointments">
                         <img src={apoointment} alt="" />
                         <div className="appoint-details">
-                            <p>Check my Appointments</p>
+                         <h3>{doctor.today.length}</h3>
+                            <p>Appointments Today</p>
                         </div>
-                    </Link>
+                    </a>
                     <div className="patients">
                         <img src={patient} alt="" />
                         <div className="person-details">
