@@ -81,7 +81,7 @@ const AddDoctor = () => {
               <p>{user.dateAdded}</p>
               <p className="light">{user.timeAdded}</p>
             </div>
-            <p className={user.Status === 'active' ? 'active' : 'off-duty'}>{user.Status}</p>
+            <p className={user.Status === 'Active' ? 'active' : 'off-duty'}>{user.Status}</p>
             <img className="arrow21" src={arrow} alt="" />
           </div>
           </>

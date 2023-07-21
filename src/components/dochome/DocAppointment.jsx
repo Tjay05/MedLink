@@ -29,12 +29,12 @@ const DocAppointment = () => {
             </div>
             <div className="await-table">
             {doCtor.map((doCtor) => (
+                <>
                 <div className="awaiting-patients">
                     <p id="patientName">{`${doCtor.firstname} ${doCtor.lastname}`}</p>
                     <p id="patientId">{doCtor.id}</p>
                     <p id="gender">{doCtor.Gender}</p>
                 </div>
-            ))}
                 <Link to="/dochome/details">
                     <svg 
                         width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,6 +42,8 @@ const DocAppointment = () => {
                     </svg>
                     Begin Appointment
                 </Link>
+                </>
+            ))}
             </div>
         </div>
      );
