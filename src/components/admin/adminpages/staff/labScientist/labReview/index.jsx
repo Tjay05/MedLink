@@ -1,9 +1,15 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link,useNavigate } from "react-router-dom";
 
-const LabReview = () => {
-    const history=useNavigate()
+const LabReview = ({ labUserType, labFirstname, labLastname, labEmail, labGender, labNumber, labDOB, labDegree, labSpecialization, labLicenseNumber, labYearsOfExperience, labEmploymentStatus, labDaysWeek, labHourDay, labSchedule }) => {
+  const history=useNavigate()
+  
+  const handleSubmit = () => {
+
+    const labScientist = { labUserType, labFirstname, labLastname, labEmail, labGender, labNumber, labDOB, labDegree, labSpecialization, labLicenseNumber, labYearsOfExperience, labEmploymentStatus, labDaysWeek, labHourDay, labSchedule }
+
+    console.log(labScientist);
+  }
   return (
 
     <>
@@ -39,7 +45,7 @@ const LabReview = () => {
                 <p>Back</p>
               </button>
               <Link to="../labAddSuccess">
-                <button className="btnNextStep">
+                <button onClick={handleSubmit} className="btnNextStep">
                   <p>Next step</p>
                 </button>
               </Link>

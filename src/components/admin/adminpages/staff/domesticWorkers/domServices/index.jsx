@@ -1,9 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
-import calender from "../../../../../../assets/icons/calen.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const DomServices = () => {
+const DomServices = ({ domDaysWeek, setDomDaysWeek, domHourDay, setDomHourDay, domSchedule, setDomSchedule }) => {
   const history = useNavigate()
   return (
     <>
@@ -48,10 +46,10 @@ const DomServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="select user type"
+                  value={domDaysWeek}
+                  onChange={(e) => setDomDaysWeek(e.target.value)}
+                  placeholder="Days/Week"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Hours/Day </p>
@@ -61,11 +59,10 @@ const DomServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="select gender"
+                  value={domHourDay}
+                  onChange={(e) => setDomHourDay(e.target.value)}
+                  placeholder="Hours/Day"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Schedule Type </p>
@@ -75,11 +72,10 @@ const DomServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="select gender"
+                  value={domSchedule}
+                  onChange={(e) => setDomSchedule(e.target.value)}
+                  placeholder="Schedule Type"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
             </form>
           </div>

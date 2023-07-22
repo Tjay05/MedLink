@@ -1,9 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
-import calender from "../../../../../../assets/icons/calen.svg";
 import {useNavigate, Link } from "react-router-dom";
 
-const PharmBasicInfo = () => {
+const PharmBasicInfo = ({ pharmUserType, setPharmUserType, pharmFirstname, setPharmFirstname, pharmLastname, setPharmLastname, pharmEmail, setPharmEmail, pharmGender, setPharmGender, pharmNumber, setPharmNumber, pharmDOB, setPharmDOB }) => {
     const history = useNavigate();
   return (
     <>
@@ -44,16 +42,16 @@ const PharmBasicInfo = () => {
                 <p className="pInput"> User type </p>
               </label>
 
-              <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select user type"
-                />
-                <img src={poly} alt="" className="imageInput" />
-              </div>
+              <select 
+                value={pharmUserType} 
+                onChange={ (e) => setPharmUserType(e.target.value) }
+              >
+                <option value="Doctor">Doctor</option>
+                <option value="Pharamacist">Pharmacist</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Lab Scientist">Lab Scientist</option>
+                <option value="Domestic Worker">Domestic Worker</option>
+              </select>
 
               <label htmlFor="">
                 <p className="pInput"> First name</p>
@@ -62,7 +60,8 @@ const PharmBasicInfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
+                value={pharmFirstname}
+                onChange={(e) => setPharmFirstname(e.target.value)}
                 placeholder="Your first name"
               />
               <label htmlFor="">
@@ -72,7 +71,8 @@ const PharmBasicInfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
+                value={pharmLastname}
+                onChange={(e) => setPharmLastname(e.target.value)}
                 placeholder="Your last name"
               />
 
@@ -86,22 +86,21 @@ const PharmBasicInfo = () => {
                 type="email"
                 id="email3"
                 className="editInput"
-                name="email3"
+                value={pharmEmail}
+                onChange={(e) => setPharmEmail(e.target.value)}
                 placeholder="Your email address"
               />
               <label htmlFor="">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select gender"
-                />
-
-                <img src={poly} alt="" className="imageInput" />
+                <select 
+                  value={pharmGender}
+                  onChange={(e) => setPharmGender(e.target.value)}
+                >
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
               </div>
 
               {/* <label htmlFor="">
@@ -119,13 +118,12 @@ const PharmBasicInfo = () => {
               </label>
               <div className="editinput">
                 <input
-                  type="text"
+                  type="date"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder=" select your date of birth "
+                  value={pharmDOB}
+                  onChange={(e) => setPharmDOB(e.target.value)}
                 />
-                <img src={calender} alt="" className="imageInput" />
               </div>
             </form>
           </div>

@@ -1,8 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const DomEnterDetails = () => {
+const DomEnterDetails = ({ domCertificate, setDomCertificate, domSpecialization, setDomSpecialization, domYearsOfExperience, setDomYearsOfExperience, domEmploymentStatus, setDomEmploymentStatus }) => {
   const history = useNavigate()
   return (
     <>
@@ -48,10 +47,10 @@ const DomEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="certificate"
+                  value={domCertificate}
+                  onChange={(e) => setDomCertificate(e.target.value)}
+                  placeholder="Certificate"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput"> Area of Specialization </p>
@@ -62,10 +61,10 @@ const DomEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="area of specialization"
+                  value={domSpecialization}
+                  onChange={(e) => setDomSpecialization(e.target.value)}
+                  placeholder="Area of Specialization"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput"> Years of experience</p>
@@ -74,8 +73,9 @@ const DomEnterDetails = () => {
                 type="text"
                 id="text2"
                 className="editInput"
-                name="text3"
-                placeholder="years of experience"
+                value={domYearsOfExperience}
+                onChange={(e) => setDomYearsOfExperience(e.target.value)}
+                placeholder="Years of Experience"
               />
             </form>
             <form action="">
@@ -87,11 +87,10 @@ const DomEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="employment status"
+                  value={domEmploymentStatus}
+                  onChange={(e) => setDomEmploymentStatus(e.target.value)}
+                  placeholder="Employment Status"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
             </form>
           </div>

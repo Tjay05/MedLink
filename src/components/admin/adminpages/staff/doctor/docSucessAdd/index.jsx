@@ -1,7 +1,7 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
 
-const DocAddSuccess = () => {
+const DocAddSuccess = ({ docFirstName, docLastName }) => {
   return (
     <>
       <div className="wrapBasicInfo">
@@ -12,7 +12,7 @@ const DocAddSuccess = () => {
 
           <div className="afterSubmit">
             <p>
-              You have Successfully Added (Dr's name). Check your email address
+              You have Successfully Added dr {/*docFirstName*/}. Check your email address
               for your unique ID
             </p>
           </div>

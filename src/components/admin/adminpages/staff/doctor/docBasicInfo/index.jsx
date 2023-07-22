@@ -1,9 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
-import calender from "../../../../../../assets/icons/calen.svg";
 import {useNavigate, Link } from "react-router-dom";
 
-const DocBasicInfo = () => {
+const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstname, docLastname, setDocLastname, docEmail, setDocEmail, docGender, setDocGender, docNumber, setDocNumber, docDOB, setDocDOB }) => {
   const history=useNavigate()
   return (
     <>
@@ -40,6 +38,20 @@ const DocBasicInfo = () => {
           <h2>Basic Information</h2>
           <div className="twoForms">
             <form action="">
+            <label htmlFor="">
+                <p className="pInput"> User type </p>
+              </label>
+
+              <select 
+                value={docUserType} 
+                onChange={ (e) => setDocUserType(e.target.value) }
+              >
+                <option value="Doctor">Doctor</option>
+                <option value="Pharamacist">Pharmacist</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Lab Scientist">Lab Scientist</option>
+                <option value="Domestic Worker">Domestic Worker</option>
+              </select>
               <label htmlFor="">
                 <p className="pInput"> First name</p>
               </label>
@@ -47,7 +59,8 @@ const DocBasicInfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
+                value={docFirstname}
+                onChange={(e) => setDocFirstname(e.target.value)}
                 placeholder="Your first name"
               />
               <label htmlFor="">
@@ -57,7 +70,8 @@ const DocBasicInfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
+                value={docLastname}
+                onChange={(e) => setDocLastname(e.target.value)}
                 placeholder="Your last name"
               />
 
@@ -68,7 +82,8 @@ const DocBasicInfo = () => {
                 type="email"
                 id="email3"
                 className="editInput"
-                name="email3"
+                value={docEmail}
+                onChange={(e) => setDocEmail(e.target.value)}
                 placeholder="Your email address"
               />
             </form>
@@ -78,7 +93,10 @@ const DocBasicInfo = () => {
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
-                <select name="gender" id="">
+                <select 
+                  value={docGender}
+                  onChange={(e) => setDocGender(e.target.value)}
+                >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
@@ -91,7 +109,8 @@ const DocBasicInfo = () => {
                 type="text"
                 id="number"
                 className="editInput"
-                name=""
+                value={docNumber}
+                onChange={(e) => setDocNumber(e.target.value)}
                 placeholder="Your number"
               />
               <label htmlFor="">
@@ -101,7 +120,8 @@ const DocBasicInfo = () => {
                 type="date"
                 id=""
                 className="editInput"
-                name=""
+                value={docDOB}
+                onChange={(e) => setDocDOB(e.target.value)}
                 placeholder=" select your date of birth "
               />
             </form>

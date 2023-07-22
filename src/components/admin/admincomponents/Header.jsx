@@ -1,8 +1,10 @@
+import { useState } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+
 import Logo from "../../../assets/icons/logo.svg";
 import blocks from "../../../assets/icons/blocks.svg"
 import chart from "../../../assets/icons/chart.svg"
 import chat from "../../../assets/icons/chat.svg"
-import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 import DocMenu from "../adminpages/staff/doctor/docBasicInfo/DocMenu";
 import PharmMenu from "../adminpages/staff/pharmarcist/pharmBasicInfo/PharmMenu";
@@ -11,21 +13,20 @@ import LabMenu from "../adminpages/staff/labScientist/labBasicInfo/LabMenu";
 import DomMenu from "../adminpages/staff/domesticWorkers/domWorkBasicInfo/DomMenu";
 
 const Header = () => {
-const location  = useLocation()
+  const location  = useLocation()
   const isStaffRoute =
-  // location.pathname.startsWith("/staff" ) &&
-  !location.pathname.includes("/adminhome/AddDoctor") &&  !location.pathname.includes("/adminhome/docEnterDetails") && !location.pathname.includes("/adminhome/docServices") && !location.pathname.includes("/adminhome/docReview") && !location.pathname.includes("/adminhome/docSuccessAdd")  &&
-  //the pharmacist part
-   !location.pathname.includes("/adminhome/Addpharmacist") &&  !location.pathname.includes("/adminhome/pharmEnterDetails") && !location.pathname.includes("/adminhome/pharmServices") && !location.pathname.includes("/adminhome/pharmReview") && !location.pathname.includes("/adminhome/pharmSuccessAdd")  &&
-   //the nurse part
+    !location.pathname.includes("/adminhome/AddDoctor") &&  !location.pathname.includes("/adminhome/docEnterDetails") && !location.pathname.includes("/adminhome/docServices") && !location.pathname.includes("/adminhome/docReview") && !location.pathname.includes("/adminhome/docSuccessAdd")  &&
+    //the pharmacist part
+    !location.pathname.includes("/adminhome/Addpharmacist") &&  !location.pathname.includes("/adminhome/pharmEnterDetails") && !location.pathname.includes("/adminhome/pharmServices") && !location.pathname.includes("/adminhome/pharmReview") && !location.pathname.includes("/adminhome/pharmSuccessAdd")  &&
+    //the nurse part
     !location.pathname.includes("/adminhome/AddNurse") &&  !location.pathname.includes("/adminhome/nurseEnterDetails") && !location.pathname.includes("/adminhome/nurseServices") && !location.pathname.includes("/adminhome/nurseReview") && !location.pathname.includes("/adminhome/nurseSuccessAdd")  &&
     //the lab-scientist part
-     !location.pathname.includes("/adminhome/AddLabSci") &&  !location.pathname.includes("/adminhome/labEnterDetails") && !location.pathname.includes("/adminhome/labServices") && !location.pathname.includes("/adminhome/labReview") && !location.pathname.includes("/adminhome/labAddSuccess") &&
-     //the domestic worker part
-      !location.pathname.includes("/adminhome/AddDomWorker") &&  !location.pathname.includes("/adminhome/domEnterDetails") && !location.pathname.includes("/adminhome/domServices") && !location.pathname.includes("/adminhome/domReview") && !location.pathname.includes("/adminhome/domAddSuccess");
+    !location.pathname.includes("/adminhome/AddLabSci") &&  !location.pathname.includes("/adminhome/labEnterDetails") && !location.pathname.includes("/adminhome/labServices") && !location.pathname.includes("/adminhome/labReview") && !location.pathname.includes("/adminhome/labAddSuccess") &&
+    //the domestic worker part
+    !location.pathname.includes("/adminhome/AddDomWorker") &&  !location.pathname.includes("/adminhome/domEnterDetails") && !location.pathname.includes("/adminhome/domServices") && !location.pathname.includes("/adminhome/domReview") && !location.pathname.includes("/adminhome/domAddSuccess");
 
-      const adminData = localStorage.getItem('admin');
-      const admin = JSON.parse(adminData);
+  const adminData = localStorage.getItem('admin');
+  const admin = JSON.parse(adminData);
 
   return (
     <>

@@ -1,9 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
-import calender from "../../../../../../assets/icons/calen.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const LabBasicinfo = () => {
+const LabBasicinfo = ({ labUserType, setLabUserType, labFirstname, setLabFirstname, labLastname, setLabLastname, labEmail, setLabEmail, labGender, setLabGender, labNumber, setLabNumber, labDOB, setLabDOB }) => {
   const history = useNavigate()
   return (
     <>
@@ -41,19 +39,19 @@ const LabBasicinfo = () => {
           <div className="twoForms">
             <form action="">
               <label htmlFor="">
-                <p className="pInput"> User type </p>
+                <p className="pInput"> User Type </p>
               </label>
 
-              <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select user type"
-                />
-                <img src={poly} alt="" className="imageInput" />
-              </div>
+              <select 
+                value={labUserType} 
+                onChange={ (e) => setLabUserType(e.target.value) }
+              >
+                <option value="Doctor">Doctor</option>
+                <option value="Pharamacist">Pharmacist</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Lab Scientist">Lab Scientist</option>
+                <option value="Domestic Worker">Domestic Worker</option>
+              </select>
 
               <label htmlFor="">
                 <p className="pInput"> First name</p>
@@ -62,8 +60,9 @@ const LabBasicinfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="Your first name"
+                value={labFirstname}
+                onChange={(e) => setLabFirstname(e.target.value)}
+                placeholder="Your First Name"
               />
               <label htmlFor="">
                 <p className="pInput"> Last name</p>
@@ -72,48 +71,48 @@ const LabBasicinfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="Your last name"
+                value={labLastname}
+                onChange={(e) => setLabLastname(e.target.value)}
+                placeholder="Your Last Name"
               />
             </form>
 
             <form action="">
               <label htmlFor="">
-                <p className="pInput"> Email address</p>
+                <p className="pInput"> Email Address</p>
               </label>
               <input
                 type="email"
                 id="email3"
                 className="editInput"
-                name="email3"
-                placeholder="Your email address"
+                value={labEmail}
+                onChange={(e) => setLabEmail(e.target.value)}
+                placeholder="Your Email Address"
               />
               <label htmlFor="">
-                <p className="pInput">Gender </p>
+                <p className="pInput">Gender</p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select gender"
-                />
-
-                <img src={poly} alt="" className="imageInput" />
+                <select 
+                  value={labGender}
+                  onChange={(e) => setLabGender(e.target.value)}
+                >
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
               </div>
               <label htmlFor="">
                 <p className="pInput">Date of birth </p>
               </label>
               <div className="editinput">
                 <input
-                  type="text"
+                  type="date"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder=" select your date of birth "
+                  value={labDOB}
+                  onChange={(e) => setLabDOB(e.target.value)}
+                  placeholder="Select Your Date of Birth "
                 />
-                <img src={calender} alt="" className="imageInput" />
               </div>
             </form>
           </div>

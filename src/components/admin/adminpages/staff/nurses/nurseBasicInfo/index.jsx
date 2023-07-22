@@ -1,9 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
-import calender from "../../../../../../assets/icons/calen.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const NurseBasicinfo = () => {
+const NurseBasicinfo = ({ nurseUserType, setNurseUserType, nurseFirstname, setNurseFirstname, nurseLastname, setNurseLastname, nurseEmail, setNurseEmail, nurseGender, setNurseGender, nurseNumber, setNurseNumber, nurseDOB, setNurseDOB }) => {
   const history=useNavigate()
   return (
     <>
@@ -41,19 +39,19 @@ const NurseBasicinfo = () => {
           <div className="twoForms" >
             <form action="">
               <label htmlFor="">
-                <p className="pInput"> User type </p>
+                <p className="pInput"> User Type </p>
               </label>
 
-              <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select user type"
-                />
-                <img src={poly} alt="" className="imageInput" />
-              </div>
+              <select 
+                value={nurseUserType} 
+                onChange={ (e) => setNurseUserType(e.target.value) }
+              >
+                <option value="Doctor">Doctor</option>
+                <option value="Pharamacist">Pharmacist</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Lab Scientist">Lab Scientist</option>
+                <option value="Domestic Worker">Domestic Worker</option>
+              </select>
 
               <label htmlFor="">
                 <p className="pInput"> First name</p>
@@ -62,8 +60,9 @@ const NurseBasicinfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="Your first name"
+                value={nurseFirstname}
+                onChange={(e) => setNurseFirstname(e.target.value)}
+                placeholder="First Name"
               />
               <label htmlFor="">
                 <p className="pInput"> Last name</p>
@@ -72,8 +71,9 @@ const NurseBasicinfo = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="Your last name"
+                value={nurseLastname}
+                onChange={(e) => setNurseLastname(e.target.value)}
+                placeholder="Last Name"
               />
 
             </form>
@@ -86,22 +86,21 @@ const NurseBasicinfo = () => {
                 type="email"
                 id="email3"
                 className="editInput"
-                name="email3"
-                placeholder="Your email address"
+                value={nurseEmail}
+                onChange={(e) => setNurseEmail(e.target.value)}
+                placeholder="Your Email Address"
               />
               <label htmlFor="">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
-                  name=""
-                  placeholder="select gender"
-                />
-
-                <img src={poly} alt="" className="imageInput" />
+                <select 
+                  value={nurseGender}
+                  onChange={(e) => setNurseGender(e.target.value)}
+                >
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
               </div>
 
               <label htmlFor="">
@@ -109,13 +108,13 @@ const NurseBasicinfo = () => {
               </label>
               <div className="editinput">
                 <input
-                  type="text"
+                  type="date"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder=" select your date of birth "
+                  value={nurseDOB}
+                  onChange={(e) => setNurseDOB(e.target.value)}
+                  placeholder="Select your Date of Birth "
                 />
-                <img src={calender} alt="" className="imageInput" />
               </div>
             </form>
           </div>

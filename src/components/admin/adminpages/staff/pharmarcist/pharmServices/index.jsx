@@ -1,8 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const PharmServices = () => {
+const PharmServices = ({ pharmDaysWeek, setPharmDaysWeek, pharmHourDay, setPharmHourDay, pharmSchedule, setPharmSchedule }) => {
   const history = useNavigate();
   return (
     <>
@@ -47,10 +46,10 @@ const PharmServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
+                  value={pharmDaysWeek}
+                  onChange={(e) => setPharmDaysWeek(e.target.value)}
                   placeholder="select user type"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Hours/Day </p>
@@ -60,11 +59,10 @@ const PharmServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="select gender"
+                  value={pharmHourDay}
+                  onChange={(e) => setPharmHourDay(e.target.value)}
+                  // placeholder="select gender"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Schedule Type </p>
@@ -74,11 +72,10 @@ const PharmServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="select gender"
+                  value={pharmSchedule}
+                  onChange={(e) => setPharmSchedule(e.target.value)}
+                  // placeholder="select gender"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
             </form>
           </div>

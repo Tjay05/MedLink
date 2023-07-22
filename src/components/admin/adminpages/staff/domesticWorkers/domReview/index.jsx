@@ -1,8 +1,15 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const DomReview = () => {
+const DomReview = ({ domUserType, domFirstname, domLastname, domEmail, domGender, domNumber, domDOB, domCertificate, domSpecialization, domLicenseNumber, domYearsOfExperience, domEmploymentStatus, domDaysWeek, domHourDay, domSchedule }) => {
   const history = useNavigate()
+  
+  const handleSubmit = () => {
+
+    const domWorker = { domUserType, domFirstname, domLastname, domEmail, domGender, domNumber, domDOB, domCertificate, domSpecialization, domLicenseNumber, domYearsOfExperience, domEmploymentStatus, domDaysWeek, domHourDay, domSchedule }
+
+    console.log(domWorker);
+  }
   return (
     <>
       <div className="wrapBasicInfo">
@@ -36,7 +43,7 @@ const DomReview = () => {
                 Back
               </button>
               <Link to="../domAddSuccess">
-                <button className="btnNextStep">
+                <button onClick={handleSubmit} className="btnNextStep">
                   Next step
                 </button>
               </Link>

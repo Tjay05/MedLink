@@ -1,8 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link,useNavigate } from "react-router-dom";
 
-const LabServices = () => {
+const LabServices = ({ labDaysWeek, setLabDaysWeek, labHourDay, setLabHourDay, labSchedule, setLabSchedule }) => {
     const history = useNavigate()
     return (
       <>
@@ -47,10 +46,10 @@ const LabServices = () => {
                     type="text"
                     id=""
                     className="editInput"
-                    name=""
-                    placeholder="select user type"
+                    value={labDaysWeek}
+                    onChange={(e) => setLabDaysWeek(e.target.value)}
+                    placeholder="Days/Week"
                   />
-                  <img src={poly} alt="" className="imageInput" />
                 </div>
                 <label htmlFor="">
                   <p className="pInput">Hours/Day </p>
@@ -60,11 +59,10 @@ const LabServices = () => {
                     type="text"
                     id=""
                     className="editInput"
-                    name=""
-                    placeholder="select gender"
+                    value={labHourDay}
+                    onChange={(e) => setLabHourDay(e.target.value)}
+                    placeholder="Hours/Day"
                   />
-
-                  <img src={poly} alt="" className="imageInput" />
                 </div>
                 <label htmlFor="">
                   <p className="pInput">Schedule Type </p>
@@ -74,11 +72,10 @@ const LabServices = () => {
                     type="text"
                     id=""
                     className="editInput"
-                    name=""
-                    placeholder="select gender"
+                    value={labSchedule}
+                    onChange={(e) => setLabSchedule(e.target.value)}
+                    placeholder="Schedule Type"
                   />
-
-                  <img src={poly} alt="" className="imageInput" />
                 </div>
               </form>
             </div>

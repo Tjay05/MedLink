@@ -1,8 +1,7 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const PharmEnterDetails = () => {
+const PharmEnterDetails = ({ pharmDegree, setPharmDegree, pharmSpecialization, setPharmSpecialization, pharmLicenseNumber, setPharmLicenseNumber, pharmYearsOfExperience, setPharmYearsOfExperience, pharmEmploymentStatus, setPharmEmploymentStatus }) => {
   const history = useNavigate();
   return (
     <>
@@ -48,10 +47,10 @@ const PharmEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="medical degrees"
+                  value={pharmDegree}
+                  onChange={(e) => setPharmDegree(e.target.value)}
+                  placeholder="Medical degree(s)"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
 
               <label htmlFor="">
@@ -61,8 +60,9 @@ const PharmEnterDetails = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="your specialization"
+                value={pharmSpecialization}
+                onChange={(e) => setPharmSpecialization(e.target.value)}
+                placeholder="Your Area of specialization"
               />
               <label htmlFor="">
                 <p className="pInput"> Pharmacist License Number</p>
@@ -71,8 +71,9 @@ const PharmEnterDetails = () => {
                 type="text"
                 id=""
                 className="editInput"
-                name=""
-                placeholder="your license number"
+                value={pharmLicenseNumber}
+                onChange={(e) => setPharmLicenseNumber(e.target.value)}
+                placeholder="Your License Number"
               />
 
             </form>
@@ -84,8 +85,9 @@ const PharmEnterDetails = () => {
                 type="text"
                 id="text2"
                 className="editInput"
-                name="text3"
-                placeholder="years of experience"
+                value={pharmYearsOfExperience}
+                onChange={(e) => setPharmYearsOfExperience(e.target.value)}
+                placeholder="Years of experience"
               />
               <label htmlFor="">
                 <p className="pInput">Current Employment Status</p>
@@ -95,11 +97,10 @@ const PharmEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="employment status"
+                  value={pharmEmploymentStatus}
+                  onChange={(e) => setPharmEmploymentStatus(e.target.value)}
+                  placeholder="Employment status"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
             </form>
           </div>

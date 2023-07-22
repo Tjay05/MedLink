@@ -1,8 +1,7 @@
 import separator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link, useNavigate } from "react-router-dom";
 
-const DocEnterDetails = () => {
+const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, setDocSpecialization, medLicenseNumber, setMedLicenseNumber, docYearsOfExperience, setDocYearsOfExperience, docEmploymentStatus, setDocEmploymentStatus }) => {
   const history = useNavigate();
     return (
       <>
@@ -48,10 +47,10 @@ const DocEnterDetails = () => {
                     type="text"
                     id=""
                     className="editInput"
-                    name=""
-                    placeholder="medical degrees"
+                    value={docMedDegree}
+                    onChange={(e) => setDocMedDegree(e.target.value)}
+                    placeholder="Medical degree"
                   />
-                  <img src={poly} alt="" className="imageInput" />
                 </div>
 
                 <label htmlFor="">
@@ -61,8 +60,9 @@ const DocEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="your specialization"
+                  value={docSpecialization}
+                  onChange={(e) => setDocSpecialization(e.target.value)}
+                  placeholder="Your Area of specialization"
                 />
                 <label htmlFor="">
                   <p className="pInput"> Medical License Number</p>
@@ -71,8 +71,9 @@ const DocEnterDetails = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
-                  placeholder="your license number"
+                  value={medLicenseNumber}
+                  onChange={(e) => setMedLicenseNumber(e.target.value)}
+                  placeholder="Your License Number"
                 />
               </form>
               <form action="">
@@ -83,8 +84,9 @@ const DocEnterDetails = () => {
                   type="text"
                   id="text2"
                   className="editInput"
-                  name="text3"
-                  placeholder="years of experience"
+                  value={docYearsOfExperience}
+                  onChange={(e) => setDocYearsOfExperience(e.target.value)}
+                  placeholder="Years of experience"
                 />
                 <label htmlFor="">
                   <p className="pInput">Current Employment Status</p>
@@ -94,11 +96,10 @@ const DocEnterDetails = () => {
                     type="text"
                     id=""
                     className="editInput"
-                    name=""
-                    placeholder="employment status"
+                    value={docEmploymentStatus}
+                    onChange={(e) => setDocEmploymentStatus(e.target.value)}
+                    placeholder="Employment status"
                   />
-
-                  <img src={poly} alt="" className="imageInput" />
                 </div>
 
               </form>

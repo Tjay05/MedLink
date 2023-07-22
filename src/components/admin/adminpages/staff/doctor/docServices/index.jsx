@@ -1,9 +1,8 @@
 import separator from "../../../../../../assets/icons/Separator.svg";
-import poly from "../../../../../../assets/icons/Polygon 1.svg";
 import { Link,useNavigate } from "react-router-dom";
 
 
-const DocServices = () => {
+const DocServices = ({ docDaysWeek, setDocDaysWeek, docHourDay, setDocHourDay, docSchedule, setDocSchedule }) => {
     const history = useNavigate();
   return (
     <>
@@ -49,10 +48,10 @@ const DocServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
+                  value={docDaysWeek}
+                  onChange={(e) => setDocDaysWeek(e.target.value)}
                   placeholder="select user type"
                 />
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Hours/Day </p>
@@ -62,11 +61,10 @@ const DocServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
+                  value={docHourDay}
+                  onChange={(e) => setDocHourDay(e.target.value)}
                   placeholder="select gender"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
               <label htmlFor="">
                 <p className="pInput">Schedule Type </p>
@@ -76,11 +74,10 @@ const DocServices = () => {
                   type="text"
                   id=""
                   className="editInput"
-                  name=""
+                  value={docSchedule}
+                  onChange={(e) => setDocSchedule(e.target.value)}
                   placeholder="select gender"
                 />
-
-                <img src={poly} alt="" className="imageInput" />
               </div>
             </form>
           </div>
