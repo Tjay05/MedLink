@@ -12,6 +12,14 @@ const DomReview = () => {
     const domWorker = { UserType, firstname, lastname, email, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(domWorker);
+
+    fetch("https://hospital-management-backend.onrender.com/domestic-worker/register", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(domWorker)
+    }).then(() => {
+      console.log('Domestic worker added');
+    })
   }
   return (
     <>

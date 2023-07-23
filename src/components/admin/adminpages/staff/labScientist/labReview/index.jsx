@@ -12,6 +12,14 @@ const LabReview = () => {
     const labScientist = { UserType, firstname, lastname, email, Gender, number, DOB, lab_Degree, areaOfSpecialization, lab_License, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(labScientist);
+
+    fetch("https://hospital-management-backend.onrender.com/lab-scientist/register", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(labScientist)
+    }).then(() => {
+      console.log('Lab Scientist added');
+    })
   }
   return (
 

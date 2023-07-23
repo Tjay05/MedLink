@@ -2,8 +2,10 @@ import separator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { RegdocContext } from "../../../../admincomponents/RegDoc";
+import { useState } from "react";
 
 const DocReview = () => {
+  const [isPending, setIsPending] = useState(false);
   const {UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule} = useContext(RegdocContext)
   const history = useNavigate();
   
@@ -13,13 +15,17 @@ const DocReview = () => {
 
     console.log(doctor);
 
+    setIsPending(true);
+
     fetch("https://hospital-management-backend.onrender.com/doctor/register", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(doctor)
     }).then(() => {
       console.log('Doctor added');
-    })
+      setIsPending(false)
+      history("../docSuccessAdd")
+    }).catch((error) => console.log(error))
   }
 
   return (
@@ -54,11 +60,10 @@ const DocReview = () => {
               <button className="btnBack" onClick={() => history(-1)}>
                 Back
               </button>
-              <Link to="../docSuccessAdd">
-                <button onClick={handleSubmit} className="btnNextStep">
+                {!isPending && <button onClick={handleSubmit} className="btnNextStep">
                   Next step
-                </button>
-              </Link>
+                </button>}
+                {isPending && <button disabled className="btnNextStep">Adding Doctor...</button> }
             </div>
           </div>
         </div>

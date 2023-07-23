@@ -13,6 +13,14 @@ const PharmReview = () => {
     const pharmacist = { UserType, firstname, lastname, email, Gender, number, DOB, Pharm_Degree, area_Of_Specialization, Pharm_License, Years_Of_Exp, employ_Stat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(pharmacist);
+
+    fetch("https://hospital-management-backend.onrender.com/pharmacist/register", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pharmacist)
+    }).then(() => {
+      console.log('Pharmacist added');
+    })
   }
   return (
     <>

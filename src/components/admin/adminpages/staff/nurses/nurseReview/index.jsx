@@ -12,6 +12,14 @@ const NurseReview = () => {
     const nurse = { UserType, firstname, lastname, email, Gender, number, DOB, Nurse_Degree, areaOfSpecialization, nurse_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(nurse);
+
+    fetch("https://hospital-management-backend.onrender.com/nurse/register", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(nurse)
+    }).then(() => {
+      console.log('Nurse added');
+    })
   }
   return (
     <>
