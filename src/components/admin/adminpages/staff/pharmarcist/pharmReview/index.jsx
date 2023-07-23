@@ -1,12 +1,16 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegPharmacistContext } from "../../../../admincomponents/RegPharmacist";
 
-const PharmReview = ({ pharmUserType, pharmFirstname, pharmLastname, pharmEmail, pharmGender, pharmNumber, pharmDOB, pharmDegree, pharmSpecialization, pharmLicenseNumber, pharmYearsOfExperience, pharmEmploymentStatus, pharmDaysWeek, pharmHourDay, pharmSchedule }) => {
+const PharmReview = () => {
+  const { UserType, firstname, lastname, email, Gender, number, DOB, Pharm_Degree, area_Of_Specialization, Pharm_License, Years_Of_Exp, employ_Stat, Days_per_week, Hours_per_day, Schedule } =useContext(RegPharmacistContext);
+
   const history = useNavigate()
   
   const handleSubmit = () => {
 
-    const pharmacist = { pharmUserType, pharmFirstname, pharmLastname, pharmEmail, pharmGender, pharmNumber, pharmDOB, pharmDegree, pharmSpecialization, pharmLicenseNumber, pharmYearsOfExperience, pharmEmploymentStatus, pharmDaysWeek, pharmHourDay, pharmSchedule }
+    const pharmacist = { UserType, firstname, lastname, email, Gender, number, DOB, Pharm_Degree, area_Of_Specialization, Pharm_License, Years_Of_Exp, employ_Stat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(pharmacist);
   }

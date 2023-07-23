@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
-import {useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { RegPharmacistContext } from "../../../../admincomponents/RegPharmacist";
 
-const PharmBasicInfo = ({ pharmUserType, setPharmUserType, pharmFirstname, setPharmFirstname, pharmLastname, setPharmLastname, pharmEmail, setPharmEmail, pharmGender, setPharmGender, pharmNumber, setPharmNumber, pharmDOB, setPharmDOB }) => {
+const PharmBasicInfo = () => {
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegPharmacistContext);
     const history = useNavigate();
   return (
     <>
@@ -38,65 +41,67 @@ const PharmBasicInfo = ({ pharmUserType, setPharmUserType, pharmFirstname, setPh
           <h2>Basic Information</h2>
           <div className="twoForms">
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="usertype">
                 <p className="pInput"> User type </p>
               </label>
 
               <select 
-                value={pharmUserType} 
-                onChange={ (e) => setPharmUserType(e.target.value) }
+                id="usertype"
+                value={UserType} 
+                onChange={ (e) => setUserType(e.target.value) }
               >
                 <option value="Doctor">Doctor</option>
-                <option value="Pharamacist">Pharmacist</option>
+                <option value="Pharmacist">Pharmacist</option>
                 <option value="Nurse">Nurse</option>
                 <option value="Lab Scientist">Lab Scientist</option>
                 <option value="Domestic Worker">Domestic Worker</option>
               </select>
 
-              <label htmlFor="">
+              <label htmlFor="firstname">
                 <p className="pInput"> First name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="firstname"
                 className="editInput"
-                value={pharmFirstname}
-                onChange={(e) => setPharmFirstname(e.target.value)}
-                placeholder="Your first name"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                placeholder="Your First Name"
               />
-              <label htmlFor="">
+              <label htmlFor="lastname">
                 <p className="pInput"> Last name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="lastname"
                 className="editInput"
-                value={pharmLastname}
-                onChange={(e) => setPharmLastname(e.target.value)}
-                placeholder="Your last name"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                placeholder="Your Last Name"
               />
 
             </form>
 
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="email3">
                 <p className="pInput"> Email address</p>
               </label>
               <input
                 type="email"
                 id="email3"
                 className="editInput"
-                value={pharmEmail}
-                onChange={(e) => setPharmEmail(e.target.value)}
-                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your Email Address"
               />
-              <label htmlFor="">
+              <label htmlFor="gender">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
                 <select 
-                  value={pharmGender}
-                  onChange={(e) => setPharmGender(e.target.value)}
+                  id="gender"
+                  value={Gender}
+                  onChange={(e) => setGender(e.target.value)}
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -113,16 +118,16 @@ const PharmBasicInfo = ({ pharmUserType, setPharmUserType, pharmFirstname, setPh
                   name=""
                   placeholder="Your first name"
                 /> */}
-              <label htmlFor="">
+              <label htmlFor="DOB">
                 <p className="pInput">Date of birth </p>
               </label>
               <div className="editinput">
                 <input
                   type="date"
-                  id=""
+                  id="DOB"
                   className="editInput"
-                  value={pharmDOB}
-                  onChange={(e) => setPharmDOB(e.target.value)}
+                  value={DOB}
+                  onChange={(e) => setDOB(e.target.value)}
                 />
               </div>
             </form>
@@ -131,7 +136,7 @@ const PharmBasicInfo = ({ pharmUserType, setPharmUserType, pharmFirstname, setPh
             <button className="btnBack" onClick={() => history(-1)}>
               Back
             </button>
-            <Link to="../pharmEnterDetails" >
+            <Link to="pharmEnterDetails" >
               <button className="btnNextStep">
                 Next step
               </button>

@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
 
-const BasicinfoDomW = ({ domUserType, setDomUserType, domFirstname, setDomFirstname, domLastname, setDomLastname, domEmail, setDomEmail, domGender, setDomGender, domNumber, setDomNumber, domDOB, setDomDOB }) => {
+const BasicinfoDomW = () => {
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegDomContext);
   const history=useNavigate()
   return (
     <>
@@ -38,13 +41,14 @@ const BasicinfoDomW = ({ domUserType, setDomUserType, domFirstname, setDomFirstn
           <h2>Basic Information</h2>
           <div className="twoForms">
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="usertype">
                 <p className="pInput"> User Type </p>
               </label>
 
               <select 
-                value={domUserType} 
-                onChange={ (e) => setDomUserType(e.target.value) }
+                id="usertype"
+                value={UserType} 
+                onChange={ (e) => setUserType(e.target.value) }
               >
                 <option value="Doctor">Doctor</option>
                 <option value="Pharamacist">Pharmacist</option>
@@ -53,65 +57,66 @@ const BasicinfoDomW = ({ domUserType, setDomUserType, domFirstname, setDomFirstn
                 <option value="Domestic Worker">Domestic Worker</option>
               </select>
 
-              <label htmlFor="">
+              <label htmlFor="Firstname">
                 <p className="pInput"> First name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="Firstname"
                 className="editInput"
-                value={domFirstname}
-                onChange={(e) => setDomFirstname(e.target.value)}
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
                 placeholder="Your First Name"
               />
-              <label htmlFor="">
+              <label htmlFor="Lastname">
                 <p className="pInput"> Last name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="Lastname"
                 className="editInput"
-                value={domLastname}
-                onChange={(e) => setDomLastname(e.target.value)}
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
                 placeholder="Your Last Name"
               />
             </form>
 
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="email3">
                 <p className="pInput">Phone Number</p>
               </label>
               <input
                 type="email"
                 id="email3"
                 className="editInput"
-                value={domNumber}
-                onChange={(e) => setDomNumber(e.target.value)}
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
                 placeholder="Your Phone Number"
               />
-              <label htmlFor="">
+              <label htmlFor="gender">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
                 <select 
-                  value={domGender}
-                  onChange={(e) => setDomGender(e.target.value)}
+                  value={Gender}
+                  id="gender"
+                  onChange={(e) => setGender(e.target.value)}
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
               </div>
 
-              <label htmlFor="">
+              <label htmlFor="dob">
                 <p className="pInput">Date of birth </p>
               </label>
               <div className="editinput">
                 <input
                   type="date"
-                  id=""
+                  id="dob"
                   className="editInput"
-                  value={domDOB}
-                  onChange={(e) => setDomDOB(e.target.value)}
+                  value={DOB}
+                  onChange={(e) => setDOB(e.target.value)}
                   placeholder=" Select your Date of Birth "
                 />
               </div>
@@ -121,7 +126,7 @@ const BasicinfoDomW = ({ domUserType, setDomUserType, domFirstname, setDomFirstn
             <button className="btnBack" onClick={()=>history(-1)}>
               back
             </button>
-            <Link to="../domEnterDetails">
+            <Link to="domEnterDetails">
               <button className="btnNextStep">
                 Next step
               </button>

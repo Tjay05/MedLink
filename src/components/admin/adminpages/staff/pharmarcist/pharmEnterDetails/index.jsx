@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegPharmacistContext } from "../../../../admincomponents/RegPharmacist";
 
-const PharmEnterDetails = ({ pharmDegree, setPharmDegree, pharmSpecialization, setPharmSpecialization, pharmLicenseNumber, setPharmLicenseNumber, pharmYearsOfExperience, setPharmYearsOfExperience, pharmEmploymentStatus, setPharmEmploymentStatus }) => {
+const PharmEnterDetails = () => {
+  const { Pharm_Degree, setDegree, area_Of_Specialization, setSpecialization, Pharm_License, setLicenseNumber, Years_Of_Exp, setYearsOfExperience, employ_Stat, setEmploymentStatus } = useContext(RegPharmacistContext);
   const history = useNavigate();
   return (
     <>
@@ -38,67 +41,67 @@ const PharmEnterDetails = ({ pharmDegree, setPharmDegree, pharmSpecialization, s
           <h2>Enter Details</h2>
           <div className="twoForms">
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="Degree">
                 <p className="pInput"> Pharm. Degree(s)</p>
               </label>
 
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="Degree"
                   className="editInput"
-                  value={pharmDegree}
-                  onChange={(e) => setPharmDegree(e.target.value)}
+                  value={Pharm_Degree}
+                  onChange={(e) => setDegree(e.target.value)}
                   placeholder="Medical degree(s)"
                 />
               </div>
 
-              <label htmlFor="">
+              <label htmlFor="area_Of_Specialization">
                 <p className="pInput">Area of Specialization</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="area_Of_Specialization"
                 className="editInput"
-                value={pharmSpecialization}
-                onChange={(e) => setPharmSpecialization(e.target.value)}
+                value={area_Of_Specialization}
+                onChange={(e) => setSpecialization(e.target.value)}
                 placeholder="Your Area of specialization"
               />
-              <label htmlFor="">
+              <label htmlFor="Pharm_License">
                 <p className="pInput"> Pharmacist License Number</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="Pharm_License"
                 className="editInput"
-                value={pharmLicenseNumber}
-                onChange={(e) => setPharmLicenseNumber(e.target.value)}
+                value={Pharm_License}
+                onChange={(e) => setLicenseNumber(e.target.value)}
                 placeholder="Your License Number"
               />
 
             </form>
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="text2">
                 <p className="pInput"> Years of experience</p>
               </label>
               <input
                 type="text"
                 id="text2"
                 className="editInput"
-                value={pharmYearsOfExperience}
-                onChange={(e) => setPharmYearsOfExperience(e.target.value)}
+                value={Years_Of_Exp}
+                onChange={(e) => setYearsOfExperience(e.target.value)}
                 placeholder="Years of experience"
               />
-              <label htmlFor="">
+              <label htmlFor="Employment Status">
                 <p className="pInput">Current Employment Status</p>
               </label>
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="Employment Status"
                   className="editInput"
-                  value={pharmEmploymentStatus}
-                  onChange={(e) => setPharmEmploymentStatus(e.target.value)}
+                  value={employ_Stat}
+                  onChange={(e) => setEmploymentStatus(e.target.value)}
                   placeholder="Employment status"
                 />
               </div>

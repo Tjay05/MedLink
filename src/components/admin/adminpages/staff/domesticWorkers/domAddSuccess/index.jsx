@@ -17,7 +17,7 @@ const DomSuccessAdd = () => {
             </p>
           </div>
           <button className="done">
-            <Link to="../domesticWorkers">
+            <Link to="../../domesticWorkers">
               <p>Done</p>
             </Link>
             </button>

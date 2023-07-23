@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
 
-const DomServices = ({ domDaysWeek, setDomDaysWeek, domHourDay, setDomHourDay, domSchedule, setDomSchedule }) => {
+const DomServices = () => {
+  const { Days_per_week, setDaysWeek, Hours_per_day, setHourDay, Schedule, setSchedule } = useContext(RegDomContext);
   const history = useNavigate()
   return (
     <>
@@ -38,42 +41,42 @@ const DomServices = ({ domDaysWeek, setDomDaysWeek, domHourDay, setDomHourDay, d
           <h2>Select Services And Availbility</h2>
           <div className="twoForms">
             <form action="" className="serviceForm">
-              <label htmlFor="">
+              <label htmlFor="days">
                 <p className="pInput"> Days/Week </p>
               </label>
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="days"
                   className="editInput"
-                  value={domDaysWeek}
-                  onChange={(e) => setDomDaysWeek(e.target.value)}
-                  placeholder="Days/Week"
+                  value={Days_per_week}
+                  onChange={(e) => setDaysWeek(e.target.value)}
+                  placeholder="Days per Week"
                 />
               </div>
-              <label htmlFor="">
+              <label htmlFor="hour">
                 <p className="pInput">Hours/Day </p>
               </label>
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="hour"
                   className="editInput"
-                  value={domHourDay}
-                  onChange={(e) => setDomHourDay(e.target.value)}
-                  placeholder="Hours/Day"
+                  value={Hours_per_day}
+                  onChange={(e) => setHourDay(e.target.value)}
+                  placeholder="Hours per Day"
                 />
               </div>
-              <label htmlFor="">
+              <label htmlFor="schedule">
                 <p className="pInput">Schedule Type </p>
               </label>
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="schedule"
                   className="editInput"
-                  value={domSchedule}
-                  onChange={(e) => setDomSchedule(e.target.value)}
+                  value={Schedule}
+                  onChange={(e) => setSchedule(e.target.value)}
                   placeholder="Schedule Type"
                 />
               </div>

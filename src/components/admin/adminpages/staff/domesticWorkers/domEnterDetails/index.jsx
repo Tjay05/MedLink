@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
 
-const DomEnterDetails = ({ domCertificate, setDomCertificate, domSpecialization, setDomSpecialization, domYearsOfExperience, setDomYearsOfExperience, domEmploymentStatus, setDomEmploymentStatus }) => {
+const DomEnterDetails = () => {
+  const { education, setCertificate, areaOfSpecialization, setSpecialization, YearsOfExp, setYearsOfExperience, employStat, setEmploymentStatus } = useContext(RegDomContext);
   const history = useNavigate()
   return (
     <>
@@ -38,57 +41,57 @@ const DomEnterDetails = ({ domCertificate, setDomCertificate, domSpecialization,
           <h2>Enter Details</h2>
           <div className="twoForms">
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="Education">
                 <p className="pInput"> Educational Background</p>
               </label>
 
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="Education"
                   className="editInput"
-                  value={domCertificate}
-                  onChange={(e) => setDomCertificate(e.target.value)}
+                  value={education}
+                  onChange={(e) => setCertificate(e.target.value)}
                   placeholder="Certificate"
                 />
               </div>
-              <label htmlFor="">
+              <label htmlFor="special">
                 <p className="pInput"> Area of Specialization </p>
               </label>
 
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="special"
                   className="editInput"
-                  value={domSpecialization}
-                  onChange={(e) => setDomSpecialization(e.target.value)}
+                  value={areaOfSpecialization}
+                  onChange={(e) => setSpecialization(e.target.value)}
                   placeholder="Area of Specialization"
                 />
               </div>
-              <label htmlFor="">
+              <label htmlFor="text2">
                 <p className="pInput"> Years of experience</p>
               </label>
               <input
                 type="text"
                 id="text2"
                 className="editInput"
-                value={domYearsOfExperience}
-                onChange={(e) => setDomYearsOfExperience(e.target.value)}
+                value={YearsOfExp}
+                onChange={(e) => setYearsOfExperience(e.target.value)}
                 placeholder="Years of Experience"
               />
             </form>
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="status">
                 <p className="pInput">Current Employment Status</p>
               </label>
               <div className="editinput">
                 <input
                   type="text"
-                  id=""
+                  id="status"
                   className="editInput"
-                  value={domEmploymentStatus}
-                  onChange={(e) => setDomEmploymentStatus(e.target.value)}
+                  value={employStat}
+                  onChange={(e) => setEmploymentStatus(e.target.value)}
                   placeholder="Employment Status"
                 />
               </div>

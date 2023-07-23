@@ -1,12 +1,15 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
 
-const DomReview = ({ domUserType, domFirstname, domLastname, domEmail, domGender, domNumber, domDOB, domCertificate, domSpecialization, domLicenseNumber, domYearsOfExperience, domEmploymentStatus, domDaysWeek, domHourDay, domSchedule }) => {
+const DomReview = () => {
+  const { UserType, firstname, lastname, email, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule } = useContext(RegDomContext);
   const history = useNavigate()
   
   const handleSubmit = () => {
 
-    const domWorker = { domUserType, domFirstname, domLastname, domEmail, domGender, domNumber, domDOB, domCertificate, domSpecialization, domLicenseNumber, domYearsOfExperience, domEmploymentStatus, domDaysWeek, domHourDay, domSchedule }
+    const domWorker = { UserType, firstname, lastname, email, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(domWorker);
   }

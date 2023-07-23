@@ -17,7 +17,7 @@ const LabAddSuccess = () => {
             </p>
           </div>
           <button className="done">
-          <Link to="../labScientist">
+          <Link to="../../labScientist">
               <p>Done</p>
             </Link>
             </button>

@@ -1,7 +1,11 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import {useNavigate, Link } from "react-router-dom";
+import { RegdocContext } from "../../../../admincomponents/RegDoc";
+import { useContext } from "react";
 
-const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstname, docLastname, setDocLastname, docEmail, setDocEmail, docGender, setDocGender, docNumber, setDocNumber, docDOB, setDocDOB }) => {
+const DocBasicInfo = () => {
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegdocContext);
+  
   const history=useNavigate()
   return (
     <>
@@ -43,8 +47,8 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
               </label>
 
               <select 
-                value={docUserType} 
-                onChange={ (e) => setDocUserType(e.target.value) }
+                value={UserType} 
+                onChange={ (e) => setUserType(e.target.value) }
               >
                 <option value="Doctor">Doctor</option>
                 <option value="Pharamacist">Pharmacist</option>
@@ -59,9 +63,9 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
                 type="text"
                 id=""
                 className="editInput"
-                value={docFirstname}
-                onChange={(e) => setDocFirstname(e.target.value)}
-                placeholder="Your first name"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
+                placeholder="Your First Name"
               />
               <label htmlFor="">
                 <p className="pInput"> Last name</p>
@@ -70,9 +74,9 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
                 type="text"
                 id=""
                 className="editInput"
-                value={docLastname}
-                onChange={(e) => setDocLastname(e.target.value)}
-                placeholder="Your last name"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+                placeholder="Your Last Name"
               />
 
               <label htmlFor="">
@@ -82,9 +86,9 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
                 type="email"
                 id="email3"
                 className="editInput"
-                value={docEmail}
-                onChange={(e) => setDocEmail(e.target.value)}
-                placeholder="Your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your Email Address"
               />
             </form>
 
@@ -94,8 +98,8 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
               </label>
               <div className="editinput">
                 <select 
-                  value={docGender}
-                  onChange={(e) => setDocGender(e.target.value)}
+                  value={Gender}
+                  onChange={(e) => setGender(e.target.value)}
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -109,9 +113,9 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
                 type="text"
                 id="number"
                 className="editInput"
-                value={docNumber}
-                onChange={(e) => setDocNumber(e.target.value)}
-                placeholder="Your number"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+                placeholder="Your Number"
               />
               <label htmlFor="">
                 <p className="pInput">Date of birth </p>
@@ -120,8 +124,8 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
                 type="date"
                 id=""
                 className="editInput"
-                value={docDOB}
-                onChange={(e) => setDocDOB(e.target.value)}
+                value={DOB}
+                onChange={(e) => setDOB(e.target.value)}
                 placeholder=" select your date of birth "
               />
             </form>
@@ -130,7 +134,7 @@ const DocBasicInfo = ({ docUserType, setDocUserType, docFirstname, setDocFirstna
             <button className="btnBack" onClick={() => history(-1)}>
               Back
             </button>
-            <Link to="../docEnterDetails">
+            <Link to="docEnterDetails">
               <button className="btnNextStep">
                 Next step
               </button>

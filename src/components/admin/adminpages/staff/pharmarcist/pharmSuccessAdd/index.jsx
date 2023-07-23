@@ -19,7 +19,7 @@ const PharmSuccessAdd = () => {
           <button className="done">
             <Link
               style={{ textDecoration: "none" }}
-              to="../pharmacist"
+              to="../../pharmacist"
             >
               <p>Done</p>
             </Link>

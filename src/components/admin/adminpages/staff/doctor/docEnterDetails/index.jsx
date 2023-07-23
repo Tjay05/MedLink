@@ -1,7 +1,11 @@
 import separator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegdocContext } from "../../../../admincomponents/RegDoc";
 
-const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, setDocSpecialization, medLicenseNumber, setMedLicenseNumber, docYearsOfExperience, setDocYearsOfExperience, docEmploymentStatus, setDocEmploymentStatus }) => {
+const DocEnterDetails = () => {
+  const { medicalDegree, setMedDegree, areaOfSpecialization, setSpecialization, med_License_number, setMedLicenseNumber, YearsOfExp, setYearsOfExperience, employStat, setEmploymentStatus } = useContext(RegdocContext)
+
   const history = useNavigate();
     return (
       <>
@@ -47,9 +51,9 @@ const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, set
                     type="text"
                     id=""
                     className="editInput"
-                    value={docMedDegree}
-                    onChange={(e) => setDocMedDegree(e.target.value)}
-                    placeholder="Medical degree"
+                    value={medicalDegree}
+                    onChange={(e) => setMedDegree(e.target.value)}
+                    placeholder="Medical Degree"
                   />
                 </div>
 
@@ -60,9 +64,9 @@ const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, set
                   type="text"
                   id=""
                   className="editInput"
-                  value={docSpecialization}
-                  onChange={(e) => setDocSpecialization(e.target.value)}
-                  placeholder="Your Area of specialization"
+                  value={areaOfSpecialization}
+                  onChange={(e) => setSpecialization(e.target.value)}
+                  placeholder="Your Area of Specialization"
                 />
                 <label htmlFor="">
                   <p className="pInput"> Medical License Number</p>
@@ -71,7 +75,7 @@ const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, set
                   type="text"
                   id=""
                   className="editInput"
-                  value={medLicenseNumber}
+                  value={med_License_number}
                   onChange={(e) => setMedLicenseNumber(e.target.value)}
                   placeholder="Your License Number"
                 />
@@ -84,9 +88,9 @@ const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, set
                   type="text"
                   id="text2"
                   className="editInput"
-                  value={docYearsOfExperience}
-                  onChange={(e) => setDocYearsOfExperience(e.target.value)}
-                  placeholder="Years of experience"
+                  value={YearsOfExp}
+                  onChange={(e) => setYearsOfExperience(e.target.value)}
+                  placeholder="Years of Experience"
                 />
                 <label htmlFor="">
                   <p className="pInput">Current Employment Status</p>
@@ -96,9 +100,9 @@ const DocEnterDetails = ({ docMedDegree, setDocMedDegree, docSpecialization, set
                     type="text"
                     id=""
                     className="editInput"
-                    value={docEmploymentStatus}
-                    onChange={(e) => setDocEmploymentStatus(e.target.value)}
-                    placeholder="Employment status"
+                    value={employStat}
+                    onChange={(e) => setEmploymentStatus(e.target.value)}
+                    placeholder="Employment Status"
                   />
                 </div>
 

@@ -15,15 +15,15 @@ import DomMenu from "../adminpages/staff/domesticWorkers/domWorkBasicInfo/DomMen
 const Header = () => {
   const location  = useLocation()
   const isStaffRoute =
-    !location.pathname.includes("/adminhome/AddDoctor") &&  !location.pathname.includes("/adminhome/docEnterDetails") && !location.pathname.includes("/adminhome/docServices") && !location.pathname.includes("/adminhome/docReview") && !location.pathname.includes("/adminhome/docSuccessAdd")  &&
+    !location.pathname.includes("/adminhome/AddDoctor")  &&
     //the pharmacist part
-    !location.pathname.includes("/adminhome/Addpharmacist") &&  !location.pathname.includes("/adminhome/pharmEnterDetails") && !location.pathname.includes("/adminhome/pharmServices") && !location.pathname.includes("/adminhome/pharmReview") && !location.pathname.includes("/adminhome/pharmSuccessAdd")  &&
+    !location.pathname.includes("/adminhome/Addpharmacist") &&
     //the nurse part
-    !location.pathname.includes("/adminhome/AddNurse") &&  !location.pathname.includes("/adminhome/nurseEnterDetails") && !location.pathname.includes("/adminhome/nurseServices") && !location.pathname.includes("/adminhome/nurseReview") && !location.pathname.includes("/adminhome/nurseSuccessAdd")  &&
+    !location.pathname.includes("/adminhome/AddNurse") &&
     //the lab-scientist part
-    !location.pathname.includes("/adminhome/AddLabSci") &&  !location.pathname.includes("/adminhome/labEnterDetails") && !location.pathname.includes("/adminhome/labServices") && !location.pathname.includes("/adminhome/labReview") && !location.pathname.includes("/adminhome/labAddSuccess") &&
+    !location.pathname.includes("/adminhome/AddLabSci") &&
     //the domestic worker part
-    !location.pathname.includes("/adminhome/AddDomWorker") &&  !location.pathname.includes("/adminhome/domEnterDetails") && !location.pathname.includes("/adminhome/domServices") && !location.pathname.includes("/adminhome/domReview") && !location.pathname.includes("/adminhome/domAddSuccess");
+    !location.pathname.includes("/adminhome/AddDomWorker");
 
   const adminData = localStorage.getItem('admin');
   const admin = JSON.parse(adminData);
@@ -78,13 +78,13 @@ const Header = () => {
               </NavLink>
             </ul>
           </aside>
-        ) : location.pathname === "/adminhome/Addpharmacist" || location.pathname === "/adminhome/pharmEnterDetails" || location.pathname === "/adminhome/pharmServices" || location.pathname === "/adminhome/pharmReview" || location.pathname === "/adminhome/pharmSuccessAdd" ? (
+        ) : location.pathname.includes("/adminhome/Addpharmacist") ? (
           <PharmMenu />
-        ) : location.pathname === "/adminhome/AddNurse" || location.pathname === "/adminhome/nurseEnterDetails" || location.pathname === "/adminhome/nurseServices" || location.pathname === "/adminhome/nurseReview" || location.pathname === "/adminhome/nurseSuccessAdd" ? (
+        ) : location.pathname.includes("/adminhome/AddNurse") ? (
           <NurseMenu />
-        ) : location.pathname === "/adminhome/AddLabSci" || location.pathname === "/adminhome/labEnterDetails" || location.pathname === "/adminhome/labServices" || location.pathname === "/adminhome/labReview" || location.pathname === "/adminhome/labAddSuccess" ? (
+        ) : location.pathname.includes("/adminhome/AddLabSci") ? (
           <LabMenu/>
-        ) : location.pathname === "/adminhome/AddDomWorker" || location.pathname === "/adminhome/domEnterDetails" || location.pathname === "/adminhome/domServices" || location.pathname === "/adminhome/domReview" || location.pathname === "/adminhome/domAddSuccess" ? (
+        ) : location.pathname.includes("/adminhome/AddDomWorker") ? (
           <DomMenu />
         ) : (
           <DocMenu />

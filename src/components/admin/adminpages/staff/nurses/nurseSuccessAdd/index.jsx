@@ -16,7 +16,7 @@ const NurseAddSuccess = () => {
             </p>
           </div>
           <button className="done">
-            <Link style={{ textDecoration: "none" }} to="../nurse">
+            <Link style={{ textDecoration: "none" }} to="../../nurse">
               <p>Done</p>
             </Link>
           </button>

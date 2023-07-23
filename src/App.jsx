@@ -60,6 +60,11 @@ import DocAppointment from "./components/dochome/DocAppointment";
 import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
 import DocProfile from "./components/dochome/DocProfile";
+import Regdoc from "./components/admin/admincomponents/RegDoc";
+import RegPharmacist from "./components/admin/admincomponents/RegPharmacist";
+import RegNurse from "./components/admin/admincomponents/RegNurse";
+import RegLab from "./components/admin/admincomponents/RegLab";
+import RegDom from "./components/admin/admincomponents/RegDomWorker";
 
 function App() {
   // ADMIN
@@ -83,92 +88,6 @@ function App() {
   const [data, setData] = useState('');
   const [adminData, setAdminData] = useState('');
 
-  // REGISTRATION VARIABLES
-  // Add doctor
-  const [docUserType , setDocUserType] = useState('Doctor');
-  const [docFirstname , setDocFirstname] = useState('');
-  const [docLastname , setDocLastname] = useState('');
-  const [docEmail , setDocEmail] = useState('');
-  const [docGender , setDocGender] = useState('Male');
-  const [docNumber , setDocNumber] = useState('');
-  const [docDOB , setDocDOB] = useState('');
-  const [docMedDegree , setDocMedDegree] = useState('');
-  const [docSpecialization , setDocSpecialization] = useState('');
-  const [medLicenseNumber , setMedLicenseNumber] = useState('');
-  const [docYearsOfExperience , setDocYearsOfExperience] = useState('');
-  const [docEmploymentStatus , setDocEmploymentStatus] = useState('');
-  const [docDaysWeek , setDocDaysWeek] = useState('');
-  const [docHourDay , setDocHourDay] = useState('');
-  const [docSchedule , setDocSchedule] = useState('');
-
-  // Add Pharmacist
-  const [pharmUserType , setPharmUserType] = useState('Pharmacist');
-  const [pharmFirstname , setPharmFirstname] = useState('');
-  const [pharmLastname , setPharmLastname] = useState('');
-  const [pharmEmail , setPharmEmail] = useState('');
-  const [pharmGender , setPharmGender] = useState('Male');
-  const [pharmNumber , setPharmNumber] = useState('');
-  const [pharmDOB , setPharmDOB] = useState('');
-  const [pharmDegree , setPharmDegree] = useState('');
-  const [pharmSpecialization , setPharmSpecialization] = useState('');
-  const [pharmLicenseNumber , setPharmLicenseNumber] = useState('');
-  const [pharmYearsOfExperience , setPharmYearsOfExperience] = useState('');
-  const [pharmEmploymentStatus , setPharmEmploymentStatus] = useState('');
-  const [pharmDaysWeek , setPharmDaysWeek] = useState('');
-  const [pharmHourDay , setPharmHourDay] = useState('');
-  const [pharmSchedule , setPharmSchedule] = useState('');
-
-  // Add Nurse
-  const [nurseUserType , setNurseUserType] = useState('Nurse');
-  const [nurseFirstname , setNurseFirstname] = useState('');
-  const [nurseLastname , setNurseLastname] = useState('');
-  const [nurseEmail , setNurseEmail] = useState('');
-  const [nurseGender , setNurseGender] = useState('Male');
-  const [nurseNumber , setNurseNumber] = useState('');
-  const [nurseDOB , setNurseDOB] = useState('');
-  const [nurseDegree , setNurseDegree] = useState('');
-  const [nurseSpecialization , setNurseSpecialization] = useState('');
-  const [nurseLicenseNumber , setNurseLicenseNumber] = useState('');
-  const [nurseYearsOfExperience , setNurseYearsOfExperience] = useState('');
-  const [nurseEmploymentStatus , setNurseEmploymentStatus] = useState('');
-  const [nurseDaysWeek , setNurseDaysWeek] = useState('');
-  const [nurseHourDay , setNurseHourDay] = useState('');
-  const [nurseSchedule , setNurseSchedule] = useState('');
-
-  // Add Lab Scientist
-  const [labUserType , setLabUserType] = useState('Lab Scientist');
-  const [labFirstname , setLabFirstname] = useState('');
-  const [labLastname , setLabLastname] = useState('');
-  const [labEmail , setLabEmail] = useState('');
-  const [labGender , setLabGender] = useState('Male');
-  const [labNumber , setLabNumber] = useState('');
-  const [labDOB , setLabDOB] = useState('');
-  const [labDegree , setLabDegree] = useState('');
-  const [labSpecialization , setLabSpecialization] = useState('');
-  const [labLicenseNumber , setLabLicenseNumber] = useState('');
-  const [labYearsOfExperience , setLabYearsOfExperience] = useState('');
-  const [labEmploymentStatus , setLabEmploymentStatus] = useState('');
-  const [labDaysWeek , setLabDaysWeek] = useState('');
-  const [labHourDay , setLabHourDay] = useState('');
-  const [labSchedule , setLabSchedule] = useState('');
-
-  // Add Domestic Worker
-  const [domUserType , setDomUserType] = useState('Domestic Worker');
-  const [domFirstname , setDomFirstname] = useState('');
-  const [domLastname , setDomLastname] = useState('');
-  const [domEmail , setDomEmail] = useState('');
-  const [domGender , setDomGender] = useState('Male');
-  const [domNumber , setDomNumber] = useState('');
-  const [domDOB , setDomDOB] = useState('');
-  const [domCertificate , setDomCertificate] = useState('');
-  const [domSpecialization , setDomSpecialization] = useState('');
-  const [domLicenseNumber , setDomLicenseNumber] = useState('');
-  const [domYearsOfExperience , setDomYearsOfExperience] = useState('');
-  const [domEmploymentStatus , setDomEmploymentStatus] = useState('');
-  const [domDaysWeek , setDomDaysWeek] = useState('');
-  const [domHourDay , setDomHourDay] = useState('');
-  const [domSchedule , setDomSchedule] = useState('');
-
   return (
     <>
       <BrowserRouter>
@@ -190,84 +109,52 @@ function App() {
           <Route path="adminhome" element={<Header/>} >
             {/* Doctor */}
             <Route index element={<AddDoctor/>} />
-            <Route path="AddDoctor" element={
-              <DocBasicInfo docUserType={docUserType} setDocUserType={setDocUserType} docFirstname={docFirstname} setDocFirstname={setDocFirstname} docLastname={docLastname} setDocLastname={setDocLastname} docEmail={docEmail} setDocEmail={setDocEmail} docGender={docGender} setDocGender={setDocGender} docNumber={docNumber} setDocNumber={setDocNumber} docDOB={docDOB} setDocDOB={setDocDOB} />
-            }/>
-            <Route path="docEnterDetails" element={
-              <DocEnterDetails docMedDegree={docMedDegree} setDocMedDegree={setDocMedDegree} docSpecialization={docSpecialization} setDocSpecialization={setDocSpecialization} medLicenseNumber={medLicenseNumber} setMedLicenseNumber={setMedLicenseNumber} docYearsOfExperience={docYearsOfExperience} setDocYearsOfExperience={setDocYearsOfExperience} docEmploymentStatus={docEmploymentStatus} setDocEmploymentStatus={setDocEmploymentStatus} />
-            } />
-            <Route path="docServices" element={
-              <DocServices docDaysWeek={docDaysWeek} setDocDaysWeek={setDocDaysWeek} docHourDay={docHourDay} setDocHourDay={setDocHourDay} docSchedule={docSchedule} setDocSchedule={setDocSchedule} />
-            } />
-            <Route path="docReview" element={
-              <DocReview docUserType={docUserType} setDocUserType={setDocUserType} docFirstname={docFirstname} setDocFirstname={setDocFirstname} docLastname={docLastname} setDocLastname={setDocLastname} docEmail={docEmail} setDocEmail={setDocEmail} docGender={docGender} setDocGender={setDocGender} docNumber={docNumber} setDocNumber={setDocNumber} docDOB={docDOB} setDocDOB={setDocDOB} docMedDegree={docMedDegree} setDocMedDegree={setDocMedDegree} docSpecialization={docSpecialization} setDocSpecialization={setDocSpecialization} medLicenseNumber={medLicenseNumber} setMedLicenseNumber={setMedLicenseNumber} docYearsOfExperience={docYearsOfExperience} setDocYearsOfExperience={setDocYearsOfExperience} docEmploymentStatus={docEmploymentStatus} setDocEmploymentStatus={setDocEmploymentStatus} docDaysWeek={docDaysWeek} setDocDaysWeek={setDocDaysWeek} docHourDay={docHourDay} setDocHourDay={setDocHourDay} docSchedule={docSchedule} setDocSchedule={setDocSchedule}/>
-            } />
-            <Route path="docSuccessAdd" element={<DocSuccessAdd docFirstname={docFirstname} docLastname={docLastname} />} />
+            <Route path="AddDoctor" element={<Regdoc/>} >
+              <Route index element={<DocBasicInfo />}/>
+              <Route path="docEnterDetails" element={<DocEnterDetails  />} />
+              <Route path="docServices" element={<DocServices />} />
+              <Route path="docReview" element={<DocReview />} />
+              <Route path="docSuccessAdd" element={<DocSuccessAdd />} />
+            </Route>
 
             {/* Pharmacist */}
             <Route path="pharmacist" element={<AddPharm/>} />
-            <Route path="Addpharmacist" element={
-              <PharmBasicInfo pharmUserType={pharmUserType} setPharmUserType={setPharmUserType} pharmFirstname={pharmFirstname} setPharmFirstname={setPharmFirstname} pharmLastname={pharmLastname} setPharmLastname={setPharmLastname} pharmEmail={pharmEmail} setPharmEmail={setPharmEmail} pharmGender={pharmGender} setPharmGender={setPharmGender} pharmNumber={pharmNumber} setPharmNumber={setPharmNumber} pharmDOB={pharmDOB} setPharmDOB={setPharmDOB} />
-            } />
-            <Route path="pharmEnterDetails" element={
-              <PharmEnterDetails pharmDegree={pharmDegree} setPharmDegree={setPharmDegree} pharmSpecialization={pharmSpecialization} setPharmSpecialization={setPharmSpecialization} pharmLicenseNumber={pharmLicenseNumber} setPharmLicenseNumber={setPharmLicenseNumber} pharmYearsOfExperience={pharmYearsOfExperience} setPharmYearsOfExperience={setPharmYearsOfExperience} pharmEmploymentStatus={pharmEmploymentStatus} setPharmEmploymentStatus={setPharmEmploymentStatus} />
-            } />
-            <Route path="pharmServices" element={
-              <PharmServices pharmDaysWeek={pharmDaysWeek} setPharmDaysWeek={setPharmDaysWeek} pharmHourDay={pharmHourDay} setPharmHourDay={setPharmHourDay} pharmSchedule={pharmSchedule} setPharmSchedule={setPharmSchedule} />
-            } />
-            <Route path="pharmReview" element={
-              <PharmReview pharmUserType={pharmUserType} pharmFirstname={pharmFirstname} pharmLastname={pharmLastname} pharmEmail={pharmEmail} pharmGender={pharmGender} pharmNumber={pharmNumber} pharmDOB={pharmDOB} pharmDegree={pharmDegree} pharmSpecialization={pharmSpecialization} pharmLicenseNumber={pharmLicenseNumber} pharmYearsOfExperience={pharmYearsOfExperience} pharmEmploymentStatus={pharmEmploymentStatus} pharmDaysWeek={pharmDaysWeek} pharmHourDay={pharmHourDay} pharmSchedule={pharmSchedule} />
-            } />
-            <Route path="pharmSuccessAdd" element={<PharmSuccessAdd/>} />
+            <Route path="Addpharmacist" element={<RegPharmacist/>} >
+              <Route index element={<PharmBasicInfo />} />
+              <Route path="pharmEnterDetails" element={<PharmEnterDetails />} />
+              <Route path="pharmServices" element={<PharmServices />} />
+              <Route path="pharmReview" element={<PharmReview />} />
+              <Route path="pharmSuccessAdd" element={<PharmSuccessAdd/>} />
+            </Route>
 
             {/* Nurses */}
             <Route path="nurse" element={<AddNurse/>} />
-            <Route path="AddNurse" element={
-              <NurseBasicInfo nurseUserType={nurseUserType} setNurseUserType={setNurseUserType} nurseFirstname={nurseFirstname} setNurseFirstname={setNurseFirstname} nurseLastname={nurseLastname} setNurseLastname={setNurseLastname} nurseEmail={nurseEmail} setNurseEmail={setNurseEmail} nurseGender={nurseGender} setNurseGender={setNurseGender} nurseNumber={nurseNumber} setNurseNumber={setNurseNumber} nurseDOB={nurseDOB} setNurseDOB={setNurseDOB} />
-            } />
-            <Route path="nurseEnterDetails" element={
-              <NursesEnterDetails nurseDegree={nurseDegree} setNurseDegree={setNurseDegree} nurseSpecialization={nurseSpecialization} setNurseSpecialization={setNurseSpecialization} nurseLicenseNumber={nurseLicenseNumber} setNurseLicenseNumber={setNurseLicenseNumber} nurseYearsOfExperience={nurseYearsOfExperience} setNurseYearsOfExperience={setNurseYearsOfExperience} nurseEmploymentStatus={nurseEmploymentStatus} setNurseEmploymentStatus={setNurseEmploymentStatus} />
-            } />
-            <Route path="nurseServices" element={
-              <NursesServices nurseDaysWeek={nurseDaysWeek} setNurseDaysWeek={setNurseDaysWeek} nurseHourDay={nurseHourDay} setNurseHourDay={setNurseHourDay} nurseSchedule={nurseSchedule} setNurseSchedule={setNurseSchedule} />
-            } />
-            <Route path="nurseReview" element={
-              <NursesReview nurseUserType={nurseUserType} nurseFirstname={nurseFirstname} nurseLastname={nurseLastname} nurseEmail={nurseEmail} nurseGender={nurseGender} nurseNumber={nurseNumber} nurseDOB={nurseDOB} nurseDegree={nurseDegree} nurseSpecialization={nurseSpecialization} nurseLicenseNumber={nurseLicenseNumber} nurseYearsOfExperience={nurseYearsOfExperience} nurseEmploymentStatus={nurseEmploymentStatus} nurseDaysWeek={nurseDaysWeek} nurseHourDay={nurseHourDay} nurseSchedule={nurseSchedule} />
-            } />
-            <Route path="nurseSuccessAdd" element={<NursesSuccessAdd/>} />
-
+            <Route path="AddNurse" element={<RegNurse/>} >
+              <Route index element={<NurseBasicInfo />} />
+              <Route path="nurseEnterDetails" element={<NursesEnterDetails />} />
+              <Route path="nurseServices" element={<NursesServices />} />
+              <Route path="nurseReview" element={<NursesReview />} />
+              <Route path="nurseSuccessAdd" element={<NursesSuccessAdd/>} />
+            </Route>
             {/* Lab Scientist */}
             <Route path="labScientist" element={<AddLab/>} />
-            <Route path="AddLabSci" element={
-              <LabBasicInfo labUserType={labUserType} setLabUserType={setLabUserType} labFirstname={labFirstname} setLabFirstname={setLabFirstname} labLastname={labLastname} setLabLastname={setLabLastname} labEmail={labEmail} setLabEmail={setLabEmail} labGender={labGender} setLabGender={setLabGender} labNumber={labNumber} setLabNumber={setLabNumber} labDOB={labDOB} setLabDOB={setLabDOB} />
-            } />
-            <Route path="labEnterDetails" element={
-              <LabEnterDetails labDegree={labDegree} setLabDegree={setLabDegree} labSpecialization={labSpecialization} setLabSpecialization={setLabSpecialization} labLicenseNumber={labLicenseNumber} setLabLicenseNumber={setLabLicenseNumber} labYearsOfExperience={labYearsOfExperience} setLabYearsOfExperience={setLabYearsOfExperience} labEmploymentStatus={labEmploymentStatus} setLabEmploymentStatus={setLabEmploymentStatus} />
-            } />
-            <Route path="labServices" element={
-              <LabServices labDaysWeek={labDaysWeek} setLabDaysWeek={setLabDaysWeek} labHourDay={labHourDay} setLabHourDay={setLabHourDay} labSchedule={labSchedule} setLabSchedule={setLabSchedule} />
-            } />
-            <Route path="labReview" element={
-              <LabReview labUserType={labUserType} labFirstname={labFirstname} labLastname={labLastname} labEmail={labEmail} labGender={labGender} labNumber={labNumber} labDOB={labDOB} labDegree={labDegree} labSpecialization={labSpecialization} labLicenseNumber={labLicenseNumber} labYearsOfExperience={labYearsOfExperience} labEmploymentStatus={labEmploymentStatus} labDaysWeek={labDaysWeek} labHourDay={labHourDay} labSchedule={labSchedule} />
-            } />
-            <Route path="labAddSuccess" element={<LabAddSuccess/>} />
+            <Route path="AddLabSci" element={<RegLab/>}>
+              <Route index element={<LabBasicInfo />} />
+              <Route path="labEnterDetails" element={<LabEnterDetails />} />
+              <Route path="labServices" element={<LabServices />} />
+              <Route path="labReview" element={<LabReview />} />
+              <Route path="labAddSuccess" element={<LabAddSuccess/>} />
+            </Route>
 
             {/* Domestic Workers */}
             <Route path="domesticWorkers" element={<AddDomesticWorkers/>} />
-            <Route path="AddDomWorker" element={
-              <BasicInfoDomW domUserType={domUserType} setDomUserType={setDomUserType} domFirstname={domFirstname} setDomFirstname={setDomFirstname} domLastname={domLastname} setDomLastname={setDomLastname} domEmail={domEmail} setDomEmail={setDomEmail} domGender={domGender} setDomGender={setDomGender} domNumber={domNumber} setDomNumber={setDomNumber} domDOB={domDOB} setDomDOB={setDomDOB} />
-            } />
-            <Route path="domEnterDetails" element={
-              <DomEnterDetails domCertificate={domCertificate} setDomCertificate={setDomCertificate} domSpecialization={domSpecialization} setDomSpecialization={setDomSpecialization} domYearsOfExperience={domYearsOfExperience} setDomYearsOfExperience={setDomYearsOfExperience} domEmploymentStatus={domEmploymentStatus} setDomEmploymentStatus={setDomEmploymentStatus} />
-            } />
-            <Route path="domServices" element={
-              <DomServices domDaysWeek={domDaysWeek} setDomDaysWeek={setDomDaysWeek} domHourDay={domHourDay} setDomHourDay={setDomHourDay} domSchedule={domSchedule} setDomSchedule={setDomSchedule} />
-            } />
-            <Route path="domReview" element={
-              <DomReview domUserType={domUserType} domFirstname={domFirstname} domLastname={domLastname} domEmail={domEmail} domGender={domGender} domNumber={domNumber} domDOB={domDOB} domCertificate={domCertificate} domSpecialization={domSpecialization} domYearsOfExperience={domYearsOfExperience} domEmploymentStatus={domEmploymentStatus} domDaysWeek={domDaysWeek} domHourDay={domHourDay} domSchedule={domSchedule} />
-            } />
-            <Route path="domAddSuccess" element={<DomAddSuccess/>} />
-
+            <Route path="AddDomWorker" element={<RegDom/>}>
+              <Route index element={<BasicInfoDomW />} />
+              <Route path="domEnterDetails" element={<DomEnterDetails />} />
+              <Route path="domServices" element={<DomServices />} />
+              <Route path="domReview" element={<DomReview />} />
+              <Route path="domAddSuccess" element={<DomAddSuccess/>} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

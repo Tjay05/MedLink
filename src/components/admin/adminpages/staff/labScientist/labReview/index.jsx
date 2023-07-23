@@ -1,12 +1,15 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link,useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegLabContext } from "../../../../admincomponents/RegLab";
 
-const LabReview = ({ labUserType, labFirstname, labLastname, labEmail, labGender, labNumber, labDOB, labDegree, labSpecialization, labLicenseNumber, labYearsOfExperience, labEmploymentStatus, labDaysWeek, labHourDay, labSchedule }) => {
+const LabReview = () => {
+  const { UserType, firstname, lastname, email, Gender, number, DOB, lab_Degree, areaOfSpecialization, lab_License, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule } = useContext(RegLabContext);
   const history=useNavigate()
   
   const handleSubmit = () => {
 
-    const labScientist = { labUserType, labFirstname, labLastname, labEmail, labGender, labNumber, labDOB, labDegree, labSpecialization, labLicenseNumber, labYearsOfExperience, labEmploymentStatus, labDaysWeek, labHourDay, labSchedule }
+    const labScientist = { UserType, firstname, lastname, email, Gender, number, DOB, lab_Degree, areaOfSpecialization, lab_License, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(labScientist);
   }

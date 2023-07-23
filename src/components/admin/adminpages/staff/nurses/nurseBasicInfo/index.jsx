@@ -1,7 +1,10 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegNurseContext } from "../../../../admincomponents/RegNurse";
 
-const NurseBasicinfo = ({ nurseUserType, setNurseUserType, nurseFirstname, setNurseFirstname, nurseLastname, setNurseLastname, nurseEmail, setNurseEmail, nurseGender, setNurseGender, nurseNumber, setNurseNumber, nurseDOB, setNurseDOB }) => {
+const NurseBasicinfo = () => {
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegNurseContext);
   const history=useNavigate()
   return (
     <>
@@ -38,13 +41,14 @@ const NurseBasicinfo = ({ nurseUserType, setNurseUserType, nurseFirstname, setNu
           <h2>Basic Information</h2>
           <div className="twoForms" >
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="Usertype">
                 <p className="pInput"> User Type </p>
               </label>
 
               <select 
-                value={nurseUserType} 
-                onChange={ (e) => setNurseUserType(e.target.value) }
+                id="Usertype"
+                value={UserType} 
+                onChange={ (e) => setUserType(e.target.value) }
               >
                 <option value="Doctor">Doctor</option>
                 <option value="Pharamacist">Pharmacist</option>
@@ -53,66 +57,67 @@ const NurseBasicinfo = ({ nurseUserType, setNurseUserType, nurseFirstname, setNu
                 <option value="Domestic Worker">Domestic Worker</option>
               </select>
 
-              <label htmlFor="">
+              <label htmlFor="First name">
                 <p className="pInput"> First name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="First name"
                 className="editInput"
-                value={nurseFirstname}
-                onChange={(e) => setNurseFirstname(e.target.value)}
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
                 placeholder="First Name"
               />
-              <label htmlFor="">
+              <label htmlFor="lastname">
                 <p className="pInput"> Last name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="lastname"
                 className="editInput"
-                value={nurseLastname}
-                onChange={(e) => setNurseLastname(e.target.value)}
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
                 placeholder="Last Name"
               />
 
             </form>
 
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="email3">
                 <p className="pInput"> Email address</p>
               </label>
               <input
                 type="email"
                 id="email3"
                 className="editInput"
-                value={nurseEmail}
-                onChange={(e) => setNurseEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email Address"
               />
-              <label htmlFor="">
+              <label htmlFor="gender">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
                 <select 
-                  value={nurseGender}
-                  onChange={(e) => setNurseGender(e.target.value)}
+                  id="gender"
+                  value={Gender}
+                  onChange={(e) => setGender(e.target.value)}
                 >
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
                 </select>
               </div>
 
-              <label htmlFor="">
+              <label htmlFor="DOB">
                 <p className="pInput">Date of birth </p>
               </label>
               <div className="editinput">
                 <input
                   type="date"
-                  id=""
+                  id="DOB"
                   className="editInput"
-                  value={nurseDOB}
-                  onChange={(e) => setNurseDOB(e.target.value)}
+                  value={DOB}
+                  onChange={(e) => setDOB(e.target.value)}
                   placeholder="Select your Date of Birth "
                 />
               </div>
@@ -122,7 +127,7 @@ const NurseBasicinfo = ({ nurseUserType, setNurseUserType, nurseFirstname, setNu
             <button className="btnBack" onClick={() => history(-1)}>
               Back
             </button>
-            <Link to="../nurseEnterDetails">
+            <Link to="nurseEnterDetails">
               <button className="btnNextStep">
                 <p>Next step</p>
               </button>

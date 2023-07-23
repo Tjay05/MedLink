@@ -1,8 +1,12 @@
 import separator from "../../../../../../assets/icons/Separator.svg";
 import { Link,useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegdocContext } from "../../../../admincomponents/RegDoc";
 
 
-const DocServices = ({ docDaysWeek, setDocDaysWeek, docHourDay, setDocHourDay, docSchedule, setDocSchedule }) => {
+const DocServices = () => {
+  const { Days_per_week, setDaysWeek, Hours_per_day, setHourDay, Schedule, setSchedule } = useContext(RegdocContext)
+
     const history = useNavigate();
   return (
     <>
@@ -48,8 +52,8 @@ const DocServices = ({ docDaysWeek, setDocDaysWeek, docHourDay, setDocHourDay, d
                   type="text"
                   id=""
                   className="editInput"
-                  value={docDaysWeek}
-                  onChange={(e) => setDocDaysWeek(e.target.value)}
+                  value={Days_per_week}
+                  onChange={(e) => setDaysWeek(e.target.value)}
                   placeholder="select user type"
                 />
               </div>
@@ -61,8 +65,8 @@ const DocServices = ({ docDaysWeek, setDocDaysWeek, docHourDay, setDocHourDay, d
                   type="text"
                   id=""
                   className="editInput"
-                  value={docHourDay}
-                  onChange={(e) => setDocHourDay(e.target.value)}
+                  value={Hours_per_day}
+                  onChange={(e) => setHourDay(e.target.value)}
                   placeholder="select gender"
                 />
               </div>
@@ -74,8 +78,8 @@ const DocServices = ({ docDaysWeek, setDocDaysWeek, docHourDay, setDocHourDay, d
                   type="text"
                   id=""
                   className="editInput"
-                  value={docSchedule}
-                  onChange={(e) => setDocSchedule(e.target.value)}
+                  value={Schedule}
+                  onChange={(e) => setSchedule(e.target.value)}
                   placeholder="select gender"
                 />
               </div>

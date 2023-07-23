@@ -1,12 +1,15 @@
 import seperator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegNurseContext } from "../../../../admincomponents/RegNurse";
 
-const NurseReview = ({ nurseUserType, nurseFirstname, nurseLastname, nurseEmail, nurseGender, nurseNumber, nurseDOB, nurseDegree, nurseSpecialization, nurseLicenseNumber, nurseYearsOfExperience, nurseEmploymentStatus, nurseDaysWeek, nurseHourDay, nurseSchedule }) => {
+const NurseReview = () => {
+  const { UserType, firstname, lastname, email, Gender, number, DOB, Nurse_Degree, areaOfSpecialization, nurse_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule } = useContext(RegNurseContext);
   const history = useNavigate()
   
   const handleSubmit = () => {
 
-    const nurse = { nurseUserType, nurseFirstname, nurseLastname, nurseEmail, nurseGender, nurseNumber, nurseDOB, nurseDegree, nurseSpecialization, nurseLicenseNumber, nurseYearsOfExperience, nurseEmploymentStatus, nurseDaysWeek, nurseHourDay, nurseSchedule }
+    const nurse = { UserType, firstname, lastname, email, Gender, number, DOB, Nurse_Degree, areaOfSpecialization, nurse_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(nurse);
   }

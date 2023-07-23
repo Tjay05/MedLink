@@ -1,14 +1,25 @@
 import separator from "../../../../../../assets/icons/Separator.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { RegdocContext } from "../../../../admincomponents/RegDoc";
 
-const DocReview = ({ docUserType, docFirstname, docLastname, docEmail, docGender, docNumber, docDOB, docMedDegree, docSpecialization, medLicenseNumber, docYearsOfExperience, docEmploymentStatus, docDaysWeek, docHourDay, docSchedule }) => {
+const DocReview = () => {
+  const {UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule} = useContext(RegdocContext)
   const history = useNavigate();
   
   const handleSubmit = () => {
 
-    const doctor = { docUserType, docFirstname, docLastname, docEmail, docGender, docNumber, docDOB, docMedDegree, docSpecialization, medLicenseNumber, docYearsOfExperience, docEmploymentStatus, docDaysWeek, docHourDay, docSchedule }
+    const doctor = { UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule }
 
     console.log(doctor);
+
+    fetch("https://hospital-management-backend.onrender.com/doctor/register", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(doctor)
+    }).then(() => {
+      console.log('Doctor added');
+    })
   }
 
   return (
