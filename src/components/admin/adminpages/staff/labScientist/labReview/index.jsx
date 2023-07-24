@@ -19,7 +19,7 @@ const LabReview = () => {
     setIsPending(true);
 
     try {
-      fetch("https://hospital-management-backend.onrender.com/lab-scientist/register", {
+      const response = await fetch("https://hospital-management-backend.onrender.com/lab-scientist/register", {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(labScientist)
