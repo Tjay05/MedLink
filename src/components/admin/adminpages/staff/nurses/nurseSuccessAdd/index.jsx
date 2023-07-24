@@ -1,6 +1,12 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
+import { RegNurseContext } from "../../../../admincomponents/RegNurse";
+import { useContext } from "react";
+
 const NurseAddSuccess = () => {
+
+  const { message } = useContext(RegNurseContext);
+
   return (
     <>
       <div className="wrapBasicInfo">
@@ -10,16 +16,13 @@ const NurseAddSuccess = () => {
           </div>
 
           <div className="afterSubmit">
-            <p>
-              You have Successfully Added (Nurse’s name). Check your email
-              address for your unique ID
-            </p>
+            <p>{message}</p>
           </div>
-          <button className="done">
-            <Link style={{ textDecoration: "none" }} to="../../nurse">
+          <Link to="../../nurse">
+            <button className="done">
               <p>Done</p>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </>

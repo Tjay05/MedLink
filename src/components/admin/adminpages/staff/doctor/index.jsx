@@ -68,7 +68,7 @@ const AddDoctor = () => {
           <>
           <div className="allDocs" key={user._id}>
             <div className="PicProfile">
-              <img src={fairAvatar} alt="" />
+              <img src={user.avatar} alt="" />
               <div className="profile">
                 <p id="user">{`${user.firstname} ${user.lastname}`}</p>
                 <p id="profession">{user.areaOfSpecialization}</p>

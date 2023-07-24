@@ -838,6 +838,11 @@ header.docHeader {
   gap: 0.5rem;
 }
 
+.PicProfile img {
+  width: 32px;
+  border-radius: 5px;
+}
+
 .allDocs > p {
   flex: 1;
 }
@@ -938,6 +943,24 @@ header.docHeader {
     outline: none;
 }
 
+.twoForms select, input {
+  font-family: 'Poppins', sans-serif;
+  width: 350px;
+  height: 2rem;
+}
+
+.twoForms input[type="date"] {
+  width: 220px;
+}
+
+select#gender {
+  width: 100px;
+}
+
+select#Days, select#Hours, select#Schedule {
+  width: 150px;
+}
+
 .pInput {
   color: black;
   padding-top: 14px;
@@ -1033,4 +1056,10 @@ p.off-duty {
   padding: 0.3rem;
   border-radius: 5px;
   background-color: var(--bg-grey-lite);
+}
+
+p.error-message {
+  text-align: center;
+  font-size: .9rem;
+  color: red;
 }

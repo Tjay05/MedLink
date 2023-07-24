@@ -1,7 +1,12 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
+import { RegLabContext } from "../../../../admincomponents/RegLab";
+import { useContext } from "react";
 
 const LabAddSuccess = () => {
+
+  const { message } = useContext(RegLabContext);
+
   return (
     <>
       <div className="wrapBasicInfo">
@@ -11,16 +16,13 @@ const LabAddSuccess = () => {
           </div>
 
           <div className="afterSubmit">
-            <p>
-              You have Successfully Added (Lab Scientist name). Check your email
-              address for your unique ID
-            </p>
+            <p>{message}</p>
           </div>
-          <button className="done">
           <Link to="../../labScientist">
+            <button className="done">
               <p>Done</p>
-            </Link>
             </button>
+          </Link>
         </div>
       </div>
     </>

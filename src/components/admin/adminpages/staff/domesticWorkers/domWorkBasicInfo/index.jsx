@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
 
 const BasicinfoDomW = () => {
-  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegDomContext);
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegDomContext);
   const history=useNavigate()
   return (
     <>
@@ -31,7 +31,7 @@ const BasicinfoDomW = () => {
           </div>
           <div className="blurBasic">
             <p>
-              <span>4 </span> Review and Submit
+              <span>4 </span> Wages and Salary
             </p>
             <img src={seperator} alt="" className="seperator" />
           </div>
@@ -82,12 +82,12 @@ const BasicinfoDomW = () => {
             </form>
 
             <form action="">
-              <label htmlFor="email3">
-                <p className="pInput">Phone Number</p>
+              <label htmlFor="Phonenumber">
+                <p className="pInput"> Phone Number</p>
               </label>
               <input
-                type="email"
-                id="email3"
+                type="text"
+                id="Phonenumber"
                 className="editInput"
                 value={number}
                 onChange={(e) => setNumber(e.target.value)}

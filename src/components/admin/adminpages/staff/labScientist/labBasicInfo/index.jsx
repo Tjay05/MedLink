@@ -31,7 +31,7 @@ const LabBasicinfo = () => {
           </div>
           <div className="blurBasic">
             <p>
-              <span>4 </span> Review and Submit
+              <span>4 </span> Wages and Salary
             </p>
             <img src={seperator} alt="" className="seperator" />
           </div>
@@ -79,9 +79,6 @@ const LabBasicinfo = () => {
                 onChange={(e) => setLastname(e.target.value)}
                 placeholder="Your Last Name"
               />
-            </form>
-
-            <form action="">
               <label htmlFor="email3">
                 <p className="pInput"> Email Address</p>
               </label>
@@ -93,12 +90,15 @@ const LabBasicinfo = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email Address"
               />
-              <label htmlFor="Gender">
+            </form>
+
+            <form action="">
+              <label htmlFor="gender">
                 <p className="pInput">Gender</p>
               </label>
               <div className="editinput">
                 <select 
-                  id="Gender"
+                  id="gender"
                   value={Gender}
                   onChange={(e) => setGender(e.target.value)}
                 >
@@ -106,6 +106,18 @@ const LabBasicinfo = () => {
                   <option value="Female">Female</option>
                 </select>
               </div>
+
+              <label htmlFor="Phonenumber">
+                <p className="pInput"> Phone Number</p>
+              </label>
+              <input
+                type="text"
+                id="Phonenumber"
+                className="editInput"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+                placeholder="Your Phone Number"
+              />
               <label htmlFor="DOB">
                 <p className="pInput">Date of birth </p>
               </label>

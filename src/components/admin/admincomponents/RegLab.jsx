@@ -2,6 +2,8 @@ import { createContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 const RegLabContext = createContext();
+const adminData = localStorage.getItem('admin');
+const admin = JSON.parse(adminData);
 
 const RegLab = () => {    
   // Add Lab Scientist
@@ -17,9 +19,13 @@ const RegLab = () => {
   const [lab_License , setLicenseNumber] = useState('');
   const [YearsOfExp , setYearsOfExperience] = useState('');
   const [employStat , setEmploymentStatus] = useState('');
-  const [Days_per_week , setDaysWeek] = useState('');
-  const [Hours_per_day , setHourDay] = useState('');
-  const [Schedule , setSchedule] = useState('');
+  const [Days_per_week , setDaysWeek] = useState('Mon');
+  const [Hours_per_day , setHourDay] = useState('6');
+  const [Schedule , setSchedule] = useState('morning');
+  const [pensionDeduction, setPensionDeduction] = useState('');
+  const [netMonthly, setNetMonthly] = useState('');
+  const [totalAnnualPayment, setTotalAnnualPayment] = useState('');
+  const [message,setMessage] = useState('')
 
   const contextValueLab = { 
     UserType, setUserType, 
@@ -36,7 +42,12 @@ const RegLab = () => {
     employStat, setEmploymentStatus,
     Days_per_week, setDaysWeek, 
     Hours_per_day, setHourDay, 
-    Schedule, setSchedule
+    Schedule, setSchedule,
+    pensionDeduction, setPensionDeduction,
+    netMonthly, setNetMonthly,
+    totalAnnualPayment, setTotalAnnualPayment,
+    addedBy:`${admin.firstname} ${admin.lastname}`,
+    message, setMessage
     }
 
     return ( 

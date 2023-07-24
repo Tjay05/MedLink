@@ -1,7 +1,12 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
+import { RegdocContext } from "../../../../admincomponents/RegDoc";
+import { useContext } from "react";
 
-const DocAddSuccess = ({ docFirstName, docLastName }) => {
+const DocAddSuccess = () => {
+
+  const { message } = useContext(RegdocContext);
+
   return (
     <>
       <div className="wrapBasicInfo">
@@ -11,10 +16,7 @@ const DocAddSuccess = ({ docFirstName, docLastName }) => {
           </div>
 
           <div className="afterSubmit">
-            <p>
-              You have Successfully Added dr {/*docFirstName*/}. Check your email address
-              for your unique ID
-            </p>
+            <p> {message} </p>
           </div>
           <Link to="/adminhome/">
             <button className="done">

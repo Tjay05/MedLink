@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 import { useState, createContext } from "react";
 
 const RegPharmacistContext = createContext()
+const adminData = localStorage.getItem('admin');
+const admin = JSON.parse(adminData);
 
 const RegPharmacist = () => {
     // Add Pharmacist
@@ -17,9 +19,13 @@ const RegPharmacist = () => {
     const [Pharm_License , setLicenseNumber] = useState('');
     const [Years_Of_Exp , setYearsOfExperience] = useState('');
     const [employ_Stat , setEmploymentStatus] = useState('');
-    const [Days_per_week , setDaysWeek] = useState('');
-    const [Hours_per_day , setHourDay] = useState('');
-    const [Schedule , setSchedule] = useState('');
+    const [Days_per_week , setDaysWeek] = useState('Mon');
+    const [Hours_per_day , setHourDay] = useState('6');
+    const [Schedule , setSchedule] = useState('morning');
+    const [pensionDeduction, setPensionDeduction] = useState('');
+    const [netMonthly, setNetMonthly] = useState('');
+    const [totalAnnualPayment, setTotalAnnualPayment] = useState('');
+    const [message,setMessage] = useState('')
 
     const contextValuePharm = {
         UserType, setUserType, 
@@ -36,7 +42,12 @@ const RegPharmacist = () => {
         employ_Stat, setEmploymentStatus,
         Days_per_week, setDaysWeek, 
         Hours_per_day, setHourDay, 
-        Schedule, setSchedule
+        Schedule, setSchedule,
+        pensionDeduction, setPensionDeduction,
+        netMonthly, setNetMonthly,
+        totalAnnualPayment, setTotalAnnualPayment,
+        addedBy:`${admin.firstname} ${admin.lastname}`,
+        message, setMessage
     }
 
     return ( 

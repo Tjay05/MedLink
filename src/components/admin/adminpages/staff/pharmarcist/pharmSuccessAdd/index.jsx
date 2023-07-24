@@ -1,7 +1,12 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
+import { RegPharmacistContext } from "../../../../admincomponents/RegPharmacist";
+import { useContext } from "react";
 
 const PharmSuccessAdd = () => {
+
+  const { message } = useContext(RegPharmacistContext);
+
   return (
     <>
       <div className="wrapBasicInfo">
@@ -11,19 +16,13 @@ const PharmSuccessAdd = () => {
           </div>
 
           <div className="afterSubmit">
-            <p>
-              You have Successfully Added (Pharm’s name). Check your email
-              address for your unique ID
-            </p>
+            <p> {message} </p>
           </div>
-          <button className="done">
-            <Link
-              style={{ textDecoration: "none" }}
-              to="../../pharmacist"
-            >
+          <Link to="../../pharmacist" >
+            <button className="done">
               <p>Done</p>
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </>

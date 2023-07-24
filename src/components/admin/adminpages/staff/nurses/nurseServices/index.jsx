@@ -31,7 +31,7 @@ const NurseServices = () => {
           </div>
           <div className="blurBasic">
             <p>
-              <span>4 </span> Review and Submit
+              <span>4 </span> Wages and Salary
             </p>
             <img src={seperator} alt="" className="seperator" />
           </div>
@@ -45,40 +45,49 @@ const NurseServices = () => {
                 <p className="pInput"> Days/Week </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
+                <select 
                   id="Days"
-                  className="editInput"
                   value={Days_per_week}
                   onChange={(e) => setDaysWeek(e.target.value)}
-                  placeholder="Days per Week"
-                />
+                >
+                  <option value="Mon">Monday</option>
+                  <option value="Tues">Tuesday</option>
+                  <option value="Wed">Wednesday</option>
+                  <option value="Thurs">Thursday</option>
+                  <option value="Fri">Friday</option>
+                  <option value="Sat">Saturday</option>
+                  <option value="Sun">Sunday</option>
+                </select>
               </div>
               <label htmlFor="Hours">
                 <p className="pInput">Hours/Day </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
+                <select 
                   id="Hours"
-                  className="editInput"
                   value={Hours_per_day}
                   onChange={(e) => setHourDay(e.target.value)}
-                  placeholder="Hours per Day"
-                />
+                >
+                  <option value="6">6 Hours</option>
+                  <option value="12">12 Hours</option>
+                  <option value="18">18 Hours</option>
+                  <option value="24">24 Hours</option>
+                </select>
               </div>
-              <label htmlFor="schedule">
+              <label htmlFor="Schedule">
                 <p className="pInput">Schedule Type </p>
               </label>
               <div className="editinput">
-                <input
-                  type="text"
-                  id="schedule"
-                  className="editInput"
+                <select 
+                  id="Schedule"
                   value={Schedule}
                   onChange={(e) => setSchedule(e.target.value)}
-                  placeholder="Schedule Type"
-                />
+                >
+                  <option value="morning">6am - 12pm</option>
+                  <option value="afternoon">12pm - 6pm</option>
+                  <option value="evening">6pm - 12am</option>
+                  <option value="night">12am - 6am</option>
+                </select>
               </div>
             </form>
           </div>

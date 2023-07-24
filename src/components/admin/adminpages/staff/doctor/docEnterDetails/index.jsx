@@ -32,7 +32,7 @@ const DocEnterDetails = () => {
             </div>
             <div className="blurBasic">
               <p>
-                <span>4 </span> Review and Submit
+                <span>4 </span> Wages and Salary
               </p>
               <img src={separator} alt="" className="seperator" />
             </div>
@@ -42,14 +42,14 @@ const DocEnterDetails = () => {
             <h2>Enter Details</h2>
             <div className="twoForms">
               <form action="">
-                <label htmlFor="">
+                <label htmlFor="degree">
                   <p className="pInput"> Medical Degree(s) </p>
                 </label>
 
                 <div className="editinput">
                   <input
                     type="text"
-                    id=""
+                    id="degree"
                     className="editInput"
                     value={medicalDegree}
                     onChange={(e) => setMedDegree(e.target.value)}
@@ -57,23 +57,46 @@ const DocEnterDetails = () => {
                   />
                 </div>
 
-                <label htmlFor="">
+                <label htmlFor="specialization">
                   <p className="pInput">Area of Specialization</p>
                 </label>
-                <input
-                  type="text"
-                  id=""
-                  className="editInput"
+                <select
+                  id="specialization"
                   value={areaOfSpecialization}
                   onChange={(e) => setSpecialization(e.target.value)}
-                  placeholder="Your Area of Specialization"
-                />
-                <label htmlFor="">
+                >
+                  <option value="">Select a field</option>
+                  <option value="Surgeon">Surgeon</option>
+                  <option value="General-Practitioner">General Practitioner</option>
+                  <option value="Neurologist">Neurologist</option>
+                  <option value="Pediatrician">Pediatrician</option>
+                  <option value="Radiologist">Radiologist</option>
+                  <option value="Dermatologist">Dermatologist</option>
+                  <option value="Psychiatrist">Psychiatrist</option>
+                  <option value="Anesthesiologist">Anesthesiologist</option>
+                  <option value="Cardiologist">Cardiologist</option>
+                  <option value="Oncologist">Oncologist</option>
+                  <option value="Urologist">Urologist</option>
+                  <option value="Pathologist">Pathologist</option>
+                  <option value="Orthopaedist">Orthopaedist</option>
+                  <option value="Endocrinologist">Endocrinologist</option>
+                  <option value="Gastroenterologist">Gastroenterologist</option>
+                  <option value="Internal-Medicine">Internal Medicine</option>
+                  <option value="Pulmonologist">Pulmonologist</option>
+                  <option value="Ophthalmologist">Ophthalmologist</option>
+                  <option value="Rheumatologist">Rheumatologist</option>
+                  <option value="Gynaecologist">Gynaecologist</option>
+                  <option value="Ophthalmology">Ophthalmology</option>
+                  <option value="Nephrologist">Nephrologist</option>
+                  <option value="Podiatrist">Podiatrist</option>
+                  <option value="Dentist">Dentist</option>
+                </select>
+                <label htmlFor="License">
                   <p className="pInput"> Medical License Number</p>
                 </label>
                 <input
                   type="text"
-                  id=""
+                  id="License"
                   className="editInput"
                   value={med_License_number}
                   onChange={(e) => setMedLicenseNumber(e.target.value)}
@@ -81,7 +104,7 @@ const DocEnterDetails = () => {
                 />
               </form>
               <form action="">
-                <label htmlFor="">
+                <label htmlFor="text2">
                   <p className="pInput"> Years of experience</p>
                 </label>
                 <input
@@ -92,13 +115,13 @@ const DocEnterDetails = () => {
                   onChange={(e) => setYearsOfExperience(e.target.value)}
                   placeholder="Years of Experience"
                 />
-                <label htmlFor="">
+                <label htmlFor="Status">
                   <p className="pInput">Current Employment Status</p>
                 </label>
                 <div className="editinput">
                   <input
                     type="text"
-                    id=""
+                    id="Status"
                     className="editInput"
                     value={employStat}
                     onChange={(e) => setEmploymentStatus(e.target.value)}

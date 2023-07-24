@@ -31,7 +31,7 @@ const NurseBasicinfo = () => {
           </div>
           <div className="blurBasic">
             <p>
-              <span>4 </span> Review and Submit
+              <span>4 </span> Wages and Salary
             </p>
             <img src={seperator} alt="" className="seperator" />
           </div>
@@ -80,9 +80,6 @@ const NurseBasicinfo = () => {
                 placeholder="Last Name"
               />
 
-            </form>
-
-            <form action="">
               <label htmlFor="email3">
                 <p className="pInput"> Email address</p>
               </label>
@@ -94,6 +91,9 @@ const NurseBasicinfo = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email Address"
               />
+            </form>
+
+            <form action="">
               <label htmlFor="gender">
                 <p className="pInput">Gender </p>
               </label>
@@ -107,6 +107,18 @@ const NurseBasicinfo = () => {
                   <option value="Female">Female</option>
                 </select>
               </div>
+
+              <label htmlFor="Phonenumber">
+                <p className="pInput"> Phone Number</p>
+              </label>
+              <input
+                type="text"
+                id="Phonenumber"
+                className="editInput"
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
+                placeholder="Your Phone Number"
+              />
 
               <label htmlFor="DOB">
                 <p className="pInput">Date of birth </p>

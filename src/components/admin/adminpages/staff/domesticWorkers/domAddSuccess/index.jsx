@@ -1,7 +1,12 @@
 import checkimg from "../../../../../../assets/icons/checkimage.svg";
 import { Link } from "react-router-dom";
+import { RegDomContext } from "../../../../admincomponents/RegDomWorker";
+import { useContext } from "react";
 
 const DomSuccessAdd = () => {
+
+  const { message } = useContext(RegDomContext);
+
   return (
     <>
       <div className="wrapBasicInfo">
@@ -11,16 +16,13 @@ const DomSuccessAdd = () => {
           </div>
 
           <div className="afterSubmit">
-            <p>
-              You have Successfully Added (Domestic worker's name). Check your email
-              address for your unique ID
-            </p>
+            <p>{message}</p>
           </div>
-          <button className="done">
-            <Link to="../../domesticWorkers">
+          <Link to="../../domesticWorkers">
+            <button className="done">
               <p>Done</p>
-            </Link>
             </button>
+          </Link>
         </div>
       </div>
     </>

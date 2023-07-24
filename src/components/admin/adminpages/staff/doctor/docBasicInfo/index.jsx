@@ -32,7 +32,7 @@ const DocBasicInfo = () => {
           </div>
           <div className="blurBasic">
             <p>
-              <span>4 </span> Review and Submit
+              <span>4 </span> Wages and Salary
             </p>
             <img src={seperator} alt="" className="seperator" />
           </div>
@@ -42,12 +42,13 @@ const DocBasicInfo = () => {
           <h2>Basic Information</h2>
           <div className="twoForms">
             <form action="">
-            <label htmlFor="">
+            <label htmlFor="usertype">
                 <p className="pInput"> User type </p>
               </label>
 
               <select 
                 value={UserType} 
+                id="usertype"
                 onChange={ (e) => setUserType(e.target.value) }
               >
                 <option value="Doctor">Doctor</option>
@@ -56,30 +57,30 @@ const DocBasicInfo = () => {
                 <option value="Lab Scientist">Lab Scientist</option>
                 <option value="Domestic Worker">Domestic Worker</option>
               </select>
-              <label htmlFor="">
+              <label htmlFor="firstname">
                 <p className="pInput"> First name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="firstname"
                 className="editInput"
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
                 placeholder="Your First Name"
               />
-              <label htmlFor="">
+              <label htmlFor="lastname">
                 <p className="pInput"> Last name</p>
               </label>
               <input
                 type="text"
-                id=""
+                id="lastname"
                 className="editInput"
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
                 placeholder="Your Last Name"
               />
 
-              <label htmlFor="">
+              <label htmlFor="email3">
                 <p className="pInput"> Email address</p>
               </label>
               <input
@@ -93,11 +94,12 @@ const DocBasicInfo = () => {
             </form>
 
             <form action="">
-              <label htmlFor="">
+              <label htmlFor="gender">
                 <p className="pInput">Gender </p>
               </label>
               <div className="editinput">
                 <select 
+                  id="gender"
                   value={Gender}
                   onChange={(e) => setGender(e.target.value)}
                 >
@@ -106,7 +108,7 @@ const DocBasicInfo = () => {
                 </select>
               </div>
 
-              <label htmlFor="">
+              <label htmlFor="number">
                 <p className="pInput"> Phone Number</p>
               </label>
               <input
@@ -117,12 +119,12 @@ const DocBasicInfo = () => {
                 onChange={(e) => setNumber(e.target.value)}
                 placeholder="Your Number"
               />
-              <label htmlFor="">
+              <label htmlFor="dob">
                 <p className="pInput">Date of birth </p>
               </label>
               <input
                 type="date"
-                id=""
+                id="dob"
                 className="editInput"
                 value={DOB}
                 onChange={(e) => setDOB(e.target.value)}
