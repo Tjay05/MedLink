@@ -61,7 +61,7 @@ const AddPharm = () => {
         {user.map((user) => (
           <div className="allDocs" key={user._id}>
             <div className="PicProfile">
-              <img src={fairAvatar} alt=""/>
+              <img src={user.avatar} alt=""/>
               <div className="profile">
                 <p id="user">{`${user.firstname} ${user.lastname}`}</p>
               </div>

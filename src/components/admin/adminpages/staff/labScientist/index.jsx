@@ -70,7 +70,7 @@ const AddLabSci = () => {
         {user.map((user) => (
           <div className="allDocs" key={user._id}>
             <div className="PicProfile">
-              <img src={avatar} alt="" className="avatar" />
+              <img src={user.avatar} alt="" className="avatar" />
               <div className="profile">
                 <p>{`${user.firstname} ${user.lastname}`}</p>
               </div>

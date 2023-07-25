@@ -66,7 +66,7 @@ const AddDomesticWorkers = () => {
         {user.map((user) => (
           <div className="allDocs" key={user._id}>
             <div className="PicProfile">
-              <img src={avatar} alt="" />
+              <img src={user.avatar} alt="" />
               <div className="profile">
                 <p>{`${user.firstname} ${user.lastname}`}</p>
               </div>
