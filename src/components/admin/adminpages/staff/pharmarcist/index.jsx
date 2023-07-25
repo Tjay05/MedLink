@@ -34,10 +34,8 @@ const AddPharm = ({ pharM, setPharM }) => {
     fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
     .then((res) => res.json()) 
     .then((data) => {
-      // console.log(data);
       setPharM(data);
-      console.log(pharM);
-      // history('pharmdetails')
+      history('../pharmdetails')
     })
     .catch((error) => {
       console.log(error);

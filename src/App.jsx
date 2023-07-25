@@ -70,6 +70,8 @@ import PatientList from "./components/admin/adminpages/patients/PatientList";
 import PatDetails from "./components/admin/adminpages/patients/PatientDetails";
 import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
 import DocDetails from "./components/admin/adminpages/staff/doctor/DocDetails";
+import PharmDetails from "./components/admin/adminpages/staff/pharmarcist/PharmDetails";
+import NurseDetails from "./components/admin/adminpages/staff/nurses/NurseDetails";
 
 function App() {
   // ADMIN
@@ -139,6 +141,7 @@ function App() {
 
             {/* Pharmacist */}
             <Route path="pharmacist" element={<AddPharm pharM={pharM} setPharM={setPharM} />} />
+            <Route path="pharmdetails" element={<PharmDetails pharM={pharM} />}/>
             <Route path="Addpharmacist" element={<RegPharmacist/>} >
               <Route index element={<PharmBasicInfo />} />
               <Route path="pharmEnterDetails" element={<PharmEnterDetails />} />
@@ -149,7 +152,8 @@ function App() {
 
             {/* Nurses */}
             <Route path="nurse" element={<AddNurse nuRse={nuRse} setNuRse={setNuRse} />} />
-            <Route path="AddNurse" element={<RegNurse/>} >
+            <Route path="nursedetails" element={<NurseDetails nuRse={nuRse} />}/>
+            <Route path="AddNurse" element={<RegNurse />} >
               <Route index element={<NurseBasicInfo />} />
               <Route path="nurseEnterDetails" element={<NursesEnterDetails />} />
               <Route path="nurseServices" element={<NursesServices />} />

@@ -1,4 +1,3 @@
-// import Menu from "./menu";
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 import refresh from "../../../../../assets/icons/refreshlogo.png";
@@ -33,18 +32,17 @@ const AddLabSci = ({ labWoRk, setLabWoRk }) => {
   };
 
   const handleNxtPage = (user_Id) => {
-    console.log('click');
     fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
-    .then((res) => res.json())
+    .then((res) => res.json()) 
     .then((data) => {
       console.log(data);
       setLabWoRk(data);
       console.log(labWoRk);
       // history('labdetails')
-    })
+    }) 
     .catch((error) => {
       console.log(error);
-    })
+    });
   }
 
   return (
@@ -99,7 +97,7 @@ const AddLabSci = ({ labWoRk, setLabWoRk }) => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img onClick={() => handleNxtPage(user._Id)} className="arrow21" src={arrow} alt="" />
+            <img onClick={()=>handleNxtPage(user._Id)} className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

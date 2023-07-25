@@ -35,10 +35,8 @@ const AddNurse = ({ nuRse, setNuRse }) => {
     fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       setNuRse(data);
-      console.log(nuRse);
-      // history('nursedetails')
+      history('../nursedetails')
     })
     .catch((error) => {
       console.log(error);
