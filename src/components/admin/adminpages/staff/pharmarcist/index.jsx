@@ -39,6 +39,12 @@ const AddPharm = () => {
               <span>{user.length}</span> pharmacist availble
             </p>
           </div>
+          <div className="refresh">
+            <button onClick={refreshFromBackend}>
+              <img src={refresh} alt="" />
+              Refresh
+            </button>
+          </div>
           <div className="btnright">
             <Link to="../Addpharmacist">
               <button>

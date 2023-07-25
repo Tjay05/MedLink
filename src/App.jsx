@@ -69,6 +69,7 @@ import Patient from "./components/admin/adminpages/patients";
 import PatientList from "./components/admin/adminpages/patients/PatientList";
 import PatDetails from "./components/admin/adminpages/patients/PatientDetails";
 import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
+import DocDetails from "./components/admin/adminpages/staff/doctor/DocDetails";
 
 function App() {
   // ADMIN
@@ -120,6 +121,7 @@ function App() {
             </Route>
             {/* Doctor */}
             <Route index element={<AddDoctor/>} />
+            <Route path="docdetails" element={<DocDetails/>} />
             <Route path="AddDoctor" element={<Regdoc/>} >
               <Route index element={<DocBasicInfo />}/>
               <Route path="docEnterDetails" element={<DocEnterDetails  />} />

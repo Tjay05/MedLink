@@ -22,6 +22,7 @@ const AddLabSci = () => {
       });
   }, []);
   const refreshFromBackend = () => {
+    console.log('clicked on the button');
     fetch("https://hospital-management-backend.onrender.com/lab-scientist/all")
       .then((res) => res.json())
       .then((data) => {
@@ -42,12 +43,12 @@ const AddLabSci = () => {
               <span>{user.length}</span> lab scientists available
             </p>
           </div>
-          {/* <div className="refresh">
+          <div className="refresh">
             <button onClick={refreshFromBackend}>
-              <img src={refresh} alt="" id="imgRefresh" />
+              <img src={refresh} alt="" />
               Refresh
             </button>
-          </div> */}
+          </div>
           <div className="btnright">
             <Link to="../AddLabSci">
               <button>

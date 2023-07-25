@@ -5,9 +5,9 @@ const Patient = () => {
         <div>
             
             <Outlet/>
-           
+            
         </div>
-     );
+        );
 }
  
 export default Patient;

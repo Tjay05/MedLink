@@ -40,12 +40,12 @@ const AddNurse = () => {
               <span>{user.length}</span> Nurses available
             </p>
           </div>
-          {/* <div className="refresh">
+          <div className="refresh">
             <button onClick={refreshFromBackend}>
-              <img src={refresh} alt="" id="imgRefresh" />
+              <img src={refresh} alt="" />
               Refresh
             </button>
-          </div> */}
+          </div>
           <div className="btnright">
             <Link to="../AddNurse">
               <button>

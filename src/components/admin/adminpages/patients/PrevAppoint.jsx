@@ -13,7 +13,7 @@ const PrevApp = () => {
         </div>
         <div className="doc__NaMe">
           <p>Brooklyn Simmons</p>
-          <p>Dermatologists</p>
+          <p className="light">Dermatologists</p>
         </div>
         <p>98653222</p>
       </div>

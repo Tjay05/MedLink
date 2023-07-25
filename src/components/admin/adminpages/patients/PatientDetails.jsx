@@ -25,6 +25,8 @@ const PatDetails = () => {
         </ul>
       </nav>
       <Outlet />
+
+      <button className="bckArrow">Back</button>
     </div>
    );
 }

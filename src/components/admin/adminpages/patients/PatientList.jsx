@@ -1,11 +1,26 @@
 import avatar from "../../../../assets/icons/fairAvatar.svg"
 import arrow from "../../../../assets/icons/arrow.svg"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+import { useState } from "react"
 
 const PatientList = () => {
+	const [patient, setPatient] = useState([]);
 	
 	const history = useNavigate()
 	const handleNxtPage = () => history('patientdetails');
+
+	// Fetch
+	useEffect( () => {
+		fetch("https://hospital-management-backend.onrender.com/patient/all")
+		.then((res) => res.json())
+		.then((data) => {
+			setPatient(data);
+		})
+		.catch((error) => {
+			console.log(error);
+		});
+	}, [])
 
 	return ( 
 		<div className="wrapPatients">
@@ -18,22 +33,22 @@ const PatientList = () => {
 				<p>Date Added</p>
 			</div>
 
-			<div className="all__patients">
+			{patient.map((patient) => (<div className="all__patients" key={patient.id} >
 				<div className="pic-profile">
-					<img src={avatar} alt="" />
-					<p>Tosin Poppins</p>
+					<img src={patient.avatar} alt="" />
+					<p>{`${patient.firstname} ${patient.lastname}`}</p>
 				</div>
-				<p>87234991OA</p>
-				<p>poppins@font.com</p>
-				<p>00-call-rexxie</p>
+				<p>{patient.id}</p>
+				<p>{patient.email}</p>
+				<p>{patient.number}</p>
 				<div className="date-Added">
 					<div className="date">
-						<p>12/07/2020</p>
-						<p className="light">11:24 AM</p>
+						<p>{patient.dateAdded}</p>
+						<p className="light">{patient.timeAdded}</p>
 					</div>
 					<img onClick={handleNxtPage} src={arrow} alt="arrow" />
 				</div>
-			</div>
+			</div>))}
 		</div>
 	);
 }
