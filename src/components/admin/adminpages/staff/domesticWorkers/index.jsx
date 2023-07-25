@@ -1,11 +1,10 @@
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
-import avatar from "../../../../../assets/icons/Avatar1.svg";
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const AddDomesticWorkers = () => {
+const AddDomesticWorkers = ({ domWk, setDomWk }) => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -28,6 +27,22 @@ const AddDomesticWorkers = () => {
         console.log(error);
       });
   };
+
+  const handleNxtPage = (user_Id) => {
+    console.log('click');
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setDomWk(data);
+      console.log(domWk);
+      // history('domworkerdetails')
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   return (
     <>
       <div className="wrapAddDoc">
@@ -79,7 +94,7 @@ const AddDomesticWorkers = () => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img className="arrow21" src={arrow} alt="" />
+            <img onClick={() => handleNxtPage(user._id)} className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

@@ -93,6 +93,13 @@ function App() {
   const [data, setData] = useState('');
   const [adminData, setAdminData] = useState('');
 
+  // User Details
+  const [pers, setPers] = useState('');
+  const [pharM, setPharM] = useState('');
+  const [nuRse, setNuRse] = useState('');
+  const [labWoRk, setLabWoRk] = useState('');
+  const [domWk, setDomWk] = useState('');
+
   return (
     <>
       <BrowserRouter>
@@ -120,8 +127,8 @@ function App() {
               </Route>
             </Route>
             {/* Doctor */}
-            <Route index element={<AddDoctor/>} />
-            <Route path="docdetails" element={<DocDetails/>} />
+            <Route index element={<AddDoctor pers={pers} setPers={setPers} />} />
+            <Route path="docdetails" element={<DocDetails pers={pers}/>} />
             <Route path="AddDoctor" element={<Regdoc/>} >
               <Route index element={<DocBasicInfo />}/>
               <Route path="docEnterDetails" element={<DocEnterDetails  />} />
@@ -131,7 +138,7 @@ function App() {
             </Route>
 
             {/* Pharmacist */}
-            <Route path="pharmacist" element={<AddPharm/>} />
+            <Route path="pharmacist" element={<AddPharm pharM={pharM} setPharM={setPharM} />} />
             <Route path="Addpharmacist" element={<RegPharmacist/>} >
               <Route index element={<PharmBasicInfo />} />
               <Route path="pharmEnterDetails" element={<PharmEnterDetails />} />
@@ -141,7 +148,7 @@ function App() {
             </Route>
 
             {/* Nurses */}
-            <Route path="nurse" element={<AddNurse/>} />
+            <Route path="nurse" element={<AddNurse nuRse={nuRse} setNuRse={setNuRse} />} />
             <Route path="AddNurse" element={<RegNurse/>} >
               <Route index element={<NurseBasicInfo />} />
               <Route path="nurseEnterDetails" element={<NursesEnterDetails />} />
@@ -149,8 +156,9 @@ function App() {
               <Route path="nurseReview" element={<NursesReview />} />
               <Route path="nurseSuccessAdd" element={<NursesSuccessAdd/>} />
             </Route>
+
             {/* Lab Scientist */}
-            <Route path="labScientist" element={<AddLab/>} />
+            <Route path="labScientist" element={<AddLab labWoRk={labWoRk} setLabWoRk={setLabWoRk} />} />
             <Route path="AddLabSci" element={<RegLab/>}>
               <Route index element={<LabBasicInfo />} />
               <Route path="labEnterDetails" element={<LabEnterDetails />} />
@@ -160,7 +168,7 @@ function App() {
             </Route>
 
             {/* Domestic Workers */}
-            <Route path="domesticWorkers" element={<AddDomesticWorkers/>} />
+            <Route path="domesticWorkers" element={<AddDomesticWorkers domWk={domWk} setDomWk={setDomWk} />} />
             <Route path="AddDomWorker" element={<RegDom/>}>
               <Route index element={<BasicInfoDomW />} />
               <Route path="domEnterDetails" element={<DomEnterDetails />} />

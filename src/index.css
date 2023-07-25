@@ -1177,12 +1177,35 @@ p.error-message {
 /* Patient Details */
 .wrapPatients .patientDetails {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
 }
 
-.patientDetails img {
-  width: 7%;
+.patientDetails1 {
+  width: 50%;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.patientDetails .patientDetails1 img {
+  width: 10%;
+}
+
+.patientDetails1 .profile {
+  font-weight: 600;
+  color: var(--patient-apointment);
+}
+
+button.bckArrow {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  padding: .5rem 1.5rem;
+  background-color: var(--bg-btn-green);
+  color: var(--pure-white);
+  border-radius: 5px;
 }
 
 .wrapPatients nav.patients {
@@ -1203,10 +1226,6 @@ nav.patients ul li a.active {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   background-color: var(--bg-text-color-light-green);
-}
-
-button.bckArrow {
-  align-self: flex-start;
 }
 
 /* Admin Patient Appointments Side */
@@ -1252,4 +1271,21 @@ button.bckArrow {
 
 .allAppointments p {
   flex: 1;
+}
+
+/* Doc Details */
+.profileBio{
+  display: flex;
+  gap: 20rem;
+  font-size: 1.5rem;
+}
+
+.profileBio .doc_Profile img {
+  border-radius: 50%;
+  margin-inline-start: 5rem;
+}
+
+.profileBio .docBio span.light {
+  color: var(--bg-btn-green);
+  /* font-size: 1.5rem; */
 }

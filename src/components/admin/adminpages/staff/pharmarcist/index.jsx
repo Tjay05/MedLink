@@ -1,13 +1,13 @@
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 import refresh from "../../../../../assets/icons/refreshlogo.png";
-import fairAvatar from "../../../../../assets/icons/fairAvatar.svg"
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const AddPharm = () => {
+const AddPharm = ({ pharM, setPharM }) => {
   const [user, setUser] = useState([]);
+  const history = useNavigate();
 
   useEffect(() => {
     fetch("https://hospital-management-backend.onrender.com/pharmacist/all")
@@ -29,6 +29,21 @@ const AddPharm = () => {
         console.log(error);
       });
   };
+
+  const handleNxtPage = (user_Id) => {
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
+    .then((res) => res.json()) 
+    .then((data) => {
+      // console.log(data);
+      setPharM(data);
+      console.log(pharM);
+      // history('pharmdetails')
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
+
   return (
     <>
       <div className="wrapAddDoc">
@@ -80,7 +95,7 @@ const AddPharm = () => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img className="arrow21" src={arrow} alt="" />
+            <img onClick={() => handleNxtPage(user._id)} className="arrow21" src={arrow} alt="" />
           </div>
         ))}
       </div>

@@ -1,12 +1,11 @@
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 import refresh from "../../../../../assets/icons/refreshlogo.png";
-import fairAvatar from "../../../../../assets/icons/fairAvatar.svg"
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const AddDoctor = () => {
+const AddDoctor = ({ pers, setPers }) => {
   const [user, setUser] = useState([]);
   const history = useNavigate();
 
@@ -31,7 +30,17 @@ const AddDoctor = () => {
       });
   };
 
-  const handleNxtPage = () => history('docdetails')
+  const handleNxtPage = (user_Id) => {
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
+    .then((res) => res.json()) 
+    .then((data) => {
+      setPers(data);
+      history('docdetails')
+    }) 
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 
   return (
     <>
@@ -69,7 +78,7 @@ const AddDoctor = () => {
         </div>
 
         {user.map((user) => (
-          <>
+          
           <div className="allDocs" key={user.id}>
             <div className="PicProfile">
               <img src={user.avatar} alt="" />
@@ -86,9 +95,8 @@ const AddDoctor = () => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'Active' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img onClick={handleNxtPage} className="arrow21" src={arrow} alt="" />
+            <img onClick={()=>handleNxtPage(user._id)} className="arrow21" src={arrow}  alt="" />
           </div>
-          </>
           )
           )
         }
