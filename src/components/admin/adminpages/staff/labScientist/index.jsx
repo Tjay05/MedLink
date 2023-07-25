@@ -15,7 +15,6 @@ const AddLabSci = () => {
     fetch("https://hospital-management-backend.onrender.com/lab-scientist/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {

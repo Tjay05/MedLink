@@ -47,6 +47,7 @@ const PharmBasicInfo = () => {
 
               <select 
                 id="usertype"
+                disabled
                 value={UserType} 
                 onChange={ (e) => setUserType(e.target.value) }
               >

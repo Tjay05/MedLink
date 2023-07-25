@@ -47,6 +47,7 @@ const NurseBasicinfo = () => {
 
               <select 
                 id="Usertype"
+                disabled
                 value={UserType} 
                 onChange={ (e) => setUserType(e.target.value) }
               >

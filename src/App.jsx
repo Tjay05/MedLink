@@ -65,6 +65,10 @@ import RegPharmacist from "./components/admin/admincomponents/RegPharmacist";
 import RegNurse from "./components/admin/admincomponents/RegNurse";
 import RegLab from "./components/admin/admincomponents/RegLab";
 import RegDom from "./components/admin/admincomponents/RegDomWorker";
+import Patient from "./components/admin/adminpages/patients";
+import PatientList from "./components/admin/adminpages/patients/PatientList";
+import PatDetails from "./components/admin/adminpages/patients/PatientDetails";
+import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
 
 function App() {
   // ADMIN
@@ -107,6 +111,13 @@ function App() {
             <Route path="docProfile" element={<DocProfile/>}/>
           </Route>
           <Route path="adminhome" element={<Header/>} >
+            {/* Patient Side of Admin */}
+            <Route path="patients" element={<Patient/>} >
+              <Route index element={<PatientList/>} />
+              <Route path="patientdetails" element={<PatDetails/>}>
+                <Route index element={<PrevApp/>} />
+              </Route>
+            </Route>
             {/* Doctor */}
             <Route index element={<AddDoctor/>} />
             <Route path="AddDoctor" element={<Regdoc/>} >

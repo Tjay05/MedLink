@@ -17,6 +17,7 @@
   --bg-appointments: hsla(131, 58%, 39%, 1);
   --bg-in-patients: hsla(354, 100%, 66%, 1);
   --bg-patient-reviews: hsla(40, 100%, 50%, 1);
+  --bg-text-color-light-green: hsla(119, 100%, 98%, 1);
   --bg-btn-green: hsla(104, 29%, 43%, 1);
   --notification-font: hsla(103, 32%, 56%, 1);
   --dashboard-gradient: linear-gradient(100deg, rgba(22.74, 49.94, 12.69, 0.8) 0%, rgba(166.56, 255, 133.87, 0.8) 100%);
@@ -1062,4 +1063,159 @@ p.error-message {
   text-align: center;
   font-size: .9rem;
   color: red;
+}
+
+/* ADMIN PATIENT SIDE */
+/* List of Patients */
+.wrapPatients {
+  font-family: 'Poppins', sans-serif;
+  width: 95%;
+  margin-inline: auto;
+  padding-block: 1rem;
+}
+
+.wrapPatients h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--bg-btn-green);
+}
+
+.patients__info {
+  margin-block-start: 2rem;
+  display: flex;
+  width: 100%;
+  background-color: hsla(0, 0%, 98%, 1);
+  color: var(--bg-form-green);
+  font-weight: 600;
+  font-size: .9rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.wrapPatients .patients__info * {
+  flex: 1;
+}
+
+.all__patients{
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--patient-apointment);
+  font-weight: 600;
+  margin-block: 1.5rem;
+}
+
+.all__patients .pic-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.all__patients p {
+  flex: 1;
+}
+
+.all__patients .date-Added {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.all__patients .date-Added img {
+  padding: .4rem;
+  border-radius: 5px;
+  background-color: hsla(0, 0%, 98%, 1);;
+}
+
+/* Mini Nav */
+.patMenu {
+  font-family: 'Poppins', sans-serif;
+  padding-inline-start: 4rem;
+}
+
+.patMenu p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--bg-btn-green);
+  padding: .5rem 1rem;
+  display: inline-block;
+  border-radius: 6px;
+  background-color: var(--bg-text-color-light-green);
+}
+
+/* Patient Details */
+.wrapPatients .patientDetails {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.patientDetails img {
+  width: 7%;
+}
+
+.wrapPatients nav.patients {
+  margin-block: 3.5rem 2.5rem;
+}
+
+.wrapPatients nav.patients ul {
+  color: var(--bg-btn-green);
+  padding: .5rem 1rem;
+  display: inline-block;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+nav.patients ul li a.active {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: var(--bg-text-color-light-green);
+}
+
+/* Admin Patient Appointments Side */
+.prevAppInfo {
+  margin-block-start: 2rem;
+  display: flex;
+  width: 100%;
+  background-color: hsla(0, 0%, 98%, 1);
+  color: var(--bg-btn-green);
+  font-weight: 600;
+  font-size: .9rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.prevAppInfo * {
+  flex: 1;
+}
+
+.allAppointments {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--patient-apointment);
+  font-weight: 600;
+  margin-block: 1.5rem;
+}
+
+.allAppointments .date {
+  flex: 1;
+}
+
+.allAppointments .doc__NaMe {
+  flex: 1;
+}
+
+.allAppointments p {
+  flex: 1;
 }

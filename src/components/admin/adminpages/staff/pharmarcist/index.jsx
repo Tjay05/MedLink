@@ -13,7 +13,6 @@ const AddPharm = () => {
     fetch("https://hospital-management-backend.onrender.com/pharmacist/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {

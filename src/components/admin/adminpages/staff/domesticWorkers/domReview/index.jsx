@@ -6,13 +6,13 @@ import { useState } from "react";
 
 const DomReview = () => {
   const [isPending, setIsPending] = useState(false);
-  const { UserType, firstname, lastname, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, setPensionDeduction, netMonthly, setNetMonthly, totalAnnualPayment, setTotalAnnualPayment,addedBy, message, setMessage } = useContext(RegDomContext);
+  const { UserType, firstname, lastname, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, addedBy, message, setMessage } = useContext(RegDomContext);
 
   const history = useNavigate()
   
   const handleSubmit = async() => {
 
-    const domWorker = { UserType, firstname, lastname, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
+    const domWorker = { UserType, firstname, lastname, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, addedBy }
 
     console.log(domWorker);
 
@@ -74,35 +74,6 @@ const DomReview = () => {
           </div>
           <div className="twoForms">
             <form action="">
-              <label htmlFor="pension"><p className="pInput">Pension Deduction</p></label>
-              <input 
-                type="text" 
-                id="pension"
-                className="editInput" 
-                disabled
-                value={netMonthly * 0.1}
-                onChange={setPensionDeduction(String(netMonthly * 0.1))}
-                placeholder="Pension Deduction"
-              />
-              <label htmlFor="monthly"><p className="pInput">Monthly Payment</p></label>
-              <input 
-                type="text" 
-                id="monthly"
-                className="editInput" 
-                value={netMonthly}
-                onChange={(e) => setNetMonthly(e.target.value)}
-                placeholder="Monthly Payment"
-              />
-              <label htmlFor="yearly"><p className="pInput">Annual Payment</p></label>
-              <input 
-                type="text" 
-                id="yearly"
-                className="editInput" 
-                value={netMonthly * 12}
-                onChange={setTotalAnnualPayment(String(netMonthly * 12))}
-                disabled
-                placeholder="Yearly Payment"
-              />
 
             </form>
           </div>

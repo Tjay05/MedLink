@@ -13,7 +13,6 @@ const AddNurse = () => {
     fetch("https://hospital-management-backend.onrender.com/nurse/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {
@@ -77,8 +76,8 @@ const AddNurse = () => {
             <p>{user.areaOfSpecialization}</p>
             <p>{user.number}</p>
             <div className="dateAdded">
-              <p>{user.timeAdded}</p>
-              <p className="light" >{user.dateAdded}</p>
+              <p>{user.dateAdded}</p>
+              <p className="light" >{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
             <img className="arrow21" src={arrow} alt="" />

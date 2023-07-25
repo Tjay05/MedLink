@@ -11,6 +11,7 @@ import PharmMenu from "../adminpages/staff/pharmarcist/pharmBasicInfo/PharmMenu"
 import NurseMenu from "../adminpages/staff/nurses/nurseBasicInfo/NurseMenu";
 import LabMenu from "../adminpages/staff/labScientist/labBasicInfo/LabMenu";
 import DomMenu from "../adminpages/staff/domesticWorkers/domWorkBasicInfo/DomMenu";
+import MiniNav from "../adminpages/patients/MiniNav";
 
 const Header = () => {
   const location  = useLocation()
@@ -23,7 +24,9 @@ const Header = () => {
     //the lab-scientist part
     !location.pathname.includes("/adminhome/AddLabSci") &&
     //the domestic worker part
-    !location.pathname.includes("/adminhome/AddDomWorker");
+    !location.pathname.includes("/adminhome/AddDomWorker") &&
+    // Patients
+    !location.pathname.includes("/adminhome/patients");
 
   const adminData = localStorage.getItem('admin');
   const admin = JSON.parse(adminData);
@@ -34,8 +37,8 @@ const Header = () => {
       <div className="rule">
         <ul className="first-nav">
           <li><a><img src={Logo} alt="" className="logo" /></a></li>
-          <li><Link to="/adminhome/">Staff</Link></li>
-          <li><Link to="patients">Patients</Link></li>
+          <li><NavLink to="/adminhome/">Staff</NavLink></li>
+          <li><NavLink to="patients">Patients</NavLink></li>
           <li><a>Appointments</a></li>
           <li><a>Payroll</a></li>
           <li><a>NHIS Scheme</a></li>
@@ -86,6 +89,8 @@ const Header = () => {
           <LabMenu/>
         ) : location.pathname.includes("/adminhome/AddDomWorker") ? (
           <DomMenu />
+        ) : location.pathname.includes("/adminhome/patients") ? (
+          <MiniNav/>
         ) : (
           <DocMenu />
         )}

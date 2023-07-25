@@ -12,7 +12,6 @@ const AddDomesticWorkers = () => {
     fetch("https://hospital-management-backend.onrender.com/domestic-worker/all")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setUser(data);
       })
       .catch((error) => {

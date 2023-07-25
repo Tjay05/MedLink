@@ -20,9 +20,6 @@ const RegDom = () => {
     const [Days_per_week , setDaysWeek] = useState('Mon');
     const [Hours_per_day , setHourDay] = useState('6');
     const [Schedule , setSchedule] = useState('morning');
-    const [pensionDeduction, setPensionDeduction] = useState('');
-    const [netMonthly, setNetMonthly] = useState('');
-    const [totalAnnualPayment, setTotalAnnualPayment] = useState('');
     const [message,setMessage] = useState('')
 
     const contextValueDom = { 
@@ -39,9 +36,6 @@ const RegDom = () => {
         Days_per_week, setDaysWeek, 
         Hours_per_day, setHourDay, 
         Schedule, setSchedule,
-        pensionDeduction, setPensionDeduction,
-        netMonthly, setNetMonthly,
-        totalAnnualPayment, setTotalAnnualPayment,
         addedBy:`${admin.firstname} ${admin.lastname}`,
         message, setMessage
     }

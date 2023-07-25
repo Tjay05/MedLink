@@ -47,6 +47,7 @@ const DocBasicInfo = () => {
               </label>
 
               <select 
+                disabled
                 value={UserType} 
                 id="usertype"
                 onChange={ (e) => setUserType(e.target.value) }
