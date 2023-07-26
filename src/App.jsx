@@ -60,14 +60,20 @@ import DocAppointment from "./components/dochome/DocAppointment";
 import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
 import DocProfile from "./components/dochome/DocProfile";
+
+// Registration pages
 import Regdoc from "./components/admin/admincomponents/RegDoc";
 import RegPharmacist from "./components/admin/admincomponents/RegPharmacist";
 import RegNurse from "./components/admin/admincomponents/RegNurse";
 import RegLab from "./components/admin/admincomponents/RegLab";
 import RegDom from "./components/admin/admincomponents/RegDomWorker";
+
+// Admin Patient Sides
 import Patient from "./components/admin/adminpages/patients";
 import PatientList from "./components/admin/adminpages/patients/PatientList";
 import PatDetails from "./components/admin/adminpages/patients/PatientDetails";
+
+// Bio Pages
 import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
 import DocDetails from "./components/admin/adminpages/staff/doctor/DocDetails";
 import PharmDetails from "./components/admin/adminpages/staff/pharmarcist/PharmDetails";
