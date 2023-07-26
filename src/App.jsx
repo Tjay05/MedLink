@@ -72,6 +72,8 @@ import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
 import DocDetails from "./components/admin/adminpages/staff/doctor/DocDetails";
 import PharmDetails from "./components/admin/adminpages/staff/pharmarcist/PharmDetails";
 import NurseDetails from "./components/admin/adminpages/staff/nurses/NurseDetails";
+import PersDocDetails from "./components/admin/adminpages/staff/doctor/PersDocDetails";
+import DocAPPoint from "./components/admin/adminpages/staff/doctor/DocAPPoint";
 
 function App() {
   // ADMIN
@@ -99,7 +101,7 @@ function App() {
   const [pers, setPers] = useState('');
   const [pharM, setPharM] = useState('');
   const [nuRse, setNuRse] = useState('');
-  const [labWoRk, setLabWoRk] = useState('');
+  const [labScientist, setLabScientist] = useState('');
   const [domWk, setDomWk] = useState('');
 
   return (
@@ -130,7 +132,10 @@ function App() {
             </Route>
             {/* Doctor */}
             <Route index element={<AddDoctor pers={pers} setPers={setPers} />} />
-            <Route path="docdetails" element={<DocDetails pers={pers}/>} />
+            <Route path="docdetails" element={<DocDetails pers={pers}/>}>
+              <Route index element={<PersDocDetails pers={pers}/>} />
+              <Route path="DocAPPointment" element={<DocAPPoint pers={pers}/>} />
+            </Route>
             <Route path="AddDoctor" element={<Regdoc/>} >
               <Route index element={<DocBasicInfo />}/>
               <Route path="docEnterDetails" element={<DocEnterDetails  />} />
@@ -162,7 +167,7 @@ function App() {
             </Route>
 
             {/* Lab Scientist */}
-            <Route path="labScientist" element={<AddLab labWoRk={labWoRk} setLabWoRk={setLabWoRk} />} />
+            <Route path="labScientist" element={<AddLab labScientist={labScientist} setLabScientist={setLabScientist} />} />
             <Route path="AddLabSci" element={<RegLab/>}>
               <Route index element={<LabBasicInfo />} />
               <Route path="labEnterDetails" element={<LabEnterDetails />} />

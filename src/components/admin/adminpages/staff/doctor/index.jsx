@@ -35,7 +35,7 @@ const AddDoctor = ({ pers, setPers }) => {
     .then((res) => res.json()) 
     .then((data) => {
       setPers(data);
-      history('docdetails')
+      history('docdetails/')
     }) 
     .catch((error) => {
       console.log(error);

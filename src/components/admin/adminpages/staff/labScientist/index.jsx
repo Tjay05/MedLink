@@ -5,7 +5,7 @@ import refresh from "../../../../../assets/icons/refreshlogo.png";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const AddLabSci = ({ labWoRk, setLabWoRk }) => {
+const AddLabSci = ({ labScientist, setLabScientist }) => {
   const [user, setUser] = useState([]);
   const history = useNavigate()
 
@@ -32,12 +32,13 @@ const AddLabSci = ({ labWoRk, setLabWoRk }) => {
   };
 
   const handleNxtPage = (user_Id) => {
+    console.log('click');
     fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
     .then((res) => res.json()) 
     .then((data) => {
       console.log(data);
-      setLabWoRk(data);
-      console.log(labWoRk);
+      setLabScientist(data);
+      console.log(labScientist);
       // history('labdetails')
     }) 
     .catch((error) => {
@@ -97,7 +98,7 @@ const AddLabSci = ({ labWoRk, setLabWoRk }) => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img onClick={()=>handleNxtPage(user._Id)} className="arrow21" src={arrow} alt="" />
+            <img onClick={() => handleNxtPage(user._Id)} className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

@@ -1,4 +1,3 @@
-import avatar from "../../../../assets/icons/fairAvatar.svg"
 import arrow from "../../../../assets/icons/arrow.svg"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"

@@ -1254,6 +1254,7 @@ nav.patients ul li a.active {
   font-size: 0.8rem;
   color: var(--patient-apointment);
   font-weight: 600;
+  margin-inline-start: .4rem;
   margin-block: 1.5rem;
 }
 
@@ -1274,18 +1275,50 @@ nav.patients ul li a.active {
 }
 
 /* Doc Details */
-.profileBio{
+.wrapAddDoc .patientDetails {
   display: flex;
-  gap: 15rem;
-  font-size: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.profileBio .doc_Profile img {
-  border-radius: 50%;
-  margin-inline-start: 3rem;
+.wrapAddDoc .patientDetails .patientDetails1 img {
+  width: 25%;
+  border-radius: 10px;
 }
 
-.profileBio .docBio span.light {
+.wrapAddDoc .patientDetails .patientDetails1 .profile {
+  font-size: 1.9rem;
+}
+
+.wrapAddDoc .patientDetails .patientDetails1 .profile p {
+  font-size: 1.6rem;
+}
+
+.wrapAddDoc .patientDetails .patientDetails1 .profile p.light {
+  font-size: 1.1rem;
+  opacity: 0.7;
+}
+
+.wrapAddDoc nav.patients {
+  margin-block: 3.5rem 2.5rem;
+}
+
+.wrapAddDoc nav.patients ul {
   color: var(--bg-btn-green);
-  /* font-size: 1.5rem; */
+  padding: .5rem 1rem;
+  display: inline-block;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+}
+
+nav.patients ul li a.active {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background-color: var(--bg-text-color-light-green);
+}
+
+#allApp {
+  font-size: 1.3rem;
 }

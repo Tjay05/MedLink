@@ -1,24 +1,39 @@
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+
 const DocDetails = ({ pers }) => {
+
+  const history = useNavigate();
+  const handleNavigate = () => {history(-1)}
+
   return ( 
     <div className="wrapAddDoc">
       {pers.map((doctor) => (
-        <div className="profileBio">
-          <div className="doc_Profile">
+        <div className="patientDetails" key={doctor.id} >
+          <div className="patientDetails1">
             <img src={doctor.avatar} alt="" />
+            <div className="profile">
+              <h3> {`${doctor.firstname} ${doctor.lastname}`}</h3>
+              <p>{doctor.id}</p>
+              <p>{doctor.email}</p>
+              <p className="light">Added By: {doctor.addedBy} </p>
+            </div>
           </div>
-          <div className="docBio">
-            <h2><span className="light">Full Name:</span> {`${doctor.firstname} ${doctor.lastname}`}</h2>
-            <p><span className="light">Doctor's ID:</span> {doctor.id}</p>
-            <p><span className="light">Doctor's Field:</span> {doctor.areaOfSpecialization}</p>
-            <p><span className="light">Doctor's Email Address:</span> {doctor.email}</p>
-            <p><span className="light">Doctor's Number:</span> {doctor.number}</p>
-            <p><span className="light">Medical License Number:</span> {doctor.med_License_number}</p>
-            <p><span className="light">Status:</span> {doctor.Status}</p>
-            <p><span className="light">Doctor's Date of Birth:</span> {doctor.DOB}</p>
-            <p><span className="light">Medical Degree:</span> {doctor.medicalDegree}</p>
-          </div>
-        </div>
-      ))}
+          <button onClick={handleNavigate} className="bckArrow">Back</button>
+        </div>)
+        )
+      }
+      <nav className="patients">
+        <ul>
+          <li>
+            <NavLink to="../docdetails/" >Personal Details</NavLink>
+          </li>
+          <li>
+            <NavLink to="DocAPPointment" >Appointments</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Outlet/>
+      
     </div>
    );
 }

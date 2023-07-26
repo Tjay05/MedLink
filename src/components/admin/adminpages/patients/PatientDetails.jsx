@@ -16,7 +16,7 @@ const PatDetails = () => {
             <p>87234991OA</p>
           </div>
         </div>
-      <button onClick={handleNavigate} className="bckArrow">Back</button>
+        <button onClick={handleNavigate} className="bckArrow">Back</button>
       </div>
       <nav className="patients">
         <ul>
