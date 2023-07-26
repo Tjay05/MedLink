@@ -78,6 +78,8 @@ import PharmDets from "./components/admin/adminpages/staff/pharmarcist/PharmMore
 import NurseBio from "./components/admin/adminpages/staff/nurses/PersNurseBio";
 import LabSciBio from "./components/admin/adminpages/staff/labScientist/LabSciBio";
 import LabBIo from "./components/admin/adminpages/staff/labScientist/LabBio";
+import DomBio from "./components/admin/adminpages/staff/domesticWorkers/DomBio";
+import DomWORk from "./components/admin/adminpages/staff/domesticWorkers/DomWorkBios";
 
 function App() {
   // ADMIN
@@ -189,6 +191,9 @@ function App() {
 
             {/* Domestic Workers */}
             <Route path="domesticWorkers" element={<AddDomesticWorkers domWk={domWk} setDomWk={setDomWk} />} />
+            <Route path="domworkerdetails" element={<DomBio domWk={domWk}/>} >
+              <Route index element={<DomWORk domWk={domWk}/>} />
+            </Route>
             <Route path="AddDomWorker" element={<RegDom/>}>
               <Route index element={<BasicInfoDomW />} />
               <Route path="domEnterDetails" element={<DomEnterDetails />} />

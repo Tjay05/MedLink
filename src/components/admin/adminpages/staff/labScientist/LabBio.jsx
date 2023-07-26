@@ -2,11 +2,11 @@ const LabBIo = ({labScientist}) => {
   return ( 
     <>
       <div className="prevAppInfo">
-        <p>Lab Scientist's Field</p>
+        <p>Field</p>
         <p>License Number</p>
         <p>Telephone</p>
-        <p>Lab Scientist's Degree</p>
-        <p>Lab Scientist's DOB</p>
+        <p>Degree</p>
+        <p>DOB</p>
         <p>Status</p>
       </div>
       { labScientist.map((lab) => (

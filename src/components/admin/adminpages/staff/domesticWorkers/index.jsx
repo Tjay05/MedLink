@@ -2,10 +2,11 @@ import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AddDomesticWorkers = ({ domWk, setDomWk }) => {
   const [user, setUser] = useState([]);
+  const history = useNavigate();
 
   useEffect(() => {
     fetch("https://hospital-management-backend.onrender.com/domestic-worker/all")
@@ -36,7 +37,7 @@ const AddDomesticWorkers = ({ domWk, setDomWk }) => {
       console.log(data);
       setDomWk(data);
       console.log(domWk);
-      // history('domworkerdetails')
+      history('../domworkerdetails/')
     })
     .catch((error) => {
       console.log(error);

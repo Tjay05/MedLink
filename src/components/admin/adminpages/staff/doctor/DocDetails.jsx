@@ -3,7 +3,7 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 const DocDetails = ({ pers }) => {
 
   const history = useNavigate();
-  const handleNavigate = () => {history(-1)}
+  const handleNavigate = () => {history('/adminhome/')}
 
   return ( 
     <div className="wrapAddDoc">

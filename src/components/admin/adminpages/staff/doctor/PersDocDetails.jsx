@@ -2,11 +2,11 @@ const PersDocDetails = ( {pers} ) => {
   return ( 
     <>
       <div className="prevAppInfo">
-        <p>Doc's Field</p>
+        <p>Field</p>
         <p>License Number</p>
         <p>Telephone</p>
-        <p>Medical Degree</p>
-        <p>Doc's DOB</p>
+        <p>Degree</p>
+        <p>Date of Birth</p>
         <p>Status</p>
       </div>
       { pers.map((doctor) => 

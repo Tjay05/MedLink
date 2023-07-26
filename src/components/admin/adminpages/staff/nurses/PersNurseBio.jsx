@@ -2,11 +2,11 @@ const NurseBio = ({ nuRse }) => {
   return ( 
     <>
       <div className="prevAppInfo">
-        <p>Nurse's Field</p>
+        <p>Field</p>
         <p>License Number</p>
         <p>Telephone</p>
-        <p>Nurse Degree</p>
-        <p>Doc's DOB</p>
+        <p>Degree</p>
+        <p>Date of Birth</p>
         <p>Status</p>
       </div>
       { nuRse.map((nurse) => (
