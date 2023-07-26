@@ -53,7 +53,7 @@ const AddDoctor = ({ pers, setPers }) => {
             </p>
           </div>
           <div className="refresh">
-            <button onClick={refreshFromBackend}>
+            <button onClick={()=>refreshFromBackend()}>
               <img src={refresh} alt="" />
               Refresh
             </button>

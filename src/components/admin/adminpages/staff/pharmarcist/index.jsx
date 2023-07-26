@@ -35,7 +35,7 @@ const AddPharm = ({ pharM, setPharM }) => {
     .then((res) => res.json()) 
     .then((data) => {
       setPharM(data);
-      history('../pharmdetails')
+      history('../pharmdetails/')
     })
     .catch((error) => {
       console.log(error);

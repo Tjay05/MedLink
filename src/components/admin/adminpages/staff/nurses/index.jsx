@@ -36,7 +36,7 @@ const AddNurse = ({ nuRse, setNuRse }) => {
     .then((res) => res.json())
     .then((data) => {
       setNuRse(data);
-      history('../nursedetails')
+      history('../nursedetails/')
     })
     .catch((error) => {
       console.log(error);
@@ -54,7 +54,7 @@ const AddNurse = ({ nuRse, setNuRse }) => {
             </p>
           </div>
           <div className="refresh">
-            <button onClick={refreshFromBackend}>
+            <button onClick={()=>refreshFromBackend()}>
               <img src={refresh} alt="" />
               Refresh
             </button>

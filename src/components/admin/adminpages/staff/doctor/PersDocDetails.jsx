@@ -3,8 +3,8 @@ const PersDocDetails = ( {pers} ) => {
     <>
       <div className="prevAppInfo">
         <p>Doc's Field</p>
-        <p>Medical License Number</p>
-        <p>Doc's Number</p>
+        <p>License Number</p>
+        <p>Telephone</p>
         <p>Medical Degree</p>
         <p>Doc's DOB</p>
         <p>Status</p>

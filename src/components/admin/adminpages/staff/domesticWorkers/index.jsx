@@ -54,7 +54,7 @@ const AddDomesticWorkers = ({ domWk, setDomWk }) => {
             </p>
           </div>
           {/* <div className="refresh">
-            <button onClick={refreshFromBackend}>
+            <button onClick={()=>refreshFromBackend()}>
               <img src={refresh} alt="" id="imgRefresh" />
               Refresh
             </button>

@@ -74,6 +74,10 @@ import PharmDetails from "./components/admin/adminpages/staff/pharmarcist/PharmD
 import NurseDetails from "./components/admin/adminpages/staff/nurses/NurseDetails";
 import PersDocDetails from "./components/admin/adminpages/staff/doctor/PersDocDetails";
 import DocAPPoint from "./components/admin/adminpages/staff/doctor/DocAPPoint";
+import PharmDets from "./components/admin/adminpages/staff/pharmarcist/PharmMoreDets";
+import NurseBio from "./components/admin/adminpages/staff/nurses/PersNurseBio";
+import LabSciBio from "./components/admin/adminpages/staff/labScientist/LabSciBio";
+import LabBIo from "./components/admin/adminpages/staff/labScientist/LabBio";
 
 function App() {
   // ADMIN
@@ -146,7 +150,9 @@ function App() {
 
             {/* Pharmacist */}
             <Route path="pharmacist" element={<AddPharm pharM={pharM} setPharM={setPharM} />} />
-            <Route path="pharmdetails" element={<PharmDetails pharM={pharM} />}/>
+            <Route path="pharmdetails" element={<PharmDetails pharM={pharM} />}>
+              <Route index element={<PharmDets pharM={pharM} />} />
+            </Route>
             <Route path="Addpharmacist" element={<RegPharmacist/>} >
               <Route index element={<PharmBasicInfo />} />
               <Route path="pharmEnterDetails" element={<PharmEnterDetails />} />
@@ -157,7 +163,9 @@ function App() {
 
             {/* Nurses */}
             <Route path="nurse" element={<AddNurse nuRse={nuRse} setNuRse={setNuRse} />} />
-            <Route path="nursedetails" element={<NurseDetails nuRse={nuRse} />}/>
+            <Route path="nursedetails" element={<NurseDetails nuRse={nuRse} />}>
+              <Route index element={<NurseBio nuRse={nuRse} />} />
+            </Route>
             <Route path="AddNurse" element={<RegNurse />} >
               <Route index element={<NurseBasicInfo />} />
               <Route path="nurseEnterDetails" element={<NursesEnterDetails />} />
@@ -168,6 +176,9 @@ function App() {
 
             {/* Lab Scientist */}
             <Route path="labScientist" element={<AddLab labScientist={labScientist} setLabScientist={setLabScientist} />} />
+            <Route path="labDEtails" element={<LabSciBio labScientist={labScientist}/>} >
+              <Route index element={<LabBIo labScientist={labScientist}/>} />
+            </Route>
             <Route path="AddLabSci" element={<RegLab/>}>
               <Route index element={<LabBasicInfo />} />
               <Route path="labEnterDetails" element={<LabEnterDetails />} />

@@ -36,10 +36,8 @@ const AddLabSci = ({ labScientist, setLabScientist }) => {
     fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
     .then((res) => res.json()) 
     .then((data) => {
-      console.log(data);
       setLabScientist(data);
-      console.log(labScientist);
-      // history('labdetails')
+      history('../labDEtails/')
     }) 
     .catch((error) => {
       console.log(error);
@@ -58,7 +56,7 @@ const AddLabSci = ({ labScientist, setLabScientist }) => {
             </p>
           </div>
           <div className="refresh">
-            <button onClick={refreshFromBackend}>
+            <button onClick={()=>refreshFromBackend()}>
               <img src={refresh} alt="" />
               Refresh
             </button>
@@ -98,7 +96,7 @@ const AddLabSci = ({ labScientist, setLabScientist }) => {
               <p className="light">{user.timeAdded}</p>
             </div>
             <p className={user.Status === 'On Duty' ? 'active' : 'off-duty'}>{user.Status}</p>
-            <img onClick={() => handleNxtPage(user._Id)} className="arrow21" src={arrow} alt="" />
+            <img onClick={() => handleNxtPage(user._id)} className="arrow21" src={arrow} alt="" />
           </div>
         ))} 
       </div>

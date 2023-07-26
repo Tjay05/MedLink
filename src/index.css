@@ -849,6 +849,10 @@ header.docHeader {
   margin-block: 1.5rem;
 }
 
+.allDocs img:hover {
+  cursor: pointer;
+}
+
 .allDocs .PicProfile {
   display: flex;
   flex: 1;

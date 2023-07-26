@@ -1,26 +1,38 @@
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+
 const NurseDetails = ({ nuRse }) => {
+
+  const history = useNavigate();
+  const handleNavigate = () => {history(-1)}
+
   return ( 
     <div className="wrapAddDoc">
     {nuRse.map((Nurse) => (
-      <div className="profileBio">
-        <div className="doc_Profile">
+      <div className="patientDetails" key={Nurse.id} >
+        <div className="patientDetails1">
           <img src={Nurse.avatar} alt="" />
+          <div className="profile">
+            <h3>{`${Nurse.firstname} ${Nurse.lastname}`}</h3>
+            <p>{Nurse.id}</p>
+            <p>{Nurse.email}</p>
+            <p className="light">Added By: {Nurse.addedBy}</p>
+          </div>
         </div>
-        <div className="docBio">
-          <h2><span className="light">Full Name:</span> {`${Nurse.firstname} ${Nurse.lastname}`}</h2>
-          <p><span className="light">Nurse's ID:</span> {Nurse.id}</p>
-          <p><span className="light">Nurse's Area of Specialization:</span> {Nurse.areaOfSpecialization}</p>
-          <p><span className="light">Nurse's Email Address:</span> {Nurse.email}</p>
-          <p><span className="light">Nurse's Number:</span> {Nurse.number}</p>
-          <p><span className="light">Nurse License Number:</span> {Nurse.nurse_License_number}</p>
-          <p><span className="light">Status:</span> {Nurse.Status}</p>
-          <p><span className="light">Nurse's Date of Birth:</span> {Nurse.DOB}</p>
-          <p><span className="light">Nurse Degree:</span> {Nurse.Nurse_Degree}</p>
-        </div>
-      </div>
-    ))}      
+        <button onClick={handleNavigate} className="bckArrow">Back</button>
+      </div>)
+      )
+    }
+    <nav className="patients">
+      <ul>
+        <li>
+          <NavLink to="../nursedetails/" >Personal Details</NavLink>
+        </li>
+      </ul>
+    </nav>
+    <Outlet/>
+
     </div>
-   );
+  )
 }
  
 export default NurseDetails;
