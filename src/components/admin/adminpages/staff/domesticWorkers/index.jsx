@@ -3,29 +3,37 @@ import icon from "../../../../../assets/icons/Add-user.svg";
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 const AddDomesticWorkers = ({ domWk, setDomWk }) => {
   const [user, setUser] = useState([]);
   const history = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("https://hospital-management-backend.onrender.com/domestic-worker/all")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
       });
   }, []);
   const refreshFromBackend = () => {
+    setIsLoading(true);
     fetch("https://hospital-management-backend.onrender.com/domestic-worker/all")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false);
       });
   };
 
@@ -79,7 +87,9 @@ const AddDomesticWorkers = ({ domWk, setDomWk }) => {
           <p>Status</p>
         </div>
 
-        {user.map((user) => (
+        <div className="loaded">{isLoading && <ClipLoader color="#3124ff" className="loadImg" loading={isLoading} size={50} />}</div>
+
+        {user && user.map((user) => (
           <div className="allDocs" key={user._id}>
             <div className="PicProfile">
               <img src={user.avatar} alt="" />

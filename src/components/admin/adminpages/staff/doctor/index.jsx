@@ -4,29 +4,37 @@ import refresh from "../../../../../assets/icons/refreshlogo.png";
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 const AddDoctor = ({ pers, setPers }) => {
   const [user, setUser] = useState([]);
   const history = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect( () => {
+    setIsLoading(true);
     fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        setIsLoading(false)
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false)
       });
   }, []);
   const refreshFromBackend = () => {
+    setIsLoading(true);
     fetch("https://hospital-management-backend.onrender.com/doctor/all")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        setIsLoading(false)
       })
       .catch((error) => {
         console.log(error);
+        setIsLoading(false)
       });
   };
 
@@ -77,7 +85,8 @@ const AddDoctor = ({ pers, setPers }) => {
           <p>Status</p>
         </div>
 
-        {user.map((user) => (
+        <div className="loaded">{isLoading && <ClipLoader color="#3124ff" className="loadImg" loading={isLoading} size={50} />}</div>
+        {user && user.map((user) => (
           
           <div className="allDocs" key={user.id}>
             <div className="PicProfile">

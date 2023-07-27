@@ -1326,3 +1326,10 @@ nav.patients ul li a.active {
 #allApp {
   font-size: 1.3rem;
 }
+
+/* Loader */
+.loaded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
