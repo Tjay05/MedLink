@@ -1,5 +1,6 @@
 import arrow from "../../../../../assets/icons/arrow.svg"
 import icon from "../../../../../assets/icons/Add-user.svg";
+import refresh from "../../../../../assets/icons/refreshlogo.png";
 
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -62,12 +63,12 @@ const AddDomesticWorkers = ({ domWk, setDomWk }) => {
               <span>{user.length}</span> Domestic Workers Available
             </p>
           </div>
-          {/* <div className="refresh">
+          <div className="refresh">
             <button onClick={()=>refreshFromBackend()}>
-              <img src={refresh} alt="" id="imgRefresh" />
+              <img src={refresh} alt="" />
               Refresh
             </button>
-          </div> */}
+          </div>
           <div className="btnright">
             <Link to="../AddDomWorker">
               <button>
