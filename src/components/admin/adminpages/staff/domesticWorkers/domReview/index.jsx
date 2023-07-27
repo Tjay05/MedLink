@@ -14,8 +14,6 @@ const DomReview = () => {
 
     const domWorker = { UserType, firstname, lastname, Gender, number, DOB, education, areaOfSpecialization, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, addedBy }
 
-    console.log(domWorker);
-
     setIsPending(true);
 
     try {
@@ -31,7 +29,8 @@ const DomReview = () => {
         setMessage(data);
       }
       else {
-        setMessage(data)
+        setMessage(data);
+        setIsPending(false);
       }
     } catch(error) {
       console.log(error);

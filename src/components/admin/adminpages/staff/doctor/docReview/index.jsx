@@ -14,8 +14,6 @@ const DocReview = () => {
 
     const doctor = { UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
 
-    console.log(doctor);
-
     setIsPending(true);
 
     try {
@@ -32,6 +30,7 @@ const DocReview = () => {
       }
       else{
         setMessage(data);
+        setIsPending(false);
       }
     } catch (error) {
       

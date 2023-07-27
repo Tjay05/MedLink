@@ -14,8 +14,6 @@ const LabReview = () => {
 
     const labScientist = { UserType, firstname, lastname, email, Gender, number, DOB, lab_Degree, areaOfSpecialization, lab_License, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
 
-    console.log(labScientist);
-
     setIsPending(true);
 
     try {
@@ -31,7 +29,8 @@ const LabReview = () => {
         setMessage(data);
       }
       else {
-        setMessage(data)
+        setMessage(data);
+        setIsPending(false);
       }
     } catch(error) {
       console.log(error);

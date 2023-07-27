@@ -14,8 +14,6 @@ const NurseReview = () => {
 
     const nurse = { UserType, firstname, lastname, email, Gender, number, DOB, Nurse_Degree, areaOfSpecialization, nurse_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
 
-    console.log(nurse);
-
     setIsPending(true);
 
     try {
@@ -31,7 +29,8 @@ const NurseReview = () => {
         setMessage(data);
       }
       else {
-        setMessage(data)
+        setMessage(data);
+        setIsPending(false);
       }
     } catch(error) {
       console.log(error);

@@ -14,8 +14,6 @@ const PharmReview = () => {
 
     const pharmacist = { UserType, firstname, lastname, email, Gender, number, DOB, Pharm_Degree, area_Of_Specialization, Pharm_License, Years_Of_Exp, employ_Stat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
 
-    console.log(pharmacist);
-
     setIsPending(true);
 
     try {
@@ -31,7 +29,8 @@ const PharmReview = () => {
         setMessage(data);
       }
       else {
-        setMessage(data)
+        setMessage(data);
+        setIsPending(false);
       }
     } catch(error) {
       console.log(error);
