@@ -85,7 +85,7 @@ const AddDoctor = ({ pers, setPers }) => {
           <p>Status</p>
         </div>
 
-        <div className="loaded">{isLoading && <ClipLoader color="#3124ff" className="loadImg" loading={isLoading} size={50} />}</div>
+        <div className="loaded">{isLoading && <ClipLoader color="#35693f" className="loadImg" loading={isLoading} size={60} />}</div>
         {user && user.map((user) => (
           
           <div className="allDocs" key={user.id}>
