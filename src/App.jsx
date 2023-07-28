@@ -13,6 +13,13 @@ import PharmForm from "./components/userforms/Pharmform";
 // Admin Pages
 import Header from "./components/admin/admincomponents/Header";
 
+// Registration pages
+import Regdoc from "./components/admin/admincomponents/RegDoc";
+import RegPharmacist from "./components/admin/admincomponents/RegPharmacist";
+import RegNurse from "./components/admin/admincomponents/RegNurse";
+import RegLab from "./components/admin/admincomponents/RegLab";
+import RegDom from "./components/admin/admincomponents/RegDomWorker";
+
 // Admin: Doc Pages
 import AddDoctor from "./components/admin/adminpages/staff/doctor";
 import DocBasicInfo from "./components/admin/adminpages/staff/doctor/docBasicInfo";
@@ -53,21 +60,6 @@ import DomServices from "./components/admin/adminpages/staff/domesticWorkers/dom
 import DomReview from "./components/admin/adminpages/staff/domesticWorkers/domReview";
 import DomAddSuccess from "./components/admin/adminpages/staff/domesticWorkers/domAddSuccess";
 
-// Doctor Pages
-import NavLayout from "./layouts/NavLayout";
-import DocDashboard from "./components/dochome/DocDashboard";
-import DocAppointment from "./components/dochome/DocAppointment";
-import DocNotifications from "./components/dochome/DocNotifications";
-import AppointmentDetails from "./components/dochome/AppointmentDetails";
-import DocProfile from "./components/dochome/DocProfile";
-
-// Registration pages
-import Regdoc from "./components/admin/admincomponents/RegDoc";
-import RegPharmacist from "./components/admin/admincomponents/RegPharmacist";
-import RegNurse from "./components/admin/admincomponents/RegNurse";
-import RegLab from "./components/admin/admincomponents/RegLab";
-import RegDom from "./components/admin/admincomponents/RegDomWorker";
-
 // Admin Patient Sides
 import Patient from "./components/admin/adminpages/patients";
 import PatientList from "./components/admin/adminpages/patients/PatientList";
@@ -86,6 +78,14 @@ import LabSciBio from "./components/admin/adminpages/staff/labScientist/LabSciBi
 import LabBIo from "./components/admin/adminpages/staff/labScientist/LabBio";
 import DomBio from "./components/admin/adminpages/staff/domesticWorkers/DomBio";
 import DomWORk from "./components/admin/adminpages/staff/domesticWorkers/DomWorkBios";
+
+// Doctor Pages
+import NavLayout from "./layouts/NavLayout";
+import DocDashboard from "./components/dochome/DocDashboard";
+import DocAppointment from "./components/dochome/DocAppointment";
+import DocNotifications from "./components/dochome/DocNotifications";
+import AppointmentDetails from "./components/dochome/AppointmentDetails";
+import DocProfile from "./components/dochome/DocProfile";
 
 function App() {
   // ADMIN
