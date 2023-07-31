@@ -41,7 +41,7 @@ const AddPharm = ({ pharM, setPharM }) => {
   const handleNxtPage = (user_Id) => {
     const adminData = localStorage.getItem('admin');
     const admin = JSON.parse(adminData);
-    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}/${admin.id}`)
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}/${admin._id}`)
     .then((res) => res.json()) 
     .then((data) => {
       setPharM(data);
