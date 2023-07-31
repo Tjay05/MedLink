@@ -39,7 +39,9 @@ const AddDoctor = ({ pers, setPers }) => {
   };
 
   const handleNxtPage = (user_Id) => {
-    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
+    const adminData = localStorage.getItem('admin');
+    const admin = JSON.parse(adminData);
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}/${admin.id}`)
     .then((res) => res.json()) 
     .then((data) => {
       setPers(data);

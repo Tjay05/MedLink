@@ -40,8 +40,9 @@ const AddLabSci = ({ labScientist, setLabScientist }) => {
   };
 
   const handleNxtPage = (user_Id) => {
-    console.log('click');
-    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}`)
+    const adminData = localStorage.getItem('admin');
+    const admin = JSON.parse(adminData);
+    fetch(`https://hospital-management-backend.onrender.com/admin/particularPerson/${user_Id}/${admin.id}`)
     .then((res) => res.json()) 
     .then((data) => {
       setLabScientist(data);
