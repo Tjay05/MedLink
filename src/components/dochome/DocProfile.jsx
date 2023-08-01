@@ -20,7 +20,7 @@ const DocProfile = () => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                status:'Offline'
+                Status:'Offline'
                 })
             })  
             const data = await response.json();
@@ -29,7 +29,9 @@ const DocProfile = () => {
                 localStorage.removeItem('doctor');
                 history('/');
             }
-        } catch(err) {} 
+        } catch(err) {
+            console.log(err);
+        } 
     }
 
     return ( 
