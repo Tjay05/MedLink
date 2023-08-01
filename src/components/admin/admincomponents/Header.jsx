@@ -41,7 +41,7 @@ const Header = () => {
           <li><NavLink to="patients">Patients</NavLink></li>
           <li><a>Appointments</a></li>
           <li><a>Payroll</a></li>
-          <li><a>NHIS Scheme</a></li>
+          <li><a>NHIS</a></li>
         </ul>
         <ul className="second-nav">
           <li><a><img src={blocks} /></a></li>
@@ -53,7 +53,7 @@ const Header = () => {
                 <p id="adminName">{`${admin.firstname} ${admin.lastname}`}</p>
                 <span>Admin</span>
               </div>
-              <p className="initials">{admin.firstname[0]}</p>
+              <p className="initials"><Link to="AdminProfile" >{admin.firstname[0]}</Link></p>
             </a>
           </li>
         </ul>

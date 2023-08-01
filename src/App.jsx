@@ -12,6 +12,7 @@ import PharmForm from "./components/userforms/Pharmform";
 
 // Admin Pages
 import Header from "./components/admin/admincomponents/Header";
+import AdminProfile from "./components/admin/admincomponents/AdminProfile";
 
 // Registration pages
 import Regdoc from "./components/admin/admincomponents/RegDoc";
@@ -134,14 +135,9 @@ function App() {
             <Route path="notifications" element={<DocNotifications/>} />
             <Route path="docProfile" element={<DocProfile/>}/>
           </Route>
+          {/* Admin */}
           <Route path="adminhome" element={<Header/>} >
-            {/* Patient Side of Admin */}
-            <Route path="patients" element={<Patient/>} >
-              <Route index element={<PatientList/>} />
-              <Route path="patientdetails" element={<PatDetails/>}>
-                <Route index element={<PrevApp/>} />
-              </Route>
-            </Route>
+            <Route path="AdminProfile" element={<AdminProfile/>} />
             {/* Doctor */}
             <Route index element={<AddDoctor pers={pers} setPers={setPers} />} />
             <Route path="docdetails" element={<DocDetails pers={pers}/>}>
@@ -206,6 +202,13 @@ function App() {
               <Route path="domServices" element={<DomServices />} />
               <Route path="domReview" element={<DomReview />} />
               <Route path="domAddSuccess" element={<DomAddSuccess/>} />
+            </Route>
+            {/* Patient Side of Admin */}
+            <Route path="patients" element={<Patient/>} >
+              <Route index element={<PatientList/>} />
+              <Route path="patientdetails" element={<PatDetails/>}>
+                <Route index element={<PrevApp/>} />
+              </Route>
             </Route>
           </Route>
         </Routes>

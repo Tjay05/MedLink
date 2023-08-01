@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import camera from "../../assets/icons/camera.svg"
 import logoutbtn from "../../assets/icons/logout.svg"
 
 const DocProfile = () => {
@@ -19,26 +19,25 @@ const DocProfile = () => {
         })
     }, []);
     return ( 
-        <>
-            <div className="profileHead">
-                <h3>Profile</h3>
-                <button>
-                    <img src={logoutbtn} alt="" />
-                    <p>Logout</p>
-                </button>
-            </div>
-            <>
-                <div className="profInitials">{doctor.firstname[0]}</div>
-                <div className="profDetails">
-                    <p>Profile Name : {`${doctor.firstname} ${doctor.lastname}`}</p>
-                    <p>ID: {doctor.id}</p>
-                    {/* <p>Medical License Number</p> */}
-                    <p>Area of Specialization: {doCtor.medicalDegree}</p>
-                    <p></p>
-                    <p></p>
+        <div className="profileWrap">
+            <div className="profilePic">
+                <img className="PiC" src={doctor.avatar}/>
+                <div className="ndPic">
+                    <img src={camera} alt="" /> 
                 </div>
-            </>
-        </>
+            </div>
+            <div className="profileHead">
+                <h2>Profile</h2>
+            </div>
+            <div className="profDetails">
+                <p><span id="light">Profile Name: </span> {`${doctor.firstname} ${doctor.lastname}`}</p>
+                <p><span id="light">ID:</span> {doctor.id}</p>
+                <p><span id="light">Medical License Number:</span> {doctor.med_License_number} </p>
+                <p><span id="light">Area of Specialization:</span> {doctor.areaOfSpecialization}</p>
+                <p><span id="light">Email:</span> {doctor.email} </p>
+                <button> <img src={logoutbtn} alt="" />Logout</button>
+            </div>
+        </div>
      );
 }
  
