@@ -1,23 +1,37 @@
 import { useState, useEffect } from "react";
 import camera from "../../assets/icons/camera.svg"
 import logoutbtn from "../../assets/icons/logout.svg"
+import {useNavigate} from "react-router-dom"
 
 const DocProfile = () => {
     const doctorData = localStorage.getItem('doctor')
     const doctor = JSON.parse(doctorData);
-    // console.log(doctor._id);
-    const [doCtor , setDoCtor] = useState([])
-      useEffect( ()=> {
-        fetch(`https://hospital-management-backend.onrender.com/doctor/all`)
-        .then((res) => res.json())
-        .then((data) => {
-          setDoCtor(data);
-          console.log(doCtor);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    }, []);
+
+    const history = useNavigate();
+    const [isPending, setIsPending] = useState(false);
+
+    const handleClick = async(doctor_id) => {
+
+        setIsPending(true);
+        try {
+            const response = await fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/logout`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                status:'Offline'
+                })
+            })  
+            const data = await response.json();
+            if(response.ok){
+                setIsPending(false)
+                localStorage.removeItem('doctor');
+                history('/');
+            }
+        } catch(err) {} 
+    }
+
     return ( 
         <div className="profileWrap">
             <div className="profilePic">
@@ -35,7 +49,8 @@ const DocProfile = () => {
                 <p><span id="light">Medical License Number:</span> {doctor.med_License_number} </p>
                 <p><span id="light">Area of Specialization:</span> {doctor.areaOfSpecialization}</p>
                 <p><span id="light">Email:</span> {doctor.email} </p>
-                <button> <img src={logoutbtn} alt="" />Logout</button>
+                {!isPending && <button onClick={() =>handleClick(doctor._id)} > <img src={logoutbtn} alt="" />Logout</button>}
+                {isPending && <button>Logging Out...</button>}
             </div>
         </div>
      );
