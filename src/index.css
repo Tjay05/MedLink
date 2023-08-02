@@ -1348,19 +1348,19 @@ nav.patients ul li a.active {
 .profileWrap .profilePic {
   position: absolute;
   top: 180px;
-  translate: 14% -50%;
+  translate: 0% -50%;
 }
 
 .profileWrap .profilePic img.PiC {
   border-radius: 10px;
-  max-width: 70%;
-  max-height: 70%;
+  width: 140px;
+  height: 140px;
 }
 
 .ndPic {
   position: absolute;
   bottom: 0px;
-  right: 50px;
+  right: 0px;
   width: 20%
 }
 

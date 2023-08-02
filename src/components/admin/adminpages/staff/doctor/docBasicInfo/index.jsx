@@ -4,7 +4,7 @@ import { RegdocContext } from "../../../../admincomponents/RegDoc";
 import { useContext } from "react";
 
 const DocBasicInfo = () => {
-  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB, avatar, setAvatar } = useContext(RegdocContext);
+  const { UserType, setUserType, firstname, setFirstname, lastname, setLastname, email, setEmail, Gender, setGender, number, setNumber, DOB, setDOB } = useContext(RegdocContext);
   
   const history=useNavigate()
   return (
@@ -130,16 +130,6 @@ const DocBasicInfo = () => {
                 value={DOB}
                 onChange={(e) => setDOB(e.target.value)}
                 placeholder=" select your date of birth "
-              />
-              <label htmlFor="avatar">
-                <p className="pInput">Add a Profile Photo </p>
-              </label>
-              <input
-                type="file"
-                id="avatar"
-                // className="editInput"
-                value={avatar}
-                onChange={(e) => setAvatar(e.target.value)}
               />
             </form>
           </div>
