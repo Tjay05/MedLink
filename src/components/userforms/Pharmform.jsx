@@ -1,4 +1,12 @@
-const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, /*data*/ }) => {
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { useState } from 'react';
+
+const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword }) => {
+    const [showPassword, setShowPassword] = useState(false);
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
+
     return ( 
         <div className="form-field">
             <form>
@@ -13,17 +21,22 @@ const PharmForm = ({ pharmId, setPharmId, pharmPword, setPharmPword, /*data*/ })
                     onChange={(e) => setPharmId(e.target.value)}
                 />
                 <br />
-                {/* <p className="err-mssg" >{data[0]}</p> */}
                 <label htmlFor="pharmPword">Enter your Password</label>
                 <br />
-                <input 
-                    type="password"
-                    id="pharmPword"
-                    placeholder="Password"
-                    name="pharmPword" 
-                    value={pharmPword}
-                    onChange={(e) => setPharmPword(e.target.value)}
-                />
+                <div className="passVisibility">
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        id="pharmPword"
+                        placeholder="Password"
+                        name="pharmPword"
+                        value={pharmPword}
+                        onChange={(e) => setPharmPword(e.target.value)}
+                    />
+                    <div className='showPword'                     onClick={togglePasswordVisibility}
+                    >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </div>
+                </div>
             </form>
         </div>
      );

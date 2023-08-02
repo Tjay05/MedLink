@@ -972,6 +972,23 @@ header.docHeader {
   height: 2rem;
 }
 
+.passVisibility {
+  position: relative;
+} 
+
+.passVisibility .showPword {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--bg-login-dark-green);
+}
+
+input[type="password"] {
+
+}
+
 .twoForms input[type="date"] {
   width: 220px;
 }
