@@ -985,8 +985,9 @@ header.docHeader {
   color: var(--bg-login-dark-green);
 }
 
-input[type="password"] {
-
+input:focus {
+  outline: none;
+  border: none;
 }
 
 .twoForms input[type="date"] {
@@ -1363,6 +1364,10 @@ nav.patients ul li a.active {
   align-items: center;
 }
 
+.profileWrap .profilePic .ndPic input[type="file"] {
+  display: none;
+}
+
 .profileWrap .profilePic {
   position: absolute;
   top: 180px;
@@ -1375,6 +1380,30 @@ nav.patients ul li a.active {
   height: 160px;
 }
 
+.av__upload {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+   justify-content: space-between;
+  position: absolute;
+  left: 50px;
+  top: -76px;
+}
+
+.av__upload img {
+  width: 90px;
+  height: 70px;
+}
+
+.av__upload button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background-color: var(--bg-btn-green);
+}
+
 .ndPic {
   position: absolute;
   bottom: 0px;
@@ -1382,7 +1411,7 @@ nav.patients ul li a.active {
   width: 20%
 }
 
-.ndPic img {
+.ndPic img.cam {
   width: 100%;
 }
 
