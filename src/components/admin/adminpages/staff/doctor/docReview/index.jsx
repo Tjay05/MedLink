@@ -6,13 +6,13 @@ import { useState } from "react";
 
 const DocReview = () => {
   const [isPending, setIsPending] = useState(false);
-  const {UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, setPensionDeduction, netMonthly, setNetMonthly, totalAnnualPayment, setTotalAnnualPayment,addedBy, message, setMessage} = useContext(RegdocContext);
+  const {UserType, firstname, lastname, email, Gender, number, DOB, avatar, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, setPensionDeduction, netMonthly, setNetMonthly, totalAnnualPayment, setTotalAnnualPayment,addedBy, message, setMessage} = useContext(RegdocContext);
 
   const history = useNavigate();
   
   const handleSubmit = async() => {
 
-    const doctor = { UserType, firstname, lastname, email, Gender, number, DOB, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
+    const doctor = { UserType, firstname, lastname, email, Gender, number, DOB, avatar, medicalDegree, areaOfSpecialization, med_License_number, YearsOfExp, employStat, Days_per_week, Hours_per_day, Schedule, pensionDeduction, netMonthly, totalAnnualPayment, addedBy }
 
     setIsPending(true);
 

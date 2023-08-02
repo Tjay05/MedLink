@@ -13,6 +13,7 @@ const Regdoc = () => {
     const [Gender , setGender] = useState('Male');
     const [number , setNumber] = useState('');
     const [DOB , setDOB] = useState('');
+    const [avatar , setAvatar] = useState('');
     const [medicalDegree , setMedDegree] = useState('');
     const [areaOfSpecialization , setSpecialization] = useState('');
     const [med_License_number , setMedLicenseNumber] = useState('');
@@ -33,6 +34,7 @@ const Regdoc = () => {
         Gender, setGender, 
         number, setNumber, 
         DOB, setDOB,
+        avatar, setAvatar,
         medicalDegree, setMedDegree, 
         areaOfSpecialization, setSpecialization, 
         med_License_number, setMedLicenseNumber, 
