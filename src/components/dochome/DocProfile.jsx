@@ -4,25 +4,25 @@ import logoutbtn from "../../assets/icons/logout.svg"
 import {useNavigate} from "react-router-dom"
 
 const DocProfile = () => {
+    const history = useNavigate();
+    const [isPending, setIsPending] = useState(false);
+    const [avatar, setAvatar] = useState(null)
+    
     const doctorData = localStorage.getItem('doctor')
     const doctor = JSON.parse(doctorData);
 
-    const history = useNavigate();
-    const [isPending, setIsPending] = useState(false);
-
-    const [avatar, setAvatar] = useState(null)
     const handlePictureUpload = (event) => {
         const file = event.target.files[0];
         setAvatar(file);
-      };
+    };
 
     const handleUpload = async() => {
+        const formData = new FormData();
+        formData.append('image',avatar)
         try {
             const response = await fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/upload-picture`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({avatar: avatar})
+                // body: formData;
             })
             const data = await response.json();
             if(response.ok){
@@ -35,7 +35,6 @@ const DocProfile = () => {
         }
     }
     
-
     const handleClick = async(doctor_id) => {
 
         setIsPending(true);
