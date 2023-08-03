@@ -90,7 +90,7 @@ const DocProfile = () => {
                 <p><span id="light">Area of Specialization:</span> {doctor.areaOfSpecialization}</p>
                 <p><span id="light">Email:</span> {doctor.email} </p>
                 {!isPending && <button onClick={() =>handleClick(doctor._id)} > <img src={logoutbtn} alt="" />Logout</button>}
-                {isPending && <button>Logging Out...</button>}
+                {isPending && <button disabled>Logging Out...</button>}
             </div>
         </div>
      );
