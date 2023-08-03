@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import camera from "../../assets/icons/camera.svg"
-import logoutbtn from "../../assets/icons/logout.svg"
-import {useNavigate} from "react-router-dom"
+import camera from "../../assets/icons/camera.svg";
+import logoutbtn from "../../assets/icons/logout.svg";
+import { useNavigate } from "react-router-dom";
+import { TbCameraPlus } from 'react-icons/tb';
 
 const DocProfile = () => {
     const history = useNavigate();
@@ -76,7 +77,7 @@ const DocProfile = () => {
                         <button onClick={handleUpload} >Upload</button>
                       </div>
                     )}
-                    <label htmlFor="upload">{!avatar && <img className="cam" src={camera} alt="" />}</label> 
+                    <label htmlFor="upload">{!avatar &&  <TbCameraPlus className="cam" />}</label> 
                 </div>
             </div>
             <div className="profileHead">

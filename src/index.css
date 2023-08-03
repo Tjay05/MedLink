@@ -1406,12 +1406,15 @@ nav.patients ul li a.active {
 
 .ndPic {
   position: absolute;
-  bottom: 0px;
-  right: 2px;
+  bottom: -12px;
+  right: -12px;
   width: 20%
 }
 
-.ndPic img.cam {
+.ndPic .cam {
+  color: var(--bg-login-dark-green);
+  cursor: pointer;
+  height: 100%;
   width: 100%;
 }
 
