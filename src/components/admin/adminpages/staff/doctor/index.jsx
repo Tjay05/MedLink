@@ -63,19 +63,20 @@ const AddDoctor = ({ pers, setPers }) => {
               <span>{user.length}</span> Doctors Available
             </p>
           </div>
-          <div className="refresh">
-            <button onClick={()=>refreshFromBackend()}>
-              <img src={refresh} alt="" />
-              Refresh
-            </button>
-          </div>
-          <div className="btnright">
-            <Link to="AddDoctor">
-              <button id="doctor ">
-                <img src={icon} alt="" id="frame" />
-                  <p>Add new doctor</p>
+          <div className="jerry">
+            <div className="refresh">
+              <button onClick={()=>refreshFromBackend()}>
+                <img src={refresh} alt="" />
               </button>
-            </Link>
+            </div>
+            <div className="btnright">
+              <Link to="AddDoctor">
+                <button id="doctor ">
+                  <img src={icon} alt="" id="frame" />
+                    <p>Add new doctor</p>
+                </button>
+              </Link>
+            </div>
           </div>
         </header>
 

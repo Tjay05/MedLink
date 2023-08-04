@@ -807,6 +807,11 @@ header.docHeader {
   font-size: 0.75rem;
 }
 
+.docHeader .jerry {
+  display: flex;
+  gap: 2rem;
+}
+
 .refresh button {
   background-color: var(--bg-btn-green);
   border: none;
@@ -814,6 +819,7 @@ header.docHeader {
   font-family: 'Poppins', sans-serif;
   color: var(--pure-white);
   font-weight: 600;
+  height: 36px;
   gap: 0.8rem;
   padding: 0.5rem;
   align-items: center;
