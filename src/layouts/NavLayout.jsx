@@ -1,4 +1,6 @@
 import { NavLink, Outlet, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 import Logo from "../assets/icons/logo.svg"
 import blocks from "../assets/icons/blocks.svg"
 import charts from "../assets/icons/chart.svg"
@@ -11,12 +13,25 @@ import Notificationlayout from "./Notification-layout";
 import { useLocation } from "react-router-dom";
 
 export default function NavLayout() {
+    const doctorData = localStorage.getItem('doctor')
+    const doctor = JSON.parse(doctorData);
+
     const location = useLocation();
     const isDocRoute = !location.pathname.includes("/dochome/") && !location.pathname.includes("/dochome/appointment") && !location.pathname.includes("/dochome/details") && !location.pathname.includes("/dochome/notifications") ; 
 
+    const [notifications , setNotifications] = useState([])
+    useEffect( ()=> {
+        fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/appointment`)
+        .then((res) => res.json())
+        .then((data) => {
+          setNotifications(data);
+          console.log(data.length);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }, []);
 
-    const doctorData = localStorage.getItem('doctor')
-    const doctor = JSON.parse(doctorData);
     return (
         <>
             <>
@@ -31,7 +46,7 @@ export default function NavLayout() {
                                 <NavLink to="appointment">Appointments</NavLink>
                             </li>
                             <li>
-                                <NavLink to="notifications">Notifications</NavLink>
+                                <NavLink to="notifications">Notifications<span className="num">{notifications.length}</span></NavLink>
                             </li>
                             <li><a>Messages</a></li>
                         </ul>
