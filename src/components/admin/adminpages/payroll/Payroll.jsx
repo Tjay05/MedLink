@@ -45,9 +45,9 @@ const Payroll = () => {
           <p id="user">{`${payrol.firstname} ${payrol.lastname}`}</p>  
           <p>{payrol.id}</p>
           <p> {payrol.UserType}</p>
-          <p>{payrol.pensionDeduction}</p>
-          <p>{payrol.netMonthly}</p>
-          <p>{payrol.totalAnnualPayment}</p> 
+          <p>{!payrol.pensionDeduction ? 'null' :payrol.pensionDeduction}</p>
+          <p>{!payrol.netMonthly ? 'null' : payrol.netMonthly }</p>
+          <p>{!payrol.totalAnnualPayment ? 'null' : payrol.totalAnnualPayment}</p> 
         </div>
       ))}
     </div>
