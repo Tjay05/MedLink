@@ -62,19 +62,20 @@ const AddPharm = ({ pharM, setPharM }) => {
               <span>{user.length}</span> pharmacist availble
             </p>
           </div>
-          <div className="refresh">
-            <button onClick={refreshFromBackend}>
-              <img src={refresh} alt="" />
-              Refresh
-            </button>
-          </div>
-          <div className="btnright">
-            <Link to="../Addpharmacist">
-              <button>
-                <img src={icon} alt="" id="frame" />
-                  <p>Add new pharmacist</p>
+          <div className="jerry">
+            <div className="refresh">
+              <button onClick={refreshFromBackend}>
+                <img src={refresh} alt="" />
               </button>
-            </Link>
+            </div>
+            <div className="btnright">
+              <Link to="../Addpharmacist">
+                <button>
+                  <img src={icon} alt="" id="frame" />
+                    <p>Add new pharmacist</p>
+                </button>
+              </Link>
+            </div>
           </div>
         </header>
 

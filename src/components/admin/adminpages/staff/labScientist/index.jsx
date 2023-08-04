@@ -64,19 +64,20 @@ const AddLabSci = ({ labScientist, setLabScientist }) => {
               <span>{user.length}</span> lab scientists available
             </p>
           </div>
-          <div className="refresh">
-            <button onClick={()=>refreshFromBackend()}>
-              <img src={refresh} alt="" />
-              Refresh
-            </button>
-          </div>
-          <div className="btnright">
-            <Link to="../AddLabSci">
-              <button>
-                <img src={icon} alt="" id="frame" />
-                  <p>Add new lab Scientist</p>
+          <div className="jerry">
+            <div className="refresh">
+              <button onClick={()=>refreshFromBackend()}>
+                <img src={refresh} alt="" /> 
               </button>
-            </Link>
+            </div>
+            <div className="btnright">
+              <Link to="../AddLabSci">
+                <button>
+                  <img src={icon} alt="" id="frame" />
+                    <p>Add new lab Scientist</p>
+                </button>
+              </Link>
+            </div>
           </div>
         </header>
 
