@@ -57,16 +57,20 @@ const Payroll = () => {
         <p>Net Monthly Pay</p>
         <p>Total Annual Pay</p>
       </div>
-      {filteredPayroll.map((payrol) => (
-        <div className="allDocs" key={payrol._id} > 
-          <p id="user">{`${payrol.firstname} ${payrol.lastname}`}</p>  
-          <p>{payrol.id}</p>
-          <p> {payrol.UserType}</p>
-          <p>{!payrol.pensionDeduction ? 'null' :payrol.pensionDeduction}</p>
-          <p>{!payrol.netMonthly ? 'null' : payrol.netMonthly }</p>
-          <p>{!payrol.totalAnnualPayment ? 'null' : payrol.totalAnnualPayment}</p> 
-        </div>
-      ))}
+      {filteredPayroll.length > 0 ? (
+        filteredPayroll.map((payrol) => (
+          <div className="allDocs" key={payrol._id} > 
+            <p id="user">{`${payrol.firstname} ${payrol.lastname}`}</p>  
+            <p>{payrol.id}</p>
+            <p> {payrol.UserType}</p>
+            <p>{!payrol.pensionDeduction ? 'null' :payrol.pensionDeduction}</p>
+            <p>{!payrol.netMonthly ? 'null' : payrol.netMonthly }</p>
+            <p>{!payrol.totalAnnualPayment ? 'null' : payrol.totalAnnualPayment}</p> 
+          </div>
+        ))
+      ) : (
+        <p>No user found</p>
+      )}
     </div>
    );
 }
