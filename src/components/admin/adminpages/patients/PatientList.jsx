@@ -2,22 +2,27 @@ import arrow from "../../../../assets/icons/arrow.svg"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react"
 import { useState } from "react"
+import { ClipLoader } from "react-spinners";
 
 const PatientList = () => {
 	const [patient, setPatient] = useState([]);
 	
 	const history = useNavigate()
 	const handleNxtPage = () => history('patientdetails');
+  const [isLoading, setIsLoading] = useState(false);
 
 	// Fetch
 	useEffect( () => {
+    setIsLoading(true);
 		fetch("https://hospital-management-backend.onrender.com/patient/all")
 		.then((res) => res.json())
 		.then((data) => {
 			setPatient(data);
+      setIsLoading(false);
 		})
 		.catch((error) => {
 			console.log(error);
+			setIsLoading(false);
 		});
 	}, [])
 
@@ -32,7 +37,9 @@ const PatientList = () => {
 				<p>Date Added</p>
 			</div>
 
-			{patient.map((patient) => (<div className="all__patients" key={patient.id} >
+			<div className="loaded">{isLoading && <ClipLoader color="#35693f" className="loadImg" loading={isLoading} size={60} />}</div>
+
+			{patient && patient.map((patient) => (<div className="all__patients" key={patient.id} >
 				<div className="pic-profile">
 					<img src={patient.avatar} alt="" />
 					<p>{`${patient.firstname} ${patient.lastname}`}</p>
