@@ -69,7 +69,7 @@ const Payroll = () => {
           </div>
         ))
       ) : (
-        <p>No user found</p>
+        <p className="notFound">No user found!!!</p>
       )}
     </div>
    );

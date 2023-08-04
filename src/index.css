@@ -1571,3 +1571,10 @@ nav.patients ul li a.active {
 .payroll__info * {
   flex: 1;
 }
+
+/* Notfound */
+p.notFound {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--bg-login-dark-green);
+}
