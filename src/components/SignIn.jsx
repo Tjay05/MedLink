@@ -31,7 +31,6 @@ const SignIn = ({ hospitalId, adminId, adminPassword, pharmId, pharmPword, labId
               email: data.email,
               areaOfSpecialization: data.areaOfSpecialization,
               med_License_number: data.med_License_number,
-              avatar: data.avatar,
               appointments: data.appointments,
               today:data.appointmentsToday,
               id: data.id,

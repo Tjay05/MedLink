@@ -1,38 +1,60 @@
-import { useState, useEffect } from "react";
-import camera from "../../assets/icons/camera.svg";
+import { useState, useEffect } from "react"; 
 import logoutbtn from "../../assets/icons/logout.svg";
 import { useNavigate } from "react-router-dom";
 import { TbCameraPlus } from 'react-icons/tb';
+import whiteAvatar from "../../assets/icons/Avatar1.svg"
 
 const DocProfile = () => {
     const history = useNavigate();
     const [isPending, setIsPending] = useState(false);
-    const [avatar, setAvatar] = useState(null)
+    const [isUploading, setIsUploading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [avatar, setAvatar] = useState(null);
+    const [pic, setPic] = useState(null);
     
     const doctorData = localStorage.getItem('doctor')
     const doctor = JSON.parse(doctorData);
-
-    const handlePictureUpload = (event) => {
-        const file = event.target.files[0];
-        setAvatar(file);
+    const handleFileChange = (event) => {
+    
+        setAvatar(event.target.files[0]);
     };
 
+    useEffect( () => {
+        setIsLoading(true);
+        fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/get-image`)
+          .then((res) => res.json())
+          .then((data) => {
+            setPic(data);
+            setIsLoading(false);
+            console.log(pic);
+          })
+          .catch((error) => {
+            console.log(error);
+            setIsLoading(false)
+          });
+      }, []);
+
     const handleUpload = async() => {
-        const formData = new FormData();
-        formData.append('image',avatar)
+        setIsUploading(true);
         try {
+            console.log(avatar);
+            const formData = new FormData();
+            formData.append('image', avatar )
             const response = await fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/upload-picture`, {
                 method: 'POST',
-                // body: formData;
+                body: formData,
             })
             const data = await response.json();
             if(response.ok){
-                console.log('Upload success')
-                history('../docProfile');
-                setAvatar(null);
+                console.log(data);
+                setIsUploading(false);
+            }else{
+                console.log('Image upload failed',data);
+                setIsUploading(false);
             }
         } catch(err){
-            console.log(err);
+            console.log('Error uploading image:', err);
+            setIsUploading(false);
         }
     }
     
@@ -63,18 +85,19 @@ const DocProfile = () => {
     return ( 
         <div className="profileWrap">
             <div className="profilePic">
-                <img className="PiC" src={doctor.avatar}/>
+                <img className="PiC" src={pic === null ? whiteAvatar : pic }/>
                 <div className="ndPic">
                     <input
-                        onChange={handlePictureUpload}  
+                        onChange={handleFileChange}  
                         type="file" 
-                        accept="image/*" 
+                        accept="image/png,/image/jpeg,/image/jpg" 
                         id="upload" 
                     />
                     {avatar && (
                       <div className='av__upload'>
                         <img src={URL.createObjectURL(avatar)} alt="Selected" />
-                        <button onClick={handleUpload} >Upload</button>
+                        {!isUploading && <button onClick={handleUpload} >Upload</button>}
+                        {isUploading && <button>Uploading Display pic...</button>}
                       </div>
                     )}
                     <label htmlFor="upload">{!avatar &&  <TbCameraPlus className="cam" />}</label> 
