@@ -230,7 +230,20 @@ nav.header .rule ul.first-nav li a {
 }
 
 ul.first-nav li a {
+  position: relative;
   padding-block: 0.5rem;
+}
+
+ul.first-nav li a span.num {
+  position: absolute;
+  top: 0;
+  color: var(--bg-login-dark-green);
+  background-color: var(--pure-white);
+  font-size: 0.6rem;
+  padding-inline: 0.3rem;
+  padding-block: .1rem;
+  text-align: center;
+  border-radius: 50%;
 }
 
 /* NAV-LINKS */
@@ -437,6 +450,7 @@ header {
   border: 1px solid hsla(0, 0%, 0%, 0.13);
   width: 100%;
   padding: 0.4rem 1rem;
+  margin-block-end: 1rem;
   color: var(--patient-apointment);
 }
 

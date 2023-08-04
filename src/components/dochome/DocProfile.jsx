@@ -16,10 +16,7 @@ const DocProfile = () => {
     
     const doctorData = localStorage.getItem('doctor')
     const doctor = JSON.parse(doctorData);
-    const handleFileChange = (event) => {
-    
-        setAvatar(event.target.files[0]);
-    };
+    const handleFileChange = (event) => setAvatar(event.target.files[0]); 
 
     useEffect( () => {
         setIsLoading(true);
@@ -36,10 +33,7 @@ const DocProfile = () => {
           });
       }, []);
 
-    const handleExit = () => {
-        setIsClosed(true);
-        
-    };
+    const handleExit = () => setIsClosed(true);  
 
     const handleUpload = async() => {
         setIsUploading(true);
@@ -108,7 +102,7 @@ const DocProfile = () => {
                       </div>
                     )}
             <div className="profilePic">
-                <img className="PiC" src={pic === null ? whiteAvatar : pic }/>
+                <img className="PiC" src={pic === null ? whiteAvatar : pic } alt='Profile picture' />
                 <div className="ndPic">
                     <input
                         onChange={handleFileChange}  

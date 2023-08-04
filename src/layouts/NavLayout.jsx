@@ -25,7 +25,6 @@ export default function NavLayout() {
         .then((res) => res.json())
         .then((data) => {
           setNotifications(data);
-          console.log(data.length);
         })
         .catch((error) => {
           console.log(error);
@@ -55,13 +54,13 @@ export default function NavLayout() {
                             <li><a><img src={charts} /></a></li>
                             <li><a><img src={chat} /></a></li>
                             <li>
-                                <a>
+                                <Link to="docProfile">
                                     <div className="profile">
                                         <p id="docName">{`${doctor.firstname} ${doctor.lastname}`}</p>
                                         <span>Doctor</span>
                                     </div>
-                                    <Link to="docProfile"><p className="initials">{doctor.firstname[0]}</p></Link>
-                                </a>
+                                    <p className="initials">{doctor.firstname[0]}</p>
+                                </Link>
                             </li>
                         </ul>
                     </div>

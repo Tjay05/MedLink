@@ -31,7 +31,7 @@ const DocNotifications = () => {
             <div className="loaded">{isLoading && <ClipLoader color="#35693f" className="loadImg" loading={isLoading} size={60} />}</div>
             
             {doCtor && doCtor.map((doCtor) => (
-                <div className="notification-preview">
+                <div className="notification-preview" key={doCtor._id}>
                     <img src={notification} alt="" />
                     <p className="notification-message">You have a new appointment with {`${doCtor.firstname} ${doCtor.lastname}(${doCtor.id})`} scheduled for {doCtor.time}</p>
                 </div>

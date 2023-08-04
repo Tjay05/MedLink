@@ -71,10 +71,10 @@ const DocDashboard = () => {
                         <p>Date</p>
                     </div>
                     {doCtor.map((doCtor) => (
-                        <div className="awaiting-patients">
+                        <div className="awaiting-patients" key={doCtor._id} >
                             <p id="patientName">{`${doCtor.firstname} ${doCtor.lastname}`}</p>
                             <p id="patientId">{doCtor.id}</p>
-                            <p id="bookingDate">01/01/2023</p>
+                            <p id="bookingDate">{doCtor.date}</p>
                         </div>
                     ))}
                 </section>
