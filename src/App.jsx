@@ -66,6 +66,9 @@ import Patient from "./components/admin/adminpages/patients";
 import PatientList from "./components/admin/adminpages/patients/PatientList";
 import PatDetails from "./components/admin/adminpages/patients/PatientDetails";
 
+// Admin Payroll
+import Payroll from "./components/admin/adminpages/payroll/Payroll"; 
+
 // Bio Pages
 import PrevApp from "./components/admin/adminpages/patients/PrevAppoint";
 import DocDetails from "./components/admin/adminpages/staff/doctor/DocDetails";
@@ -210,6 +213,7 @@ function App() {
                 <Route index element={<PrevApp/>} />
               </Route>
             </Route>
+            <Route path="payroll" element={<Payroll/>} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -12,6 +12,7 @@ import NurseMenu from "../adminpages/staff/nurses/nurseBasicInfo/NurseMenu";
 import LabMenu from "../adminpages/staff/labScientist/labBasicInfo/LabMenu";
 import DomMenu from "../adminpages/staff/domesticWorkers/domWorkBasicInfo/DomMenu";
 import MiniNav from "../adminpages/patients/MiniNav";
+import PayNav from "../adminpages/payroll/PayrollNav";
 
 const Header = () => {
   const location  = useLocation()
@@ -26,7 +27,9 @@ const Header = () => {
     //the domestic worker part
     !location.pathname.includes("/adminhome/AddDomWorker") &&
     // Patients
-    !location.pathname.includes("/adminhome/patients");
+    !location.pathname.includes("/adminhome/patients") &&
+    // Payroll
+    !location.pathname.includes("/adminhome/payroll") ;
 
   const adminData = localStorage.getItem('admin');
   const admin = JSON.parse(adminData);
@@ -40,7 +43,7 @@ const Header = () => {
           <li><NavLink to="/adminhome/">Staff</NavLink></li>
           <li><NavLink to="patients">Patients</NavLink></li>
           <li><a>Appointments</a></li>
-          <li><a>Payroll</a></li>
+          <li><NavLink to="payroll">Payroll</NavLink></li>
           <li><a>NHIS</a></li>
         </ul>
         <ul className="second-nav">
@@ -91,6 +94,8 @@ const Header = () => {
           <DomMenu />
         ) : location.pathname.includes("/adminhome/patients") ? (
           <MiniNav/>
+        ) : location.pathname.includes("/adminhome/payroll") ? (
+          <PayNav/>
         ) : (
           <DocMenu />
         )}

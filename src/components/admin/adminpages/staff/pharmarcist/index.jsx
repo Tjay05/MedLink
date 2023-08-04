@@ -59,7 +59,7 @@ const AddPharm = ({ pharM, setPharM }) => {
           <div className="left1">
             <p className="p1">List of Pharmacists</p>
             <p className="p2">
-              <span>{user.length}</span> pharmacist availble
+              <span>{user.length}</span> pharmacist(s) availble
             </p>
           </div>
           <div className="jerry">

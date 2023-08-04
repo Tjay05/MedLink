@@ -305,27 +305,6 @@ header {
   margin-inline-end: 1rem;
 }
 
-.search-bar {
-  position: relative;
-}
-
-.search__input {
-  border: none;
-  background-color: var(--bg-grey-lite);
-  width: 330px;
-  height: 35px;
-  border-radius: 5px;
-  padding-inline-start: 2.3rem;
-}
-
-.search-icon {
-  position: absolute;
-  left: 0;
-  top: 5px;
-  border: none;
-  background-color: transparent;
-}
-
 /* Grid-container */
 .grid-container {
   display: grid;
@@ -1541,4 +1520,54 @@ nav.patients ul li a.active {
 
 .profileWrap .profDetails button img {
   width: 30%;
+}
+
+/* PAYROLL */
+.wrapPatients .payrollHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}   
+
+.payrollHeader .payrollHead p {
+  color:hsla(240, 10%, 74%, 1);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search__input {
+  border: none;
+  background-color: var(--bg-grey-lite);
+  width: 330px;
+  height: 35px;
+  border-radius: 5px;
+  padding-inline-start: 2.3rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  border: none;
+  background-color: transparent;
+}
+
+.payroll__info {
+  display: flex;
+  width: 100%;
+  background-color: hsla(0, 0%, 98%, 1);
+  color: var(--bg-form-green);
+  font-weight: 600;
+  font-size: .93rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-block: 1.5rem;
+}
+
+.payroll__info * {
+  flex: 1;
 }
