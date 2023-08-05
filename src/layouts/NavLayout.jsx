@@ -47,7 +47,9 @@ export default function NavLayout() {
                             <li>
                                 <NavLink to="notifications">Notifications<span className="num">{notifications.length}</span></NavLink>
                             </li>
-                            <li><a>Messages</a></li>
+                            <li>
+                                <NavLink to="alert">Alert</NavLink>
+                            </li>
                         </ul>
                         <ul className="second-nav">
                             <li><a><img src={blocks} /></a></li>

@@ -90,6 +90,7 @@ import DocAppointment from "./components/dochome/DocAppointment";
 import DocNotifications from "./components/dochome/DocNotifications";
 import AppointmentDetails from "./components/dochome/AppointmentDetails";
 import DocProfile from "./components/dochome/DocProfile";
+import DocAlert from "./components/dochome/DocAlert";
 
 function App() {
   // ADMIN
@@ -130,13 +131,6 @@ function App() {
             <Route path="pharm" element={<PharmForm pharmId={pharmId} data={data} setData={setData} setPharmId={setPharmId} pharmPword={pharmPword} setPharmPword={setPharmPword}  />} />
             <Route path="Lab" element={<Labform labId={labId} data={data} setData={setData} setLabId={setLabId} labPassword={labPassword} setLabPassword={setLabPassword} />} />
             <Route path="doctor" element={<DoctorForm docId={docId} data={data} setData={setData} setDocId={setDocId} docPword={docPword}  setDocPword={setDocPword} />} />
-          </Route>
-          <Route path="dochome" element={<NavLayout/>} >
-            <Route index element={<DocDashboard/>}/>
-            <Route path="appointment" element={<DocAppointment/>} />
-            <Route path="details" element={<AppointmentDetails/>} />
-            <Route path="notifications" element={<DocNotifications/>} />
-            <Route path="docProfile" element={<DocProfile/>}/>
           </Route>
           {/* Admin */}
           <Route path="adminhome" element={<Header/>} >
@@ -214,6 +208,14 @@ function App() {
               </Route>
             </Route>
             <Route path="payroll" element={<Payroll/>} />
+          </Route>
+          <Route path="dochome" element={<NavLayout/>} >
+            <Route index element={<DocDashboard/>}/>
+            <Route path="appointment" element={<DocAppointment/>} />
+            <Route path="details" element={<AppointmentDetails/>} />
+            <Route path="notifications" element={<DocNotifications/>} />
+            <Route path="alert" element={<DocAlert/>} />
+            <Route path="docProfile" element={<DocProfile/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
