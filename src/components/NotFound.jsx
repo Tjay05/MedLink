@@ -9,4 +9,4 @@ const NotFound = () => {
      );
 }
  
-export default NotFound;x
+export default NotFound;
