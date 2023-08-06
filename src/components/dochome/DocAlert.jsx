@@ -10,7 +10,7 @@ const DocAlert = () => {
   const [alert , setAlert] = useState([])
   useEffect( ()=> {
       setIsLoading(true);
-      fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/appointment`)
+      fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/alerts`)
       .then((res) => res.json())
       .then((data) => {
         setAlert(data);
@@ -33,7 +33,7 @@ const DocAlert = () => {
             {alert && alert.map((alert) => (
                 <div className="notification-preview" key={alert._id}>
                     <img src={notification} alt="" />
-                    <p className="notification-message"> </p>
+                    <p className="notification-message">{alert} </p>
                 </div>
                 
             ))}

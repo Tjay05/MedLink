@@ -207,6 +207,7 @@ function App() {
                 <Route index element={<PrevApp/>} />
               </Route>
             </Route>
+            {/* Payroll Admin */}
             <Route path="payroll" element={<Payroll/>} />
           </Route>
           <Route path="dochome" element={<NavLayout/>} >
