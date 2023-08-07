@@ -39,16 +39,16 @@ const Payroll = () => {
           <p><span>{filteredPayroll.length} </span>Staff on Payroll</p>
         </div>
         <form className="search-bar" method="get">
-            <input 
-              className="search__input" 
-              type="text" 
-              placeholder="Search doctor, nurse etc" 
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />     
-            <button className="search-icon">
-              <img src={searchIcon} alt="" />    
-            </button>              
+          <input 
+            className="search__input" 
+            type="text" 
+            placeholder="Search doctor, nurse etc" 
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />     
+          <button className="search-icon">
+            <img src={searchIcon} alt="" />    
+          </button>              
         </form>
       </div>
       <div className="payroll__info">
