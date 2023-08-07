@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react";
 import searchIcon from "../../../../assets/icons/search-icon.svg"
+import { ClipLoader } from "react-spinners";
 
 const Payroll = () => {
   const [payroll, setPayroll] = useState([]);
   const [search, setSearch] = useState('');
   const [filteredPayroll, setFilteredPayroll] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // setIsLoading(true);
+    setIsLoading(true);
     fetch("https://hospital-management-backend.onrender.com/admin/allStaff")
       .then((res) => res.json())
       .then((data) => {
         setPayroll(data);
-        // setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
-        // setIsLoading(false);
+        setIsLoading(false);
       });
   }, []);
 
@@ -57,20 +59,30 @@ const Payroll = () => {
         <p>Net Monthly Pay</p>
         <p>Total Annual Pay</p>
       </div>
-      {filteredPayroll.length > 0 ? (
-        filteredPayroll.map((payrol) => (
-          <div className="allDocs" key={payrol._id} > 
-            <p id="user">{`${payrol.firstname} ${payrol.lastname}`}</p>  
-            <p>{payrol.id}</p>
-            <p> {payrol.UserType}</p>
-            <p>{!payrol.pensionDeduction ? 'null' :payrol.pensionDeduction}</p>
-            <p>{!payrol.netMonthly ? 'null' : payrol.netMonthly }</p>
-            <p>{!payrol.totalAnnualPayment ? 'null' : payrol.totalAnnualPayment}</p> 
-          </div>
-        ))
+
+      {isLoading ? (
+        <div className="loaded">
+          <ClipLoader color="#35693f" className="loadImg" loading={isLoading} size={60} />
+        </div>
       ) : (
-        <p className="notFound">No user found</p>
+        <>
+          {filteredPayroll.length > 0 ? (
+            filteredPayroll.map((payrol) => (
+              <div className="allDocs" key={payrol._id}>
+                <p id="user">{`${payrol.firstname} ${payrol.lastname}`}</p>
+                <p>{payrol.id}</p>
+                <p>{payrol.UserType}</p>
+                <p>{!payrol.pensionDeduction ? 'null' : payrol.pensionDeduction}</p>
+                <p>{!payrol.netMonthly ? 'null' : payrol.netMonthly}</p>
+                <p>{!payrol.totalAnnualPayment ? 'null' : payrol.totalAnnualPayment}</p>
+              </div>
+            ))
+          ) : (
+            <p className="notFound">No user found</p>
+          )}
+        </>
       )}
+
     </div>
    );
 }
