@@ -200,6 +200,7 @@ function App() {
               <Route path="domReview" element={<DomReview />} />
               <Route path="domAddSuccess" element={<DomAddSuccess/>} />
             </Route>
+
             {/* Patient Side of Admin */}
             <Route path="patients" element={<Patient/>} >
               <Route index element={<PatientList/>} />
@@ -207,6 +208,7 @@ function App() {
                 <Route index element={<PrevApp/>} />
               </Route>
             </Route>
+            
             {/* Payroll Admin */}
             <Route path="payroll" element={<Payroll/>} />
           </Route>
