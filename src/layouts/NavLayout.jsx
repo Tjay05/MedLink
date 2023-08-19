@@ -24,7 +24,7 @@ const NavLayout = () => {
   const doctor = JSON.parse(doctorData);
 
   useEffect( ()=> {
-    fetch(`https://hospital-management-backend.onrender.com/doctor/${doctor._id}/appointment`)
+    fetch(``)
       .then((res) => res.json())
       .then((data) => {
         setNotifications(data);
