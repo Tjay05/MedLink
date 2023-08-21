@@ -66,29 +66,19 @@ const DocEnterDetails = () => {
                   onChange={(e) => setSpecialization(e.target.value)}
                 >
                   <option value="">Select a field</option>
-                  <option value="Surgeon">Surgeon</option>
                   <option value="General-Practitioner">General Practitioner</option>
                   <option value="Neurologist">Neurologist</option>
                   <option value="Pediatrician">Pediatrician</option>
-                  <option value="Radiologist">Radiologist</option>
-                  <option value="Dermatologist">Dermatologist</option>
-                  <option value="Psychiatrist">Psychiatrist</option>
-                  <option value="Anesthesiologist">Anesthesiologist</option>
+                  <option value="Physical Therapist">Physical Therapist</option>
                   <option value="Cardiologist">Cardiologist</option>
                   <option value="Oncologist">Oncologist</option>
                   <option value="Urologist">Urologist</option>
-                  <option value="Pathologist">Pathologist</option>
-                  <option value="Orthopaedist">Orthopaedist</option>
                   <option value="Endocrinologist">Endocrinologist</option>
                   <option value="Gastroenterologist">Gastroenterologist</option>
-                  <option value="Internal-Medicine">Internal Medicine</option>
                   <option value="Pulmonologist">Pulmonologist</option>
                   <option value="Ophthalmologist">Ophthalmologist</option>
-                  <option value="Rheumatologist">Rheumatologist</option>
                   <option value="Gynaecologist">Gynaecologist</option>
-                  <option value="Ophthalmology">Ophthalmology</option>
                   <option value="Nephrologist">Nephrologist</option>
-                  <option value="Podiatrist">Podiatrist</option>
                   <option value="Dentist">Dentist</option>
                 </select>
                 <label htmlFor="License">
