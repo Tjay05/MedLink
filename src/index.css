@@ -211,7 +211,7 @@ nav.header {
   width: 100%;
   color: white;
   font-family: 'Poppins', sans-serif;
-  padding-block: 1rem 0.5rem;
+  padding-block: .8rem;
 }
 
 nav.header .rule {
@@ -227,12 +227,18 @@ nav.header .rule ul {
 
 nav.header .rule ul.first-nav li a {
   padding-inline: 1rem;
+  margin-inline: .2rem;
 }
 
 ul.first-nav li a {
   position: relative;
   padding-block: 0.5rem;
+  border: 2px solid transparent;
 }
+
+/* ul.first-nav li a:hover {
+  border-bottom: 1px solid var(--pure-white);
+}  */
 
 ul.first-nav li a span.num {
   position: absolute;
@@ -248,8 +254,8 @@ ul.first-nav li a span.num {
 
 /* NAV-LINKS */
 ul.first-nav li a.active {
-  border-bottom: 2px solid #fff;
   border-radius: 5px;
+  border: 2px solid #fff;
 }
 
 ul.second-nav li {
@@ -281,7 +287,7 @@ p.initials {
 /* Header */
 header {
   background-color: var(--pure-white);
-  padding-block: 1rem;
+  padding-block: .6rem;
 }
 
 .context {
