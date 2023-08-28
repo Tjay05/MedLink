@@ -843,6 +843,10 @@ header.docHeader {
   flex: 1;
 }
 
+.docs__info p:nth-child(2) {
+  max-width:  120px;
+}
+
 .allDocs {
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -873,6 +877,10 @@ header.docHeader {
 
 .allDocs > p {
   flex: 1;
+}
+
+.allDocs > p:nth-child(2) {
+  max-width: 120px;
 }
 
 .allDocs .dateAdded {
@@ -1142,6 +1150,10 @@ p.error-message {
   flex: 1;
 }
 
+.wrapPatients .patients__info p:nth-child(2) {
+  max-width: 120px;
+}
+
 .all__patients{
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -1167,6 +1179,10 @@ p.error-message {
 
 .all__patients p {
   flex: 1;
+}
+
+.all__patients > p:nth-child(2) {
+  max-width: 120px;
 }
 
 .all__patients .date-Added {
