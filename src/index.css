@@ -1236,9 +1236,19 @@ p.error-message {
   width: 10%;
 }
 
+.patientDetails .patientDetails1 img.omoh {
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+}
+
 .patientDetails1 .profile {
   font-weight: 600;
   color: var(--patient-apointment);
+}
+
+.DND .profile {
+  font-size: 1.8rem;
 }
 
 button.bckArrow {

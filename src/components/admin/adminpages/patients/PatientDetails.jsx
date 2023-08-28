@@ -1,19 +1,18 @@
 import avatar from "../../../../assets/icons/fairAvatar.svg"
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
-const PatDetails = () => {
-
+const PatDetails = ({ patientDetails }) => {
   const history = useNavigate();
   const handleNavigate = () => {history(-1)}
 
   return ( 
     <div className="wrapPatients">
       <div className="patientDetails">
-        <div className="patientDetails1">
-          <img src={avatar} alt="" />
+        <div className="patientDetails1 DND">
+          <img className="omoh" src={patientDetails.avatar} alt="" />
           <div className="profile">
-            <h3>Tosin Poppins</h3>
-            <p>87234991OA</p>
+            <h3>{`${patientDetails.firstname} ${patientDetails.lastname}`}</h3>
+            <p>{patientDetails.id}</p>
           </div>
         </div>
         <button onClick={handleNavigate} className="bckArrow">Back</button>

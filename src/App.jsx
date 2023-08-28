@@ -120,6 +120,7 @@ function App() {
   const [nuRse, setNuRse] = useState('');
   const [labScientist, setLabScientist] = useState('');
   const [domWk, setDomWk] = useState('');
+  const [patientDetails, setPatientDetails] = useState('');
 
   return (
     <>
@@ -202,9 +203,9 @@ function App() {
             </Route>
 
             {/* Patient Side of Admin */}
-            <Route path="patients" element={<Patient/>} >
-              <Route index element={<PatientList/>} />
-              <Route path="patientdetails" element={<PatDetails/>}>
+            <Route path="patients" element={<Patient patientDetails={patientDetails} setPatientDetails={setPatientDetails} />} >
+              <Route index element={<PatientList patientDetails={patientDetails} setPatientDetails={setPatientDetails} />} />
+              <Route path="patientdetails" element={<PatDetails patientDetails={patientDetails} setPatientDetails={setPatientDetails} />}>
                 <Route index element={<PrevApp/>} />
               </Route>
             </Route>

@@ -1,19 +1,17 @@
 import arrow from "../../../../assets/icons/arrow.svg"
 import { useNavigate } from "react-router-dom"
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState} from "react"
 import { ClipLoader } from "react-spinners";
 
-const PatientList = () => {
+const PatientList = ({ patientDetails, setPatientDetails }) => {
 	const [patient, setPatient] = useState([]);
 	
 	const history = useNavigate()
-	const handleNxtPage = () => history('patientdetails');
   const [isLoading, setIsLoading] = useState(false);
-
+	
 	// Fetch
 	useEffect( () => {
-    setIsLoading(true);
+		setIsLoading(true);
 		fetch("https://hospital-management-backend.onrender.com/patient/all")
 		.then((res) => res.json())
 		.then((data) => {
@@ -26,6 +24,24 @@ const PatientList = () => {
 		});
 	}, [])
 
+	const handleNxtPage = (patient_Id) => {
+		const adminData = localStorage.getItem('admin');
+		const admin = JSON.parse(adminData);
+		fetch(`https://hospital-management-backend.onrender.com/patient/particularPatient/${patient_Id}/${admin._id}`)
+		.then((res) => res.json())
+		.then((data) => {
+			setPatientDetails(data);
+			history('patientdetails')
+		})
+		.catch((err) => {
+			console.log(err);
+		})
+	}
+
+  useEffect(() => {
+    setPatientDetails(patientDetails);
+  }, [patientDetails]);
+	
 	return ( 
 		<div className="wrapPatients">
 			<h2>List of Patients</h2>
@@ -52,7 +68,7 @@ const PatientList = () => {
 						<p>{patient.dateAdded}</p>
 						<p className="light">{patient.timeAdded}</p>
 					</div>
-					<img onClick={handleNxtPage} src={arrow} alt="arrow" />
+					<img onClick={() => handleNxtPage(patient._id)} src={arrow} alt="arrow" />
 				</div>
 			</div>))}
 		</div>
