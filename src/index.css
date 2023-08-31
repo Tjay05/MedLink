@@ -1488,7 +1488,6 @@ nav.patients ul li a.active {
 }
 
 .ndPic .cam {
-  /* color: red; */
   border-radius: 5px;
   background-color: white;
   cursor: pointer;
