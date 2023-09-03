@@ -202,7 +202,7 @@ function App() {
               <Route path="domAddSuccess" element={<DomAddSuccess/>} />
             </Route>
 
-            {/* Patient Side of Admin */}
+            {/* Admin Patient Side */}
             <Route path="patients" element={<Patient patientDetails={patientDetails} setPatientDetails={setPatientDetails} />} >
               <Route index element={<PatientList patientDetails={patientDetails} setPatientDetails={setPatientDetails} />} />
               <Route path="patientdetails" element={<PatDetails patientDetails={patientDetails} setPatientDetails={setPatientDetails} />}>
