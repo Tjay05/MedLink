@@ -210,7 +210,7 @@ function App() {
               </Route>
             </Route>
             
-            {/* Payroll Admin */}
+            {/* Admin Payroll */}
             <Route path="payroll" element={<Payroll/>} />
           </Route>
           <Route path="dochome" element={<NavLayout/>} >
